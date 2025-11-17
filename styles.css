@@ -140,6 +140,16 @@ a:hover {
   font-style: italic;
 }
 
+.hero-credits {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  text-align: end;
+}
+
 /* Event Details Section */
 .event-details {
   background: #0a0a0a;
