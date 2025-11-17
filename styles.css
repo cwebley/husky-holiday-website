@@ -56,6 +56,10 @@ a:hover {
   color: var(--color-primary);
 }
 
+ul {
+  text-align: left;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -142,7 +146,6 @@ a:hover {
 
 .hero-credits {
   font-size: clamp(0.75rem, 1.5vw, 0.875rem);
-  color: rgba(138, 141, 150, 0.5);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   margin-top: 2rem;
