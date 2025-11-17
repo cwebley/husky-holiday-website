@@ -141,13 +141,14 @@ a:hover {
 }
 
 .hero-credits {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  color: var(--color-muted);
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+  color: rgba(138, 141, 150, 0.5);
   text-transform: uppercase;
-  letter-spacing: 0.3em;
-  margin-bottom: 1rem;
-  font-weight: 400;
-  text-align: end;
+  letter-spacing: 0.2em;
+  margin-top: 2rem;
+  font-weight: 300;
+  text-align: center;
+  opacity: 0.6;
 }
 
 /* Event Details Section */
