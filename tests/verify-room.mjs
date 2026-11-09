@@ -61,6 +61,7 @@ try {
   for (const [width, height] of [[320,568],[390,844],[430,932],[700,900],[1440,900],[1920,900]]) {
     await page('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     await load();
+    assert.equal(await evaluate("getComputedStyle(document.querySelector('[data-scene]')).willChange"), 'auto', 'Do not restore the scene layer hint: Pixel comparison showed missing cabin elements with it');
     const geometry = await evaluate(`(()=>{const selectors=['.ctf-flags','.mantel-clock','.needler-gift','.plasma-pistol-gift','.rudolph','.cabin-chair','.battle-rifle-gift','.prize-first','.prize-second','.prize-third','.holiday-lan'];return selectors.map(s=>{const e=document.querySelector(s),c=getComputedStyle(e);return [s,parseFloat(c.left),parseFloat(c.top),parseFloat(c.width),parseFloat(c.height),c.translate,c.scale,c.display]})})()`);
     if (sharedGeometry) assert.deepEqual(geometry, sharedGeometry, 'Viewport changed prop coordinates');
     else sharedGeometry = geometry;
