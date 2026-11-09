@@ -103,7 +103,7 @@ try {
       assert(spoken.includes(text), `Missing spoken scoring explanation: ${text}`);
     }
     assert(!spoken.includes('3–2'), 'Do not read the visual score as subtraction');
-    assert(await evaluate(`document.querySelector('[data-band]').getAttribute('aria-hidden') === 'true' && document.querySelector('[data-cap="rules"] a').tabIndex === -1`));
+    assert(await evaluate(`!document.querySelector('[data-band]').closest('[aria-hidden="true"]') && [...document.querySelectorAll('[data-cap]')].every(e => e.getAttribute('aria-hidden') === 'true') && document.querySelector('[data-cap="rules"] a').tabIndex === -1 && document.querySelector('[data-skip-room]').tabIndex === 0`), 'Expose skip navigation while keeping animated captions hidden from screen readers');
     assert(await evaluate(`['maps-title', 'prizes-title'].every(id => document.getElementById(id).closest('section').classList.contains('visually-hidden'))`));
     await call('Target.activateTarget', { targetId });
     await page('Emulation.setFocusEmulationEnabled', { enabled: true });

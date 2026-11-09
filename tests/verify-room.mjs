@@ -61,6 +61,8 @@ try {
   for (const [width, height] of [[320,568],[390,844],[430,932],[700,900],[1440,900],[1920,900]]) {
     await page('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     await load();
+    const roomLayout = await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');return {travel:r.offsetHeight-s.offsetHeight,stage:s.offsetHeight,band:r.querySelector('[data-band]').offsetHeight}})()`);
+    assert.equal(roomLayout.travel,roomLayout.stage*8,'Room takes eight stage-heights to traverse');
     assert.equal(await evaluate("getComputedStyle(document.querySelector('[data-scene]')).willChange"), 'auto', 'Do not restore the scene layer hint: Pixel comparison showed missing cabin elements with it');
     const geometry = await evaluate(`(()=>{const selectors=['.ctf-flags','.mantel-clock','.needler-gift','.plasma-pistol-gift','.rudolph','.cabin-chair','.battle-rifle-gift','.prize-first','.prize-second','.prize-third','.holiday-lan'];return selectors.map(s=>{const e=document.querySelector(s),c=getComputedStyle(e);return [s,parseFloat(c.left),parseFloat(c.top),parseFloat(c.width),parseFloat(c.height),c.translate,c.scale,c.display]})})()`);
     if (sharedGeometry) assert.deepEqual(geometry, sharedGeometry, 'Viewport changed prop coordinates');
@@ -216,13 +218,14 @@ try {
     assert.equal(maps.beat,'maps'); assert.equal(prizes.beat,'prizes');
     const finale=await go(10.5/11);
     assert.equal(finale.beat,'lan');
-    const plaque=await evaluate(`(()=>{const e=document.querySelector('[data-winner-plaque]'),r=e.getBoundingClientRect(),v=document.querySelector('[data-view]').getBoundingClientRect(),scale=new DOMMatrix(getComputedStyle(document.querySelector('[data-scene]')).transform).a;return {text:e.textContent,rect:r.toJSON(),view:v.toJSON(),nameSize:parseFloat(getComputedStyle(e.querySelector('.winner-plaque__name')).fontSize)*scale,scoreSize:parseFloat(getComputedStyle(e.querySelector('.winner-plaque__score')).fontSize)*scale,captions:[...document.querySelectorAll('[data-cap]')].some(e=>+e.style.opacity>.01),band:document.querySelector('[data-band]').offsetHeight,fit:[...e.children].every(c=>c.scrollWidth<=c.clientWidth)}})()`);
+    const plaque=await evaluate(`(()=>{const e=document.querySelector('[data-winner-plaque]'),r=e.getBoundingClientRect(),v=document.querySelector('[data-view]').getBoundingClientRect(),scale=new DOMMatrix(getComputedStyle(document.querySelector('[data-scene]')).transform).a;return {text:e.textContent,rect:r.toJSON(),view:v.toJSON(),nameSize:parseFloat(getComputedStyle(e.querySelector('.winner-plaque__name')).fontSize)*scale,scoreSize:parseFloat(getComputedStyle(e.querySelector('.winner-plaque__score')).fontSize)*scale,captions:[...document.querySelectorAll('[data-cap]')].filter(e=>+e.style.opacity>.01).map(e=>e.dataset.cap),band:document.querySelector('[data-band]').offsetHeight,fit:[...e.children].every(c=>c.scrollWidth<=c.clientWidth)}})()`);
     assert(plaque.text.includes('Victory is BACK')&&plaque.text.includes('+17')&&plaque.text.includes('flag diff.'));
     assert(plaque.text.includes('2025')&&plaque.text.includes('2026')&&plaque.text.includes('Your name here'));
     assert.equal(await evaluate(`document.querySelector('[data-winner-year="2026"] .winner-plaque__score')`),null,'Open year has no invented score');
     assert(plaque.rect.left>=plaque.view.left&&plaque.rect.right<=plaque.view.right&&plaque.rect.top>=plaque.view.top&&plaque.rect.bottom<=plaque.view.bottom,'Winner plaque clipped');
     assert(plaque.nameSize>=14&&plaque.scoreSize>=13,'Plaque text too small to carry winner information');
-    assert(!plaque.captions&&plaque.band===0&&plaque.fit,'Finale has no duplicate caption or overflowing plaque text');
+    assert.deepEqual(plaque.captions,['prizes'],'Prizes caption stays visible through LAN');
+    assert(plaque.band===roomLayout.band&&plaque.fit,'Finale keeps its band height without overflowing plaque text');
     assert.equal(finale.labels.length,0);
     if(width===390||width===1440) {
       const shot=await page('Page.captureScreenshot',{format:'png'});
@@ -236,7 +239,7 @@ try {
       await evaluate(`document.fonts.ready.then(()=>true)`);
       await evaluate(settle);
       assert.equal(await evaluate(`document.querySelector('#room').dataset.beat`),'lan','Reload restores the final LAN beat');
-      assert.equal(await evaluate(`document.querySelector('[data-band]').offsetHeight`),0);
+      assert.equal(await evaluate(`document.querySelector('[data-band]').offsetHeight`),roomLayout.band);
       assert.equal(await evaluate(`document.querySelector('[data-scene]').style.transform`),finale.transform);
     }
     assert.equal((await go(8.8/11)).beat,'prizes');

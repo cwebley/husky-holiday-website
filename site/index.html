@@ -26,6 +26,7 @@
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="page.css">
+<link rel="stylesheet" href="room-navigation.css">
 <script src="script.js" defer></script>
 </head>
 <body>
@@ -124,12 +125,16 @@
 <!-- THE ROOM: maps → house rules → prizes → previous winner above the LAN table -->
 <section id="room" data-js="story" aria-label="The maps, the house rules, the prizes and last year's winner" style="position: relative; height: 4500px">
 <div data-stage="1" style="position: sticky; top: 0; height: 900px; display: flex; flex-direction: column; background: transparent">
-<div data-band="1" aria-hidden="true" style="position: relative; flex: none; height: 132px; width: 100%; max-width: 1240px; margin: 0 auto">
+<div data-band="1" style="position: relative; flex: none; height: 132px; width: 100%; max-width: 1240px; margin: 0 auto">
+<div class="room-guide" data-room-guide>
+<p><span aria-hidden="true">↓</span> Scroll down to explore</p>
+<a href="#house-rules" data-skip-room>Skip the room</a>
+</div>
 <div data-cap="maps" aria-hidden="true" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px">
 <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">The maps</h2>
 <p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)">Corpo · Megapolis · Merchant’s Square · Ronin · Scarlett’s Landing · <strong style="color: #F99D1B">Yuletide (new)</strong></p>
 </div>
-<div data-cap="rules" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; opacity: 0; visibility: hidden">
+<div data-cap="rules" aria-hidden="true" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; opacity: 0; visibility: hidden">
 <h2 aria-hidden="true" style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">House rules</h2>
 <p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)"><span data-rule-step>Rule 1 of 5</span> · <a href="#house-rules" tabindex="-1">Read all rules</a></p>
 </div>

@@ -1,0 +1,44 @@
+/* Static, accessible navigation above the animated caption content. */
+.room-guide {
+  position: absolute;
+  top: 8px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #fff7ea;
+}
+.room-guide p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+.room-guide p span { font-size: 20px; line-height: 1; }
+.room-guide a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 44px;
+  padding-inline: 4px;
+  color: #ffb649;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.room-guide a:focus-visible {
+  outline: 2px solid #ffb649;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+@media (max-width: 699px) {
+  .room-guide { left: 18px; right: 18px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* No tour needs skipping when the room is a normal-length static overview. */
+  .room-guide { display: none; }
+}

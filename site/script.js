@@ -120,7 +120,7 @@
     var stepText = section.querySelector('[data-rule-step]');
     var reference = document.querySelector('#house-rules');
     if (reduceMotion) reference.open = true;
-    section.querySelector('a[href="#house-rules"]').addEventListener('click', function (event) {
+    section.querySelector('[data-cap="rules"] a[href="#house-rules"]').addEventListener('click', function (event) {
       event.preventDefault();
       reference.open = true;
       reference.scrollIntoView({ behavior: 'instant', block: 'start' });
@@ -131,6 +131,20 @@
     var ceilingLights = scene.querySelector('.cabin-lights');
     var raf = 0, vw = 0, sh = 0, top = 0, vv = 0, captionHeight = 0;
     var travel = 11;
+    // Keep eleven logical beats, but traverse them in eight stage-heights.
+    var scrollLengths = 8;
+    var guide = section.querySelector('[data-room-guide]');
+    section.querySelector('[data-skip-room]').addEventListener('click', function (event) {
+      event.preventDefault();
+      reference.open = true;
+      // Do not animate a skip through the same scene the visitor is leaving.
+      // Measure the actual header, including enlarged/wrapped text. A fixed
+      // scroll-margin can leave the focused summary underneath a taller header.
+      var headerBottom = Math.max(0, header.getBoundingClientRect().bottom);
+      var target = reference.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: target - headerBottom - 12, behavior: 'instant' });
+      reference.querySelector('summary').focus({ preventScroll: true });
+    });
 
     function geometry() {
       // Preserve desktop artwork and floor coordinates on every screen.
@@ -208,6 +222,10 @@
       }
       var bh = reduceMotion ? band.offsetHeight : Math.max(vw < 700 ? 116 : 132,
         Math.max.apply(null, caps.map(function (c) { return c.offsetHeight; })) + 36);
+      // Reserve the navigation row once during layout. It never overlays art
+      // or enters the aria-hidden animated caption subtree.
+      if (!reduceMotion) bh = Math.max(bh, guide.offsetHeight + 52 +
+        Math.max.apply(null, caps.map(function (c) { return c.offsetHeight; })));
       captionHeight = bh;
       if (!reduceMotion) band.style.height = bh + 'px';
       sh = Math.max(vw < 700 ? 320 : 460, avail);
@@ -216,9 +234,9 @@
       stage.style.height = sh + 'px';
       stage.style.top = top + 'px';
       geometry();
-      // Existing beats keep their travel time. Two final lengths pan to LAN and hold.
+      // Preserve every logical stop, with a shorter physical scroll journey.
       // The unpinned reference follows the stage and is not part of the timeline.
-      section.style.height = (reduceMotion ? sh : sh * (travel + 1)) + 'px';
+      section.style.height = (reduceMotion ? sh : sh * (scrollLengths + 1)) + 'px';
       update();
     }
 
@@ -229,11 +247,8 @@
       var p = clamp01((top - r.top) / Math.max(1, r.height - sh));
       var t = p * travel;
       var lanReveal = ease(t - 9);
-      // Let the plaque carry the finale: fade the prize caption and reclaim its space.
-      if (!reduceMotion) {
-        band.style.height = (captionHeight * (1 - lanReveal)).toFixed(2) + 'px';
-        vv = sh - captionHeight * (1 - lanReveal);
-      }
+      // Keep Prizes visible and the scene viewport fixed through the LAN pan.
+      if (!reduceMotion) vv = sh - captionHeight;
       var enter = ease(t - 1), leave = ease(t - 7);
       var mapsScale = Math.max(Math.min(vw / 1000, vv / 440) * .95, vw / 1180);
       // Keep the phone map pass above the hearth, with one frame column
@@ -262,7 +277,7 @@
         t < 7 ? activeShot : mix(mix(ruleShots[4], tree, leave), lan, lanReveal);
       if (reduceMotion) cam = shot((sceneLeft + SW) / 2, SH / 2, Math.min(vw / (SW - sceneLeft), vv / SH));
       else {
-        [1 - enter, enter * (1 - leave), leave * (1 - lanReveal)].forEach(function (o, i) { show(caps[i], o); });
+        [1 - enter, enter * (1 - leave), leave].forEach(function (o, i) { show(caps[i], o); });
       }
       var stepLabel = reduceMotion ? 'All rules listed below.' : 'Rule ' + (index + 1) + ' of 5';
       stepText.textContent = stepLabel;
@@ -293,6 +308,9 @@
     new ResizeObserver(layout).observe(stage);
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', layout);
+    // Font wrapping can resize the guide without changing the stage dimensions.
+    document.fonts.ready.then(layout);
+    document.fonts.addEventListener('loadingdone', layout);
     layout();
   }
 
