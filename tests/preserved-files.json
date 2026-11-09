@@ -1,0 +1,20 @@
+{
+  "archiveSourceCommit": "cd83b081fc077a36cadc4f89e19aa3cc950a2e75",
+  "overlaySource": "Untracked working copy backed up at /tmp/husky-release-backup.nJpX1S/website-v3",
+  "files": {
+    "2025/images/corpo.jpg": "63a023b3c88852bbb031a4b076f1787cdc127f64f27f7488b03d7623558aedac",
+    "2025/images/disciple.jpg": "4a1050c3ed0b4014fe936b37ef0f15fdaba977fa663cbf5e5d6a8818e0f860eb",
+    "2025/images/favicon.png": "74050999a109a52b2a9e659d0a56be31b05ea993c95d6563885bf4f08f39c89e",
+    "2025/images/megapolis.jpg": "6fac57658a5cc273cab20f43995aba8aa5165d7532bea13c78265d43acb45d0d",
+    "2025/images/merchants-square.jpg": "1641c053a7c6b5220f736a61d1013c8953aebe66760febb7ce05d9781d7295e3",
+    "2025/images/pharaoh.jpg": "6a86d04fa1adf63f52184dafa5849aa39e6a6503f2382fe03b8f8d2df7b9dd8b",
+    "2025/images/ronin.jpg": "129e91fff17bacd3cb170d483008ea73c6c022ea7e5a972c28b9464cdee5578a",
+    "2025/images/ruujaya.jpg": "02aa4874996b9965c859bcc12f596b03475feac1e89a7a8d4a74a90e11911743",
+    "2025/images/scarletts-landing.jpg": "b0c5dd8d306bbee8a7fafe4939aa6034609a46ca11b7e2330e75277b85190158",
+    "2025/index.html": "da37e751d990fb044cc42bcd6595412dca27a01bd8a2e4cda22e482393d3bace",
+    "2025/styles.css": "ffa2b134baa59649523f783c45681a7fa01862e2f8531f385331f2362439e8c5",
+    "current-game-overlay.html": "25c6b9c47e64c37bf07f3cab05c60a90d787762f51f27326e2263b79463e17a5",
+    "standings-overlay.html": "42bd2f2419fee9aec649bb368b88e2323c60444a6a59f16d2948ffe0c4b4147a",
+    "overlay.css": "4527dddc05edbe8b73663317579d733e8a8c6e2f7ec2a388dbcb5f57aa68233e"
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 150" fill="none">
+  <defs>
+    <pattern id="weave" width="8" height="4" patternUnits="userSpaceOnUse"><path d="M0 1H8M2 0V4M6 0V4" stroke="#ead5ad" stroke-opacity=".08" stroke-width=".8"/></pattern>
+    <pattern id="border" width="36" height="24" patternUnits="userSpaceOnUse"><path d="m18 3 12 9-12 9L6 12Z" stroke="#c3a16d" stroke-width="1.8"/><path d="m18 8 5 4-5 4-5-4Z" fill="#c3a16d"/></pattern>
+    <pattern id="fringe" width="9" height="20" patternUnits="userSpaceOnUse"><path d="M3 0 1 20M5 0 7 20" stroke="#cdbd9c" stroke-width="1.4"/></pattern>
+  </defs>
+  <path d="M66 23H735L790 140H12Z" fill="#130d0a" opacity=".32"/>
+  <path d="M66 7H734L785 137H15Z" fill="url(#fringe)"/>
+  <path d="M68 17H732L779 127H21Z" fill="#392a27" stroke="#b59b72" stroke-width="3"/>
+  <path d="M81 24H719L756 119H44Z" fill="#803e39" stroke="#c8ad7b" stroke-width="2"/>
+  <path d="M85 26H715L749 116H51Z" fill="url(#border)"/>
+  <path d="M112 43H688L711 101H89Z" fill="#243d43" stroke="#c3a16d" stroke-width="2"/>
+  <path d="m400 46 125 25-125 27-125-27Z" fill="#ae8055"/>
+  <path d="m400 52 95 19-95 20-95-20Z" fill="#803e39" stroke="#d1b381" stroke-width="1.5"/>
+  <path d="m400 60 48 11-48 12-48-12Z" fill="#c0a174"/>
+  <path d="m400 65 22 6-22 6-22-6Z" fill="#243d43"/>
+  <g stroke="#b69b70" stroke-width="2"><path d="m182 56 43 15-43 16-43-16Zm435 0 43 15-43 16-43-16Z"/><path d="M249 54v34m-11-17h22m291-17v34m-11-17h22"/></g>
+  <path d="M68 17H732L779 127H21Z" fill="url(#weave)"/>
+</svg>

@@ -1,0 +1,8 @@
+/* Swatchkit foundations, copied from ~/src/swatchkit/src/blueprints.
+   No runtime package or build step. See README.md for provenance. */
+@layer reset, tokens, elements, compositions;
+@import "swatchkit/global/reset.css" layer(reset);
+@import "swatchkit/global/tokens.css" layer(tokens);
+@import "swatchkit/global/variables.css" layer(tokens);
+@import "scoped-elements.css" layer(elements);
+@import "swatchkit/compositions/index.css" layer(compositions);

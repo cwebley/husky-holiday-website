@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="126" viewBox="0 0 220 126">
+  <defs>
+    <linearGradient id="body" x2=".3" y2="1"><stop stop-color="#A4A36B"/><stop offset=".5" stop-color="#75834D"/><stop offset="1" stop-color="#485C36"/></linearGradient>
+    <linearGradient id="tire" x2="1" y2="1"><stop stop-color="#45483D"/><stop offset="1" stop-color="#1E2521"/></linearGradient>
+    <pattern id="paper" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="14" height="14" fill="#A9363B"/><path d="M7 3V11M3 7H11" stroke="#D99180" stroke-width="1" opacity=".6"/></pattern>
+  </defs>
+  <!-- Far wheels and open cabin sit behind the low, wedge-shaped hood. -->
+  <g stroke="#28372C" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <circle cx="57" cy="89" r="23" fill="#252C25"/><circle cx="180" cy="89" r="23" fill="#252C25"/>
+    <path d="M91 81 95 42 121 34 151 39 165 78M97 43 127 45 144 81M126 45 121 34M127 45 151 39" fill="none" stroke="#303D32" stroke-width="6"/>
+    <path d="M95 43 121 35 150 40M127 46 141 76" fill="none" stroke="#A8AB8B" stroke-width="1.6"/>
+    <path d="M109 70 108 54Q114 50 122 55L125 78M138 70 139 54 148 55 153 78" fill="#554D36"/>
+    <path d="M99 72 117 68 128 75M136 76 150 72" fill="none" stroke="#B3A677" stroke-width="2"/>
+    <path d="M105 56 101 64M98 60 106 62" fill="none" stroke="#282E27" stroke-width="3"/>
+    <!-- Rear pintle and twin-barrel turret. -->
+    <path d="M166 67 166 34 174 34 174 68" fill="#586445"/>
+    <ellipse cx="170" cy="64" rx="17" ry="5" fill="#778354"/>
+    <path d="M157 29 167 20 184 22 189 33 176 39 160 36Z" fill="#647454"/>
+    <path d="M164 24 143 15 115 15 115 20 144 22 160 30Z" fill="#35463A"/>
+    <path d="M144 17 117 17M145 23 121 23" fill="none" stroke="#A7AD8A" stroke-width="2"/>
+    <path d="M181 27 190 23 195 34 185 37Z" fill="#3D4D37"/>
+    <path d="M165 39 155 43 153 50M176 40 185 43 187 49" fill="none" stroke="#C3BC90" stroke-width="2"/>
+    <!-- Angular armor and exposed running board. -->
+    <path d="M15 79 28 65 80 56 99 66 99 82 154 83 155 69 193 68 206 81 207 98 18 98Z" fill="url(#body)"/>
+    <path d="M28 65 80 56 96 66 48 75 15 79Z" fill="#A0A46B"/>
+    <path d="M99 82 155 83 155 91 98 92Z" fill="#303D2C"/>
+    <path d="M95 94 154 94" stroke="#C4C396" stroke-width="3"/>
+    <path d="M18 88 35 87 38 94 15 95M198 83 210 85 211 92 199 93" fill="#EEE1A6" stroke-width="1.5"/>
+    <path d="M12 97 28 99M193 100 213 98" stroke="#454E3C" stroke-width="5"/>
+    <path d="M18 81 34 78 33 83 19 86ZM42 78 54 75 54 81 42 84Z" fill="#283C2E" stroke-width="1"/>
+    <path d="M153 70 178 71 190 68 188 82 155 83Z" fill="#899362"/>
+    <!-- Wrapping paper hugs the hood, with a cream ribbon across it. -->
+    <path d="M49 62 69 58 86 63 64 71 65 84 49 87Z" fill="url(#paper)" stroke="#75272D" stroke-width="1.3"/>
+    <path d="M56 61 62 60 74 65 58 72 58 85 53 86 53 70 66 65Z" fill="#EDD08A" stroke="#AD843D" stroke-width="1"/>
+  </g>
+  <g fill="url(#tire)" stroke="#202A24" stroke-width="3">
+    <circle cx="48" cy="100" r="24"/><circle cx="180" cy="100" r="24"/>
+  </g>
+  <g fill="none" stroke="#626553" stroke-width="3" stroke-linecap="round">
+    <path d="M32 83 36 87M25 95 31 96M28 108 34 106M38 118 41 112M52 119 52 114M64 112 59 108M69 99 63 99M63 85 59 89M164 83 168 87M157 95 163 96M160 108 166 106M170 118 173 112M184 119 184 114M196 112 191 108M201 99 195 99M195 85 191 89"/>
+  </g>
+  <g stroke="#303C2C" stroke-width="2"><circle cx="48" cy="100" r="10" fill="#A8AC86"/><circle cx="180" cy="100" r="10" fill="#A8AC86"/><circle cx="48" cy="100" r="4" fill="#58664A"/><circle cx="180" cy="100" r="4" fill="#58664A"/></g>
+  <g fill="#BC3B43" stroke="#78272D" stroke-width="1.4">
+    <path d="M65 58C47 35 36 45 42 55 47 63 57 61 65 58ZM65 58C74 35 90 39 87 51 85 60 74 61 65 58Z"/>
+    <path d="M64 59 58 72 56 65 50 66 59 57M68 59 77 71 77 64 84 64 73 56"/>
+    <ellipse cx="65" cy="57" rx="5" ry="4" fill="#D96A65"/>
+  </g>
+  <path d="M45 48Q52 46 60 54M82 45Q75 44 70 53" fill="none" stroke="#E59480" stroke-width="1.4" stroke-linecap="round"/>
+</svg>

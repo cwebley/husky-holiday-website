@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="74" viewBox="0 0 330 270">
+<defs>
+  <linearGradient id="shell" x2=".25" y2="1"><stop stop-color="#A6A2C7"/><stop offset=".45" stop-color="#77729D"/><stop offset="1" stop-color="#4A456A"/></linearGradient>
+  <linearGradient id="metal" x2=".6" y2="1"><stop stop-color="#717B77"/><stop offset=".5" stop-color="#3F4A48"/><stop offset="1" stop-color="#273431"/></linearGradient>
+  <linearGradient id="energy" x2="1" y2=".5"><stop stop-color="#488F87"/><stop offset=".45" stop-color="#B8FFF0"/><stop offset="1" stop-color="#68C3B5"/></linearGradient>
+</defs>
+<!-- Small wall pegs, tucked behind the two solid parts of the body. -->
+<path d="M57 83V105Q57 113 68 113M277 121V146Q277 154 267 154" fill="none" stroke="#2B2018" stroke-width="8" stroke-linecap="round"/>
+<path d="M57 86V105Q57 109 67 109M277 124V146Q277 150 268 150" fill="none" stroke="#A48251" stroke-width="4" stroke-linecap="round"/>
+<!-- Broad upper shell: open muzzle at left, rounded receiver at right. -->
+<path d="M19 113L20 91Q20 54 57 36L128 33 174 20 194 33Q253 31 282 51Q307 67 310 103L292 114 252 103 224 104 210 118 178 117 168 102 108 101 97 84 72 85 49 98Z" fill="url(#metal)" stroke="#242E2E" stroke-width="4" stroke-linejoin="round"/>
+<path d="M31 89Q33 60 61 46L73 62 125 63 134 51 159 48 151 62 168 62 183 48 237 49 241 77 281 83 291 99 250 99 233 89 226 65 185 65 171 79 104 79 96 89 67 87 49 96Z" fill="url(#shell)" stroke="#454C59" stroke-width="2"/>
+<path d="M240 52Q270 59 280 77L249 72Z" fill="#273632"/>
+<path d="M64 41L73 53H126M178 26L187 34H148" fill="none" stroke="#A6AEA1" stroke-width="3" opacity=".65"/>
+<path d="M140 49L132 60 141 69M149 48L141 59 150 68" fill="none" stroke="#41455A" stroke-width="3"/>
+<circle cx="211" cy="84" r="8" fill="#2D3935" stroke="#8A9490" stroke-width="2"/>
+<circle cx="208" cy="81" r="2.5" fill="#B7C3B4"/>
+<!-- Right-hand grip curves down from the receiver, clear of the central opening. -->
+<path d="M260 105L280 108 293 99 315 115 311 153Q313 180 291 207L278 220 254 201 242 180 254 163 264 161 274 143 263 133Z" fill="url(#metal)" stroke="#25312F" stroke-width="4" stroke-linejoin="round"/>
+<path d="M278 114L292 120 300 114 302 132 283 137 273 128ZM282 151L302 151 294 164 276 161ZM268 170L288 178 279 192 258 184Z" fill="#64716A" stroke="#37443E" stroke-width="2"/>
+<path d="M271 199L280 207 289 195M287 141L302 141" fill="none" stroke="#9CA399" stroke-width="3"/>
+<!-- The slanted cyan energy bridge defines the large open-jaw silhouette. -->
+<path d="M136 101H191L184 123 172 184 149 198 101 173Q122 149 130 124Z" fill="#5B7772" stroke="#344944" stroke-width="4"/>
+<path d="M146 111Q139 145 121 174L134 179Q154 143 160 111M164 112Q159 151 142 184L154 189Q173 148 177 112" fill="none" stroke="url(#energy)" stroke-width="7"/>
+<path d="M112 167L129 178 146 182 161 190" fill="none" stroke="#ACF8E7" stroke-width="6"/>
+<!-- Lower muzzle jaw sweeps back beneath the bridge, rather than a pistol barrel. -->
+<path d="M14 132L79 131 88 153 108 169 149 179 188 182 207 177 221 185 237 231Q234 248 206 253L177 253 158 239 137 240 118 225 88 224 75 208 49 196 31 164Z" fill="url(#metal)" stroke="#26312F" stroke-width="4" stroke-linejoin="round"/>
+<path d="M20 139L72 137 68 148 48 156 63 181 87 198 108 199 133 210 155 211 169 229 190 233 213 229 201 194 181 196 172 188 132 186 105 179 80 161 74 150 41 154Z" fill="url(#shell)" stroke="#4C5360" stroke-width="2"/>
+<path d="M79 144L64 148 69 157 85 152M82 158L71 163 77 171 92 167" fill="#343747"/>
+<path d="M84 204L101 210 113 206 134 218 149 218 164 235M31 146L66 142" fill="none" stroke="#A1A9A0" stroke-width="2.5" opacity=".7"/>
+<circle cx="87" cy="211" r="6" fill="#2A3931" stroke="#899587" stroke-width="2"/>
+<!-- A narrow gift ribbon on the rear grip leaves the main outline and bridge bare. -->
+<path d="M266 168L291 178 284 188 258 178Z" fill="#C64A49" stroke="#812E34" stroke-width="1.5"/>
+<g class="gift-bow" transform="translate(220 145) scale(5) translate(-275 -180)">
+<path d="M274 177Q255 157 254 172Q257 182 274 181Q297 161 295 176Q290 185 274 181Z" fill="#E5C476" stroke="#92703D" stroke-width="2"/>
+<path d="M271 181L261 197 273 191 277 185 284 202 292 202 280 181Z" fill="#D3AD62"/>
+<ellipse cx="275" cy="180" rx="5" ry="4" fill="#F5D996" stroke="#92703D" stroke-width="1.5"/>
+</g>
+</svg>

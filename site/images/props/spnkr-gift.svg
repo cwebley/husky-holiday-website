@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="440" viewBox="0 0 240 440">
+<defs>
+<pattern id="gift-paper" width="22" height="22" patternUnits="userSpaceOnUse"><rect width="22" height="22" fill="#315B43"/><path d="M11 3L13 8 18 9 14 12 15 18 11 15 7 18 8 12 4 9 9 8Z" fill="#E3C681"/><circle cx="0" cy="0" r="1.5" fill="#DAD8B7"/><circle cx="22" cy="22" r="1.5" fill="#DAD8B7"/></pattern>
+<linearGradient id="silver" x2="0" y2="1"><stop stop-color="#565F60"/><stop offset=".23" stop-color="#B5BDB7"/><stop offset=".5" stop-color="#8A9692"/><stop offset=".75" stop-color="#697775"/><stop offset="1" stop-color="#353F42"/></linearGradient>
+<linearGradient id="housing" x2="0" y2="1"><stop stop-color="#465050"/><stop offset=".5" stop-color="#293334"/><stop offset="1" stop-color="#182124"/></linearGradient>
+<linearGradient id="ribbon"><stop stop-color="#7D2328"/><stop offset=".5" stop-color="#D15B4B"/><stop offset="1" stop-color="#8D2F30"/></linearGradient>
+</defs>
+<ellipse cx="109" cy="417" rx="83" ry="10" fill="#160F0B" opacity=".3"/>
+<!-- Side profile: two long silver tubes, black central receiver and rear collar.
+     The entire rotated silhouette fits within this generously padded canvas. -->
+<g transform="translate(145 20) rotate(78) scale(.7)">
+<!-- Rear exhaust braces. -->
+<path d="M460 39L523 47 516 84 463 93" fill="none" stroke="#1E292C" stroke-width="12" stroke-linejoin="round"/>
+<path d="M478 83L520 90 511 118 465 124" fill="none" stroke="#1C272A" stroke-width="9" stroke-linejoin="round"/>
+<!-- Parallel barrels and exhaust pipes. -->
+<rect x="19" y="36" width="476" height="37" rx="12" fill="url(#silver)" stroke="#333F41" stroke-width="3"/>
+<rect x="16" y="72" width="482" height="38" rx="12" fill="url(#silver)" stroke="#333F41" stroke-width="3"/>
+<path d="M28 43H455M25 80H455" stroke="#D5D9CC" stroke-opacity=".45" stroke-width="3"/>
+<path d="M155 36V73M167 36V73M152 73V110M164 73V110" stroke="#263134" stroke-width="6"/>
+<!-- Front muzzle collars and dark bores, viewed mostly side-on. -->
+<path d="M16 33H30V76H14L7 67V43Z" fill="#2C3638" stroke="#172225" stroke-width="3"/>
+<path d="M13 71H28V113H11L4 103V80Z" fill="#303B3C" stroke="#172225" stroke-width="3"/>
+<ellipse cx="12" cy="54" rx="7" ry="16" fill="#0E191D" stroke="#66736E" stroke-width="2"/>
+<ellipse cx="9" cy="92" rx="7" ry="16" fill="#0E191D" stroke="#66736E" stroke-width="2"/>
+<!-- Central cylindrical sleeve and angular lower receiver. -->
+<path d="M234 31H331L342 44V105L331 118H235L222 106V43Z" fill="url(#housing)" stroke="#1B282B" stroke-width="3"/>
+<path d="M239 36L323 109M238 110L325 38" stroke="#56615F" stroke-opacity=".4" stroke-width="2"/>
+<path d="M235 32V117" stroke="#B5BBB0" stroke-width="5"/>
+<path d="M186 110H343L354 134 327 153 320 194H253L223 180 204 151H173Z" fill="#303C3F" stroke="#19292D" stroke-width="4"/>
+<path d="M265 143H309V180H267Z" fill="#243236" stroke="#435154" stroke-width="2"/>
+<path d="M226 152Q248 143 254 156Q258 169 242 171H230Z" fill="#0F2027" stroke="#69736E" stroke-width="3"/>
+<path d="M212 130L192 135 184 164 170 162 176 122" fill="#202E31" stroke="#132328" stroke-width="3"/>
+<!-- Forward handgrip and its guard. -->
+<path d="M111 116L144 115 159 138 174 166 157 180 130 169 116 141Z" fill="#303E42" stroke="#1A2C31" stroke-width="3"/>
+<path d="M143 137L155 135 165 157 155 166 144 160Z" fill="#8D9891" stroke="#1A2C31" stroke-width="2"/>
+<path d="M111 123L125 127 119 160 105 159Z" fill="#17272D" stroke="#0F1D23" stroke-width="3"/>
+<!-- Lower rail and small silver pressure cylinder. -->
+<path d="M173 120H464L475 133H345" fill="none" stroke="#1B2B30" stroke-width="9"/>
+<rect x="240" y="121" width="85" height="20" rx="8" fill="url(#silver)" stroke="#2D3C3F" stroke-width="2"/>
+<!-- Broad rear band. -->
+<path d="M422 29L462 34 470 52V108L455 126H419L410 107V48Z" fill="url(#housing)" stroke="#1B292D" stroke-width="4"/>
+<path d="M423 37V117" stroke="#59635F" stroke-width="3"/>
+<!-- Carry handle and raised sight. -->
+<path d="M262 31V16H316V31M269 16L277 8H313V16" fill="none" stroke="#1D2B30" stroke-width="8" stroke-linejoin="round"/>
+<rect x="210" y="9" width="34" height="14" rx="2" fill="#1C2A2E" stroke="#101D22" stroke-width="2"/>
+<path d="M222 23V33" stroke="#3B494A" stroke-width="8"/>
+<g fill="#97A29A"><circle cx="232" cy="89" r="3"/><circle cx="332" cy="100" r="3"/><circle cx="276" cy="183" r="2"/></g>
+<text x="270" y="75" fill="#B6BEB0" font-family="Arial,sans-serif" font-size="8" font-weight="bold" letter-spacing="1">M41 SPNKr</text>
+<!-- A broad star-paper wrap around the rear tubes, secured with the red sash. -->
+<path d="M347 35H407V111H347Z" fill="url(#gift-paper)" stroke="#B5A171" stroke-width="1.5"/>
+<path d="M351 36V110M402 36V110" stroke="#D9C591" stroke-opacity=".5" stroke-width="1"/>
+<path d="M347 70H407" stroke="#132E29" stroke-opacity=".4" stroke-width="2"/>
+<path d="M366 36H385V110H366Z" fill="url(#ribbon)" stroke="#7D3030" stroke-width="1.5"/>
+<path d="M375 62Q341 32 345 53Q349 70 375 62Q405 29 408 48Q411 66 375 62Z" fill="#B94B43" stroke="#7D3030" stroke-width="2"/>
+<path d="M373 64L354 94 368 88 377 98 381 65M382 65L400 89 398 77 411 78 389 62" fill="#C25346" stroke="#7D3030" stroke-width="1.5"/>
+<ellipse cx="378" cy="63" rx="7" ry="8" fill="#D97359" stroke="#7D3030" stroke-width="2"/>
+</g></svg>

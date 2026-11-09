@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="88" viewBox="0 0 180 124">
+<defs>
+  <linearGradient id="wood" x2="0" y2="1"><stop stop-color="#95623A"/><stop offset=".4" stop-color="#674026"/><stop offset="1" stop-color="#3D251A"/></linearGradient>
+  <linearGradient id="glass" x2=".2" y2="1"><stop stop-color="#29302A"/><stop offset="1" stop-color="#101C18"/></linearGradient>
+  <pattern id="grain" width="32" height="9" patternUnits="userSpaceOnUse"><path d="M0 2Q8 -1 18 3T40 2M-10 7Q6 4 18 7T40 7" fill="none" stroke="#E9BC7B" stroke-opacity=".12" stroke-width="1"/></pattern>
+  <filter id="light" x="-.2" y="-.5" width="1.4" height="2"><feGaussianBlur stdDeviation="2"/></filter>
+</defs>
+<ellipse cx="90" cy="120" rx="85" ry="4" fill="#1B120C" opacity=".5"/>
+<path d="M16 111V43Q16 28 35 28H49Q57 9 90 9T131 28H145Q164 28 164 43V111Z" fill="url(#wood)" stroke="#2D1C14" stroke-width="3"/>
+<path d="M16 111V43Q16 28 35 28H49Q57 9 90 9T131 28H145Q164 28 164 43V111Z" fill="url(#grain)"/>
+<path d="M22 43Q22 34 38 34H53Q61 16 90 16T127 34H144Q158 34 158 43" fill="none" stroke="#D0A36A" stroke-width="2" opacity=".65"/>
+<rect x="26" y="43" width="128" height="53" rx="5" fill="#B99557" stroke="#34251A" stroke-width="2"/>
+<rect x="31" y="48" width="118" height="43" rx="3" fill="url(#glass)"/>
+<path d="M34 51H144L34 73Z" fill="#E7D2A1" opacity=".06"/>
+<text x="90" y="80" text-anchor="middle" font-family="'Courier New',monospace" font-size="37" font-weight="700" letter-spacing="1" fill="#FFB454" opacity=".55" filter="url(#light)">8:00</text>
+<text x="90" y="80" text-anchor="middle" font-family="'Courier New',monospace" font-size="37" font-weight="700" letter-spacing="1" fill="#FFD18A">8:00</text>
+<path d="M25 102H155" stroke="#B58C55" stroke-width="2" opacity=".6"/>
+<rect x="10" y="108" width="160" height="9" rx="3" fill="#764A2D" stroke="#352218" stroke-width="2"/>
+<path d="M23 117H47V122H23ZM133 117H157V122H133Z" fill="#38261B"/>
+<!-- A small sprig of holly tucked along the clock's wooden crown. -->
+<path d="M133 30L120 21 123 17 118 11 129 13 132 8 138 22M138 28L148 12 152 17 162 14 159 23 164 26 147 31" fill="#315B36" stroke="#193E29" stroke-width="1.5"/>
+<g fill="#B33A39" stroke="#75252A" stroke-width="1"><circle cx="136" cy="28" r="4"/><circle cx="144" cy="27" r="4"/><circle cx="140" cy="34" r="4"/></g>
+</svg>

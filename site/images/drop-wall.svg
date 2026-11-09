@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 180" fill="none">
+  <defs>
+    <linearGradient id="shield" x1="224" y1="0" x2="224" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff1b8" stop-opacity=".06"/>
+      <stop offset=".55" stop-color="#f4d984" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#ffe9a6" stop-opacity=".29"/>
+    </linearGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff5cd" stop-opacity=".19"/><stop offset=".5" stop-color="#f2d994" stop-opacity=".05"/><stop offset="1" stop-color="#fff5cd" stop-opacity=".19"/></linearGradient>
+    <pattern id="grid" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M11 0H0V11" stroke="#fff3ca" stroke-opacity=".28" stroke-width=".55"/></pattern>
+    <clipPath id="outline"><path d="M10 42 37 18 112 5H336L411 18 438 42V158L336 175H112L10 158Z"/></clipPath>
+  </defs>
+  <!-- A translucent segmented field, not a solid physical fire guard. -->
+  <g clip-path="url(#outline)">
+    <path d="M0 0H448V180H0Z" fill="url(#shield)"/>
+    <path d="M10 42 37 18 112 5V175L10 158ZM336 5 411 18 438 42V158L336 175Z" fill="url(#wing)"/>
+    <path d="M0 0H448V180H0Z" fill="url(#grid)"/>
+    <g stroke="#fff1bc" stroke-opacity=".75" stroke-width="1.25">
+      <path d="M112 5V175M187 5V175M261 5V175M336 5V175"/>
+      <path d="M10 67 112 56H336L438 67M10 112 112 114H336L438 112"/>
+      <path d="M60 11 55 164M388 11 393 164" stroke-opacity=".35" stroke-width=".7"/>
+    </g>
+  </g>
+  <path d="M10 42 37 18 112 5H336L411 18 438 42V158L336 175H112L10 158Z" stroke="#fff0bd" stroke-opacity=".78" stroke-width="1.6" stroke-linejoin="round"/>
+  <!-- Tiny illuminated connections at the panel intersections. -->
+  <g fill="#fff7d7" fill-opacity=".9">
+    <circle cx="112" cy="56" r="1.9"/><circle cx="187" cy="56" r="1.6"/><circle cx="261" cy="56" r="1.6"/><circle cx="336" cy="56" r="1.9"/>
+    <circle cx="112" cy="114" r="1.9"/><circle cx="187" cy="114" r="1.6"/><circle cx="261" cy="114" r="1.6"/><circle cx="336" cy="114" r="1.9"/>
+  </g>
+  <!-- UNSC-style floor projector with a small blue status light. -->
+  <ellipse cx="224" cy="176" rx="28" ry="3" fill="#101b18" fill-opacity=".4"/>
+  <path d="m205 170 12-7h14l12 7-6 7h-26Z" fill="#47554b" stroke="#24352e" stroke-width="1.5"/>
+  <path d="M220 150h8v22h-8Z" fill="#53665c" stroke="#253c32" stroke-width="1.5"/>
+  <path d="M222 152h4v10h-4Z" fill="#a9e8e4"/>
+  <path d="m208 170 10 3h12l10-3" stroke="#879386" stroke-width="1.5"/>
+  <path d="M221 173h6" stroke="#a9e8e4" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,575 @@
+/* Page composition. Cabin artwork and camera rules stay in styles.css. */
+:root {
+  --page-gutter: var(--space-s-m);
+  --page-panel-padding: var(--space-s-l);
+  --page-border: 1px solid rgb(255 255 255 / 14%);
+  --page-panel-radius: 1.75rem;
+  --page-panel-shadow: inset 0 1px 0 rgb(255 255 255 / 10%),
+    0 1.5rem 3rem rgb(0 0 0 / 25%);
+  --page-display-size: var(--step-display);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--ground);
+  color: var(--color-light);
+  font-family: var(--font-base);
+  font-size: var(--step-0);
+  line-height: var(--leading-standard);
+  font-size-adjust: none;
+}
+
+:where(.hero, .content-group, .site-footer) code {
+  color: var(--color-light);
+  overflow-wrap: anywhere;
+}
+
+:where(.hero, .content-group, .site-footer, .site-header, .rule-reference) a {
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+:where(.hero, .content-group section, .rule-reference) {
+  scroll-margin-top: 6rem;
+}
+
+.wrapper {
+  --wrapper-max-width: 75rem;
+  --gutter: var(--page-gutter);
+  width: 100%;
+}
+
+.page-main {
+  position: relative;
+  z-index: 1;
+  background: var(--ground);
+}
+
+/* Fixed inside main's stacking context, so snow is not hidden by its ground.
+   All content, including the room, paints above the decorative layer. */
+.page-main > :not(.page-background) {
+  position: relative;
+  z-index: 1;
+}
+
+.page-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-background__glow {
+  position: absolute;
+  inset: auto 0 0;
+  height: 60vh;
+  background: radial-gradient(ellipse 70% 100% at 50% 100%, var(--glow), transparent 70%);
+}
+
+.page-background__snow {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: var(--page-border);
+}
+
+.site-header__inner {
+  gap: var(--space-xs);
+  padding-block: var(--space-xs);
+}
+
+.site-brand {
+  flex-shrink: 0;
+  color: var(--color-light);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--step-2);
+  text-decoration: none;
+}
+
+.site-nav {
+  --gutter: var(--space-s-m);
+  column-gap: var(--gutter);
+  row-gap: 0.25rem;
+  font-size: var(--step--1);
+  font-weight: 700;
+}
+
+.site-nav__section {
+  padding-block: var(--space-xs);
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav__section:hover { color: var(--color-light); }
+
+/* Shared frosted surfaces and links styled as buttons. */
+.panel,
+.button,
+.rule-reference {
+  background: var(--glass);
+  border: var(--page-border);
+  box-shadow: var(--page-panel-shadow);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+}
+
+.panel {
+  --flow-space: var(--space-m);
+  padding: var(--page-panel-padding);
+  border-radius: var(--page-panel-radius);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  max-width: 100%;
+  padding: var(--space-xs) var(--space-m);
+  border-radius: 999px;
+  color: var(--color-light);
+  font-size: var(--step-0);
+  font-weight: 800;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button--accent {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.button--light {
+  background: var(--color-light);
+  color: var(--on-accent);
+}
+
+.button--compact {
+  padding-inline: var(--space-s);
+  font-size: var(--step--1);
+}
+
+.button:hover {
+  color: var(--color-light);
+  background: var(--ground);
+  border-color: var(--accent);
+}
+
+.hero {
+  padding-block-end: var(--space-xl);
+  overflow-x: clip;
+}
+
+.hero__lights {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.hero__inner {
+  --wrapper-max-width: 80rem;
+  --repel-vertical-alignment: flex-end;
+  gap: var(--space-l) var(--space-xl);
+  padding-block-start: var(--space-xl);
+}
+
+.hero__title-group {
+  --flow-space: var(--space-xs);
+  min-width: 0;
+}
+
+.hero__wordmark {
+  position: relative;
+  width: fit-content;
+}
+
+.hero__title {
+  inline-size: min-content;
+  text-fit: grow;
+  color: var(--color-light);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: var(--page-display-size);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  text-shadow: 0 0 3.75rem var(--glow);
+}
+
+.hero__rosette {
+  position: absolute;
+  /* Sit beside Raid rather than overlaying its final letter. */
+  left: calc(100% + var(--space-xs));
+  top: 62%;
+  width: clamp(2.5rem, 5.5vw, 5rem);
+  height: auto;
+  transform: rotate(8deg);
+  filter: drop-shadow(0 0.75rem 1.125rem rgb(0 0 0 / 40%));
+  overflow: visible;
+}
+
+.hero__subtitle {
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(var(--step-5), 4.2vw, 3.75rem);
+  line-height: 1.05;
+}
+
+.date-survey {
+  --flow-space: var(--space-s);
+  flex: 0 1 27.5rem;
+  min-width: 0;
+  padding: var(--space-s-m);
+  border-radius: 1.5rem;
+}
+
+.date-survey__heading {
+  --gutter: var(--space-s);
+  flex-wrap: nowrap;
+}
+
+.date-survey__title {
+  min-width: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--step-3);
+  line-height: 1.1;
+}
+
+.date-survey__button { width: 100%; }
+
+/* Calendar illustration. Dimensions are artwork coordinates, not page spacing. */
+.calendar {
+  position: relative;
+  flex: none;
+  width: 76px;
+  height: 88px;
+  transform: rotate(-5deg);
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--color-light);
+  color: var(--on-accent);
+  box-shadow: 0 8px 16px rgb(0 0 0 / 35%);
+  text-align: center;
+}
+
+.calendar::before,
+.calendar::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2a211b;
+}
+
+.calendar::before { left: 18px; }
+.calendar::after { right: 18px; }
+
+.calendar__month {
+  padding: 9px 0 4px;
+  background: var(--accent-2);
+  color: var(--on-accent);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+}
+
+.calendar__day {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.05;
+}
+
+.content-group {
+  --flow-space: var(--space-m);
+  padding-block: var(--space-xl) var(--space-4xl);
+}
+
+.content-group--intro { padding-block-start: var(--space-m); }
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: var(--step-6);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.section-title--small { font-size: var(--step-5); }
+
+.game-steps {
+  --gutter: var(--space-m);
+  --grid-placement: auto-fit;
+  --grid-min-item-size: min(100%, 13.125rem);
+  padding: 0;
+  list-style: none;
+  counter-reset: game-step;
+}
+
+.game-step {
+  --flow-space: var(--space-xs);
+  min-width: 0;
+  counter-increment: game-step;
+}
+
+.game-step::before {
+  content: counter(game-step);
+  display: block;
+  margin-block-end: var(--space-xs);
+  color: var(--accent);
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: var(--step-6);
+  line-height: 1;
+}
+
+.game-step h3 {
+  font-size: var(--step-1);
+  font-weight: 800;
+}
+
+.game-step p,
+.scoring p,
+.how-it-works__break,
+.volunteer p,
+.faq p { color: var(--muted); }
+
+.scoring {
+  --gutter: var(--space-s);
+  column-gap: var(--space-l);
+  padding-block-start: var(--space-m);
+  border-top: var(--page-border);
+}
+
+.scoring__explanation {
+  --flow-space: 0.25rem;
+  flex: 1 1 17.5rem;
+  min-width: 0;
+}
+
+.scoring__explanation h3 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: var(--step-3);
+  line-height: 1.1;
+}
+
+.scoring__example {
+  --gutter: var(--space-xs);
+  flex: 1 1 25rem;
+  min-width: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: var(--step-2);
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.score {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-s);
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 0.75rem;
+  background: rgb(0 0 0 / 25%);
+  white-space: nowrap;
+}
+
+.score__label {
+  font-family: var(--font-base);
+  font-size: var(--step--1);
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.score__gain,
+.score__total { color: var(--accent); }
+.score__loss,
+.score__equals { color: var(--muted); }
+.score__total {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: var(--step-4);
+  font-weight: 900;
+}
+
+.rule-reference {
+  max-width: 72rem;
+  margin: var(--space-m) max(var(--page-gutter), calc((100% - 72rem) / 2)) var(--space-l);
+  padding: var(--space-s) var(--space-s-m);
+  border-radius: 0.75rem;
+}
+
+.rule-reference summary {
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.rule-reference__title {
+  display: inline;
+  font: inherit;
+}
+
+summary { cursor: pointer; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+
+.rule-reference ol { padding-inline-start: 1.5em; }
+.rule-reference li { margin-block: var(--space-xs); }
+
+.volunteer {
+  --sidebar-target-width: 7.5rem;
+  --gutter: var(--space-l);
+  align-items: center;
+}
+
+.volunteer > .volunteer__tally {
+  flex: 0 0 7.5rem;
+  width: 7.5rem;
+  height: auto;
+  overflow: visible;
+  color: var(--accent);
+}
+
+/* Reveal the cross-stroke through a wider white mask, keeping the visible
+   mark's round ends intact. Its path runs bottom-left to top-right. */
+.tally__reveal {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+@keyframes tally-write {
+  0%, 7.5% { stroke-dashoffset: 1; opacity: 0; }
+  8.125% { stroke-dashoffset: 1; opacity: 1; }
+  22.5%, 93.75% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tally__reveal { animation: tally-write 8s ease-in-out infinite; }
+}
+
+.volunteer__copy {
+  --flow-space: var(--space-s);
+  min-width: 0;
+}
+
+.volunteer__copy p { max-width: 38.75rem; }
+
+.faq { --flow-space: var(--space-m); }
+
+.faq__items details {
+  padding-block: var(--space-s);
+  border-top: var(--page-border);
+}
+
+.faq__items details:last-child { border-bottom: var(--page-border); }
+
+.faq__items summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-s);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: var(--step-1);
+  list-style: none;
+}
+
+.faq__items summary::after { content: "+"; flex: none; color: var(--accent); }
+.faq__items details[open] summary::after { content: "−"; }
+.faq__items p { margin-block-start: var(--space-xs); }
+
+/* A sibling of main, with no transform, reveal wrapper or script hook. */
+.site-footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 0;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(35rem, 100svh);
+  padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.site-footer__inner { --flow-space: var(--space-m); }
+
+.site-footer__title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(3.5rem, 10vw, 9.375rem);
+  overflow-wrap: anywhere;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-shadow: 0 0 3.75rem var(--glow);
+}
+
+.site-footer__title span {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.site-footer__links { --flow-space: var(--space-xl); --gutter: var(--space-s); }
+.site-footer__actions { --gutter: var(--space-s); }
+.site-footer__credit { color: var(--muted); font-size: var(--step--1); }
+
+@media (max-width: 43.75rem) {
+  .site-brand { max-width: 100%; font-size: var(--step-1); }
+  .site-nav { min-width: 0; max-width: 100%; }
+  .site-nav__section { display: none; }
+  .hero__rosette { width: clamp(2.5rem, 13vw, 3.25rem); }
+}
+
+/* A wrapped, enlarged header must not obscure the content being read. */
+@media (max-height: 45rem) {
+  .site-header { position: relative; }
+}
+
+/* On narrow or short screens, large text can make the footer taller than
+   the viewport. Normal flow keeps its opening lines reachable at any size. */
+@media (max-height: 45rem), (max-width: 43.75rem) {
+  .site-footer { position: static; min-height: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .site-footer { position: static; min-height: auto; }
+}

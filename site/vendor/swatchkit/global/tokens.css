@@ -1,0 +1,380 @@
+/**
+ * SwatchKit Design Tokens
+ *
+ * This file is YOURS. It is the single source of truth for your design tokens.
+ * SwatchKit reads the "@swatchkit <type> Label" comment blocks below to
+ * document token groups and generate utility classes. Use tokenBlocks config
+ * to disable docs or utilities for specific groups.
+ *
+ * Edit values directly — it's plain, hand-editable CSS. Fluid sizes use a
+ * universally-supported clamp() pattern that you can tweak via the fluid
+ * config variables (--vw-min, --vw-max, --root-base) below. See docs/tokens.md.
+ *
+ * NOTE: only css/utilities/utilities.css is auto-generated. This file is not.
+ */
+
+:root {
+  /* Fluid config — tweak these; every clamp() below recomputes live, no rebuild. */
+  --vw-min: 330;   /* min viewport width (unitless px) */
+  --vw-max: 1350;  /* max viewport width (unitless px) */
+  /* The px base your min/max numbers below are authored in (16 = 1rem at the
+     browser default). NOT a runtime assumption about the user's font size:
+     the clamp floors/ceilings resolve to rem, so they still scale up if the
+     user increases their browser font size. Only change this if you write the
+     min/max values in a different px base. */
+  --root-base: 16;
+
+  /* @swatchkit colors "Colors" */
+  --color-dark: #1a1a2e;
+  --color-dark-glare: #2a2a4a;
+  --color-mid: #6b6b8a;
+  --color-light: #f5f5fa;
+  --color-primary: #3b49df;
+  /* @swatchkit end */
+
+  /* @swatchkit fonts "Fonts" */
+  --font-base: Satoshi, Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", monospace;
+  /* @swatchkit end */
+
+  /* @swatchkit text-weights "Text Weights" */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-black: 900;
+  /* @swatchkit end */
+
+  /* @swatchkit text-leading "Text Leading" */
+  --leading-micro: 1;
+  --leading-flat: 1.1;
+  --leading-fine: 1.3;
+  --leading-standard: 1.5;
+  --leading-loose: 1.7;
+  /* @swatchkit end */
+
+  /* Fluid source values -- unitless authored pixels. Keep these outside token
+     blocks so SwatchKit does not document or generate utilities for them. */
+  --fluid-step--2-min: 11.85;
+  --fluid-step--2-max: 12.5;
+  --fluid-step--1-min: 13.33;
+  --fluid-step--1-max: 15;
+  --fluid-step-0-min: 15;
+  --fluid-step-0-max: 18;
+  --fluid-step-1-min: 16.88;
+  --fluid-step-1-max: 21.6;
+  --fluid-step-2-min: 18.98;
+  --fluid-step-2-max: 25.92;
+  --fluid-step-3-min: 21.36;
+  --fluid-step-3-max: 31.1;
+  --fluid-step-4-min: 24.03;
+  --fluid-step-4-max: 37.32;
+  --fluid-step-5-min: 27.03;
+  --fluid-step-5-max: 44.79;
+  --fluid-step-6-min: 30.41;
+  --fluid-step-6-max: 53.75;
+
+  /* @swatchkit text-sizes "Text Sizes" */
+  --step--2: clamp(
+    calc(var(--fluid-step--2-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step--2-min) - var(--vw-min) *
+        (var(--fluid-step--2-max) - var(--fluid-step--2-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step--2-max) - var(--fluid-step--2-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step--2-max) / var(--root-base) * 1rem)
+  );
+  --step--1: clamp(
+    calc(var(--fluid-step--1-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step--1-min) - var(--vw-min) *
+        (var(--fluid-step--1-max) - var(--fluid-step--1-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step--1-max) - var(--fluid-step--1-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step--1-max) / var(--root-base) * 1rem)
+  );
+  --step-0: clamp(
+    calc(var(--fluid-step-0-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step-0-min) - var(--vw-min) *
+        (var(--fluid-step-0-max) - var(--fluid-step-0-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step-0-max) - var(--fluid-step-0-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step-0-max) / var(--root-base) * 1rem)
+  );
+  --step-1: clamp(
+    calc(var(--fluid-step-1-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step-1-min) - var(--vw-min) *
+        (var(--fluid-step-1-max) - var(--fluid-step-1-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step-1-max) - var(--fluid-step-1-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step-1-max) / var(--root-base) * 1rem)
+  );
+  --step-2: clamp(
+    calc(var(--fluid-step-2-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step-2-min) - var(--vw-min) *
+        (var(--fluid-step-2-max) - var(--fluid-step-2-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step-2-max) - var(--fluid-step-2-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step-2-max) / var(--root-base) * 1rem)
+  );
+  --step-3: clamp(
+    calc(var(--fluid-step-3-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step-3-min) - var(--vw-min) *
+        (var(--fluid-step-3-max) - var(--fluid-step-3-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step-3-max) - var(--fluid-step-3-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step-3-max) / var(--root-base) * 1rem)
+  );
+  --step-4: clamp(
+    calc(var(--fluid-step-4-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step-4-min) - var(--vw-min) *
+        (var(--fluid-step-4-max) - var(--fluid-step-4-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step-4-max) - var(--fluid-step-4-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step-4-max) / var(--root-base) * 1rem)
+  );
+  --step-5: clamp(
+    calc(var(--fluid-step-5-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step-5-min) - var(--vw-min) *
+        (var(--fluid-step-5-max) - var(--fluid-step-5-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step-5-max) - var(--fluid-step-5-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step-5-max) / var(--root-base) * 1rem)
+  );
+  --step-6: clamp(
+    calc(var(--fluid-step-6-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-step-6-min) - var(--vw-min) *
+        (var(--fluid-step-6-max) - var(--fluid-step-6-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-step-6-max) - var(--fluid-step-6-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-step-6-max) / var(--root-base) * 1rem)
+  );
+  /* @swatchkit end */
+
+  /* Fluid source values -- unitless authored pixels. */
+  --fluid-space-xs-min: 7;
+  --fluid-space-xs-max: 8;
+  --fluid-space-s-min: 14;
+  --fluid-space-s-max: 16;
+  --fluid-space-m-min: 21;
+  --fluid-space-m-max: 24;
+  --fluid-space-l-min: 35;
+  --fluid-space-l-max: 40;
+  --fluid-space-xl-min: 49;
+  --fluid-space-xl-max: 56;
+  --fluid-space-2xl-min: 56;
+  --fluid-space-2xl-max: 64;
+  --fluid-space-3xl-min: 70;
+  --fluid-space-3xl-max: 80;
+  --fluid-space-4xl-min: 105;
+  --fluid-space-4xl-max: 120;
+  --fluid-space-s-l-min: 14;
+  --fluid-space-s-l-max: 40;
+  --fluid-space-xs-l-min: 7;
+  --fluid-space-xs-l-max: 40;
+  --fluid-space-m-l-min: 21;
+  --fluid-space-m-l-max: 40;
+  --fluid-space-s-m-min: 14;
+  --fluid-space-s-m-max: 24;
+  --fluid-space-2xl-4xl-min: 56;
+  --fluid-space-2xl-4xl-max: 120;
+
+  /* @swatchkit spacing "Spacing" */
+  --space-xs: clamp(
+    calc(var(--fluid-space-xs-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-xs-min) - var(--vw-min) *
+        (var(--fluid-space-xs-max) - var(--fluid-space-xs-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-xs-max) - var(--fluid-space-xs-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-xs-max) / var(--root-base) * 1rem)
+  );
+  --space-s: clamp(
+    calc(var(--fluid-space-s-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-s-min) - var(--vw-min) *
+        (var(--fluid-space-s-max) - var(--fluid-space-s-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-s-max) - var(--fluid-space-s-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-s-max) / var(--root-base) * 1rem)
+  );
+  --space-m: clamp(
+    calc(var(--fluid-space-m-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-m-min) - var(--vw-min) *
+        (var(--fluid-space-m-max) - var(--fluid-space-m-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-m-max) - var(--fluid-space-m-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-m-max) / var(--root-base) * 1rem)
+  );
+  --space-l: clamp(
+    calc(var(--fluid-space-l-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-l-min) - var(--vw-min) *
+        (var(--fluid-space-l-max) - var(--fluid-space-l-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-l-max) - var(--fluid-space-l-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-l-max) / var(--root-base) * 1rem)
+  );
+  --space-xl: clamp(
+    calc(var(--fluid-space-xl-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-xl-min) - var(--vw-min) *
+        (var(--fluid-space-xl-max) - var(--fluid-space-xl-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-xl-max) - var(--fluid-space-xl-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-xl-max) / var(--root-base) * 1rem)
+  );
+  --space-2xl: clamp(
+    calc(var(--fluid-space-2xl-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-2xl-min) - var(--vw-min) *
+        (var(--fluid-space-2xl-max) - var(--fluid-space-2xl-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-2xl-max) - var(--fluid-space-2xl-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-2xl-max) / var(--root-base) * 1rem)
+  );
+  --space-3xl: clamp(
+    calc(var(--fluid-space-3xl-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-3xl-min) - var(--vw-min) *
+        (var(--fluid-space-3xl-max) - var(--fluid-space-3xl-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-3xl-max) - var(--fluid-space-3xl-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-3xl-max) / var(--root-base) * 1rem)
+  );
+  --space-4xl: clamp(
+    calc(var(--fluid-space-4xl-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-4xl-min) - var(--vw-min) *
+        (var(--fluid-space-4xl-max) - var(--fluid-space-4xl-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-4xl-max) - var(--fluid-space-4xl-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-4xl-max) / var(--root-base) * 1rem)
+  );
+  --space-s-l: clamp(
+    calc(var(--fluid-space-s-l-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-s-l-min) - var(--vw-min) *
+        (var(--fluid-space-s-l-max) - var(--fluid-space-s-l-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-s-l-max) - var(--fluid-space-s-l-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-s-l-max) / var(--root-base) * 1rem)
+  );
+  --space-xs-l: clamp(
+    calc(var(--fluid-space-xs-l-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-xs-l-min) - var(--vw-min) *
+        (var(--fluid-space-xs-l-max) - var(--fluid-space-xs-l-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-xs-l-max) - var(--fluid-space-xs-l-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-xs-l-max) / var(--root-base) * 1rem)
+  );
+  --space-m-l: clamp(
+    calc(var(--fluid-space-m-l-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-m-l-min) - var(--vw-min) *
+        (var(--fluid-space-m-l-max) - var(--fluid-space-m-l-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-m-l-max) - var(--fluid-space-m-l-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-m-l-max) / var(--root-base) * 1rem)
+  );
+  --space-s-m: clamp(
+    calc(var(--fluid-space-s-m-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-s-m-min) - var(--vw-min) *
+        (var(--fluid-space-s-m-max) - var(--fluid-space-s-m-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-s-m-max) - var(--fluid-space-s-m-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-s-m-max) / var(--root-base) * 1rem)
+  );
+  --space-2xl-4xl: clamp(
+    calc(var(--fluid-space-2xl-4xl-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-space-2xl-4xl-min) - var(--vw-min) *
+        (var(--fluid-space-2xl-4xl-max) - var(--fluid-space-2xl-4xl-min)) /
+        (var(--vw-max) - var(--vw-min)))
+        / var(--root-base) * 1rem
+      + (var(--fluid-space-2xl-4xl-max) - var(--fluid-space-2xl-4xl-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-space-2xl-4xl-max) / var(--root-base) * 1rem)
+  );
+  /* @swatchkit end */
+
+  /* @swatchkit viewports "Viewports" */
+  --viewport-min: 330px;
+  --viewport-mid: 760px;
+  --viewport-large: 940px;
+  --viewport-max: 1350px;
+  /* @swatchkit end */
+}

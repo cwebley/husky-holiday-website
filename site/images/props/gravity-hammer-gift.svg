@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="470" viewBox="-5 -5 280 470">
+<defs><pattern id="candy-paper" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><rect width="22" height="22" fill="#F2E7CC"/><rect width="9" height="22" fill="#B33B39"/><path d="M13 0V22" stroke="#C75B4A" stroke-width="2"/></pattern><linearGradient id="paper-shade"><stop stop-color="#6B3C26" stop-opacity=".3"/><stop offset=".35" stop-color="#FFF4D8" stop-opacity=".12"/><stop offset=".7" stop-color="#FFF4D8" stop-opacity="0"/><stop offset="1" stop-color="#442A22" stop-opacity=".3"/></linearGradient><linearGradient id="metal"><stop stop-color="#283238"/><stop offset=".35" stop-color="#89928F"/><stop offset=".6" stop-color="#46545A"/><stop offset="1" stop-color="#212F36"/></linearGradient><linearGradient id="blade" x2="0" y2="1"><stop stop-color="#B4BDB2"/><stop offset=".4" stop-color="#5D7077"/><stop offset="1" stop-color="#253C47"/></linearGradient><linearGradient id="gold"><stop stop-color="#A57730"/><stop offset=".5" stop-color="#F4D68B"/><stop offset="1" stop-color="#AD813E"/></linearGradient></defs>
+<ellipse cx="73" cy="447" rx="57" ry="8" fill="#160F0B" opacity=".35"/>
+<g transform="rotate(11 72 438)">
+<!-- Long ribbed haft and heavy, asymmetric Brute hammer head. -->
+<path d="M66 111H84L81 420 73 444 65 420Z" fill="url(#metal)" stroke="#21303A" stroke-width="3"/>
+<path d="M65 203H83V359H65Z" fill="#283138" stroke="#1B252D" stroke-width="2"/>
+<path d="M65 216H83M65 232H83M65 248H83M65 264H83M65 280H83M65 296H83M65 312H83M65 328H83M65 344H83" stroke="#626B69" stroke-width="5"/>
+<path d="M65 370H81V385H65M65 408H81V420H65" fill="#A3AAA0" stroke="#263943" stroke-width="2"/>
+<!-- Candy-cane wrapping covers the long shaft, with exposed metal at both ends. -->
+<path d="M62 155L87 156 85 401 62 401Z" fill="url(#candy-paper)" stroke="#A39173" stroke-width="1.5"/>
+<path d="M62 155L87 156 85 401 62 401Z" fill="url(#paper-shade)"/>
+<path d="M82 160L80 397" stroke="#A99579" stroke-opacity=".4" stroke-width="1"/>
+<path d="M62 165H87V172H62ZM62 388H85V395H62Z" fill="url(#gold)" stroke="#956D32" stroke-width="1"/>
+<path d="M16 56L44 35 117 35 148 55 146 100 110 119 43 117 17 96Z" fill="url(#metal)" stroke="#1C303C" stroke-width="4"/>
+<path d="M7 49L26 48 27 108 7 106 1 90 1 66Z" fill="#354B57" stroke="#192E3A" stroke-width="3"/>
+<path d="M11 57H19V97H11Z" fill="#A3B9B9"/>
+<path d="M39 49L57 43H107L126 54 122 97 102 107H50L36 94Z" fill="#435C68" stroke="#253D4A" stroke-width="3"/>
+<path d="M47 57L61 51H101L115 59 112 88 99 99H56L46 88Z" fill="#263F4D"/>
+<path d="M57 67L70 60H96L105 68V84L94 91H70L57 83Z" fill="#70969F" stroke="#172F40" stroke-width="3"/>
+<path d="M66 70L76 66H91L98 72V80L88 85H76L66 80Z" fill="#9BD3D3"/>
+<path d="M134 45L150 21 166 13 161 61 153 82 169 135 154 130 130 103Z" fill="url(#blade)" stroke="#203744" stroke-width="3"/>
+<path d="M163 19L150 63 148 84 163 126" fill="none" stroke="#C8D1C2" stroke-width="3"/>
+<path d="M44 111L54 140 94 140 111 115" fill="#3B515C" stroke="#1C3443" stroke-width="3"/>
+<path d="M60 129H89M62 146H87M64 166H85" stroke="#A1ACA1" stroke-width="4"/>
+<!-- Gold gift ribbon around the head and a large bow. -->
+<path d="M82 36H96V113H82Z" fill="url(#gold)" stroke="#956D32" stroke-width="1.5"/>
+<path d="M89 49Q56 17 57 37Q58 56 89 49Q118 17 122 33Q126 51 89 49Z" fill="#DBB45E" stroke="#956D32" stroke-width="2"/>
+<path d="M86 51L71 86 84 80 90 90 95 53M94 51L112 78 112 65 124 65 101 49" fill="url(#gold)" stroke="#956D32" stroke-width="1.5"/>
+<circle cx="91" cy="50" r="7" fill="#E9C87C" stroke="#956D32" stroke-width="2"/>
+</g></svg>

@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Husky Raid Holiday Tournament 2026</title>
+<meta name="description" content="The 2nd annual Husky Raid Holiday Tournament: a night of Halo Infinite capture-the-flag with friends. Help pick the date.">
+<meta name="theme-color" content="#12354E">
+<link rel="canonical" href="https://huskyholiday.win/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Husky Holiday">
+<meta property="og:title" content="Husky Raid Holiday Tournament 2026">
+<meta property="og:description" content="The 2nd annual Husky Raid Holiday Tournament: a night of Halo Infinite capture-the-flag with friends. Help pick the date.">
+<meta property="og:url" content="https://huskyholiday.win/">
+<meta property="og:image" content="https://huskyholiday.win/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Husky Raid Holiday Tournament 2026. The 2nd annual tournament. Help pick the date.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Husky Raid Holiday Tournament 2026">
+<meta name="twitter:description" content="A night of Halo Infinite capture-the-flag with friends. Help pick the date.">
+<meta name="twitter:image" content="https://huskyholiday.win/images/social-card.png">
+<meta name="twitter:image:alt" content="Husky Raid Holiday Tournament 2026. The 2nd annual tournament. Help pick the date.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="vendor/swatchkit.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="page.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<!-- NAV (frosted, sticky) -->
+<header class="site-header">
+<div class="wrapper repel site-header__inner">
+<a class="site-brand" href="#top">Husky Holiday</a>
+<nav class="cluster site-nav" aria-label="Sections">
+<a class="site-nav__section" href="#how">How it works</a>
+<a class="site-nav__section" href="#room">Maps &amp; prizes</a>
+<a class="site-nav__section" href="#faq">FAQ</a>
+<a class="button button--accent button--compact" href="https://discord.gg/SuCNdEVJbf">Join Discord</a>
+</nav>
+</div>
+</header>
+
+<!-- CONTENT LAYER -->
+<main class="page-main" id="main-content">
+<!-- Fixed snow stays above main's opaque ground and below its content. -->
+<div class="page-background" aria-hidden="true">
+<div class="page-background__glow"></div>
+<canvas class="page-background__snow" data-js="snow"></canvas>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="tournament-title">
+<svg class="hero__lights" viewBox="0 0 1200 70" aria-hidden="true">
+<path d="M0 8 Q150 52 300 8 Q450 52 600 8 Q750 52 900 8 Q1050 52 1200 8" fill="none" stroke="#1B1410" stroke-width="2.5"></path>
+<g transform="translate(38 18) rotate(11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-1); fill: var(--bulb-1); animation-delay: 0.00s"></ellipse></g>
+<g transform="translate(112 29) rotate(4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-2); fill: var(--bulb-2); animation-delay: 0.37s"></ellipse></g>
+<g transform="translate(188 29) rotate(-4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-3); fill: var(--bulb-3); animation-delay: 0.74s"></ellipse></g>
+<g transform="translate(262 18) rotate(-11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-4); fill: var(--bulb-4); animation-delay: 1.11s"></ellipse></g>
+<g transform="translate(338 18) rotate(11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-1); fill: var(--bulb-1); animation-delay: 1.48s"></ellipse></g>
+<g transform="translate(412 29) rotate(4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-2); fill: var(--bulb-2); animation-delay: 1.85s"></ellipse></g>
+<g transform="translate(488 29) rotate(-4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-3); fill: var(--bulb-3); animation-delay: 2.22s"></ellipse></g>
+<g transform="translate(562 18) rotate(-11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-4); fill: var(--bulb-4); animation-delay: 0.19s"></ellipse></g>
+<g transform="translate(638 18) rotate(11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-1); fill: var(--bulb-1); animation-delay: 0.56s"></ellipse></g>
+<g transform="translate(712 29) rotate(4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-2); fill: var(--bulb-2); animation-delay: 0.93s"></ellipse></g>
+<g transform="translate(788 29) rotate(-4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-3); fill: var(--bulb-3); animation-delay: 1.30s"></ellipse></g>
+<g transform="translate(862 18) rotate(-11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-4); fill: var(--bulb-4); animation-delay: 1.67s"></ellipse></g>
+<g transform="translate(938 18) rotate(11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-1); fill: var(--bulb-1); animation-delay: 2.04s"></ellipse></g>
+<g transform="translate(1012 29) rotate(4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-2); fill: var(--bulb-2); animation-delay: 0.01s"></ellipse></g>
+<g transform="translate(1088 29) rotate(-4)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-3); fill: var(--bulb-3); animation-delay: 0.38s"></ellipse></g>
+<g transform="translate(1162 18) rotate(-11)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color: var(--bulb-4); fill: var(--bulb-4); animation-delay: 0.75s"></ellipse></g>
+</svg>
+<div class="wrapper repel hero__inner">
+<div class="flow hero__title-group">
+<div class="hero__wordmark">
+<h1 class="hero__title" id="tournament-title">Husky Raid</h1>
+<svg class="hero__rosette" role="img" aria-label="2nd annual" viewBox="0 0 200 270"><path d="M70 150 L44 262 L66 248 L80 268 L104 160 Z" fill="#F99D1B" stroke="rgba(0,0,0,0.25)" stroke-width="2"></path><path d="M130 150 L156 262 L134 248 L120 268 L96 160 Z" fill="#F99D1B" stroke="rgba(0,0,0,0.25)" stroke-width="2"></path><polygon points="100.0,4.0 111.2,14.7 124.8,7.3 132.9,20.5 148.0,16.9 152.4,31.8 167.9,32.1 168.2,47.6 183.1,52.0 179.5,67.1 192.7,75.2 185.3,88.8 196.0,100.0 185.3,111.2 192.7,124.8 179.5,132.9 183.1,148.0 168.2,152.4 167.9,167.9 152.4,168.2 148.0,183.1 132.9,179.5 124.8,192.7 111.2,185.3 100.0,196.0 88.8,185.3 75.2,192.7 67.1,179.5 52.0,183.1 47.6,168.2 32.1,167.9 31.8,152.4 16.9,148.0 20.5,132.9 7.3,124.8 14.7,111.2 4.0,100.0 14.7,88.8 7.3,75.2 20.5,67.1 16.9,52.0 31.8,47.6 32.1,32.1 47.6,31.8 52.0,16.9 67.1,20.5 75.2,7.3 88.8,14.7" fill="#F99D1B" stroke="rgba(0,0,0,0.22)" stroke-width="2"></polygon><circle cx="100" cy="100" r="74" fill="#F99D1B" stroke="rgba(0,0,0,0.25)" stroke-width="2"></circle><circle cx="100" cy="100" r="64" fill="none" stroke="#111314" stroke-width="2" stroke-dasharray="4 5" opacity="0.7"></circle><text x="100" y="112" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="900" font-size="62" fill="#111314">2nd</text><text x="100" y="140" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="17" letter-spacing="4" fill="#111314">ANNUAL</text></svg>
+</div>
+<p class="hero__subtitle">Holiday Tournament</p>
+</div>
+<aside class="panel flow date-survey" id="date" aria-labelledby="date-title">
+<div class="cluster date-survey__heading">
+<div class="calendar" role="img" aria-label="Calendar page for December with the date still a question mark"><div class="calendar__month">DEC</div><div class="calendar__day">?</div></div>
+<h2 class="date-survey__title" id="date-title">When should we play?</h2>
+</div>
+<p>We haven't picked the night yet. Add your availability for the weekends of November 26, December 4 and December 11.</p>
+<a class="button button--accent date-survey__button" href="https://app.rallly.co/poll/H9KAVvkKt5yb">Take the date survey</a>
+</aside>
+</div>
+</section>
+
+<div class="wrapper flow content-group content-group--intro">
+
+<!-- HOW IT WORKS -->
+<section class="panel flow how-it-works" id="how" aria-labelledby="how-title">
+<h2 class="section-title" id="how-title">How it works</h2>
+<ol class="grid game-steps" role="list">
+<li class="flow game-step"><h3>Join the lobby</h3><p>Hop into the Main Lobby voice channel.</p></li>
+<li class="flow game-step"><h3>Get shuffled</h3><p>The new and improved bot builds balanced teams.</p></li>
+<li class="flow game-step"><h3>Play</h3><p>Rack up a high flag capture differential in an 8-minute game of Husky Raid.</p></li>
+<li class="flow game-step"><h3>Repeat</h3><p>Standings post, then it's back to step 2.</p></li>
+</ol>
+<div class="cluster scoring">
+<div class="flow scoring__explanation">
+<h3>Win by more, climb faster.</h3>
+<p>Each game adds your team’s winning margin, or subtracts the losing margin.</p>
+</div>
+<div class="cluster scoring__example" role="group" aria-label="Example scores and total winning margin">
+<span class="score"><span class="score__label" aria-hidden="true">Game 1</span><span aria-hidden="true">3–2 <span class="score__gain">+1</span></span><span class="visually-hidden">Game 1: won 3 to 2, gaining 1 point.</span></span>
+<span class="score"><span class="score__label" aria-hidden="true">Game 2</span><span aria-hidden="true">2–0 <span class="score__gain">+2</span></span><span class="visually-hidden">Game 2: won 2 to 0, gaining 2 points.</span></span>
+<span class="score"><span class="score__label" aria-hidden="true">Game 3</span><span aria-hidden="true">3–1 <span class="score__gain">+2</span></span><span class="visually-hidden">Game 3: won 3 to 1, gaining 2 points.</span></span>
+<span class="score"><span class="score__label" aria-hidden="true">Game 4</span><span aria-hidden="true">0–1 <span class="score__loss">−1</span></span><span class="visually-hidden">Game 4: lost 0 to 1, losing 1 point.</span></span>
+<span class="score__equals" aria-hidden="true">=</span>
+<span class="score__total"><span class="score__label" aria-hidden="true">Total score</span><span aria-hidden="true">+4</span><span class="visually-hidden">Total across 4 games: gained 4 points.</span></span>
+</div>
+</div>
+<p class="how-it-works__break">Need a break? Type <code>/set-status idle</code> to sit out a game.</p>
+</section>
+
+</div>
+
+<!-- Full-bleed experiment: the room is outside the constrained content column. -->
+<!-- THE ROOM: maps → house rules → prizes → previous winner above the LAN table -->
+<section id="room" data-js="story" aria-label="The maps, the house rules, the prizes and last year's winner" style="position: relative; height: 4500px">
+<div data-stage="1" style="position: sticky; top: 0; height: 900px; display: flex; flex-direction: column; background: transparent">
+<div data-band="1" aria-hidden="true" style="position: relative; flex: none; height: 132px; width: 100%; max-width: 1240px; margin: 0 auto">
+<div data-cap="maps" aria-hidden="true" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px">
+<h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">The maps</h2>
+<p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)">Corpo · Megapolis · Merchant’s Square · Ronin · Scarlett’s Landing · <strong style="color: #F99D1B">Yuletide (new)</strong></p>
+</div>
+<div data-cap="rules" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; opacity: 0; visibility: hidden">
+<h2 aria-hidden="true" style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">House rules</h2>
+<p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)"><span data-rule-step>Rule 1 of 5</span> · <a href="#house-rules" tabindex="-1">Read all rules</a></p>
+</div>
+<div data-cap="prizes" aria-hidden="true" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; opacity: 0; visibility: hidden">
+<h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">Prizes</h2>
+<p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)">1st $50 · 2nd $25 · 3rd $10, plus a pile of $1 bonus awards. Play 5+ games to qualify.</p>
+</div>
+</div>
+<div data-view="1" style="position: relative; flex: 1 1 auto; min-height: 0; overflow: hidden; background: #2A1C0F; border-block: 1px solid rgba(255,255,255,0.14)">
+<div data-scene="1" aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 2580px; height: 1000px; transform-origin: 0 0; will-change: transform; overflow: hidden; background-color: #3A2712; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.22) 0 3px, rgba(255,255,255,0.03) 3px 5px, transparent 5px 180px), repeating-linear-gradient(0deg, rgba(0,0,0,0.05) 0 1px, transparent 1px 9px)">
+<div style="position: absolute; left: 80px; top: 0; width: 2500px; height: 1000px">
+<div aria-hidden="true" style="position: absolute; left: -80px; right: 0; top: 850px; bottom: 0; background-color: #4A2A12; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.25) 0 2px, transparent 2px 160px), repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 6px); border-top: 3px solid #2A170A; box-shadow: inset 0 14px 22px rgba(0,0,0,0.4)"></div>
+<img class="hearth-rug" src="images/hearth-rug.svg" alt="" aria-hidden="true" width="800" height="150" style="position: absolute; left: 1290px; top: 873px; width: 820px; height: 122px; pointer-events: none">
+<div class="glow" aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 22% 40% at 68.0% 82%, rgba(246,140,80,0.32), transparent 70%), radial-gradient(ellipse 18% 35% at 18.8% 55%, rgba(253,191,104,0.18), transparent 70%)"></div>
+<svg class="cabin-lights" viewBox="0 0 2100 70" preserveAspectRatio="xMinYMin meet" aria-hidden="true" style="position: absolute; z-index: 6; top: 0; left: -80px; width: 2800px; height: 93px; overflow: visible">
+<defs>
+<pattern id="ceiling-light-strand" width="450" height="70" patternUnits="userSpaceOnUse">
+<path d="M0 8Q112.5 52 225 8Q337.5 52 450 8" fill="none" stroke="#1B1410" stroke-width="2.5"/>
+<g transform="translate(38 20) rotate(10)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"/><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color:#F99D1B;fill:#F99D1B;animation-delay:.37s"/></g>
+<g transform="translate(112 30)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"/><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color:#FFF7EA;fill:#FFF7EA;animation-delay:.74s"/></g>
+<g transform="translate(188 20) rotate(-10)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"/><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color:#F99D1B;fill:#F99D1B;animation-delay:1.11s"/></g>
+<g transform="translate(263 20) rotate(10)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"/><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color:#FFF7EA;fill:#FFF7EA;animation-delay:1.48s"/></g>
+<g transform="translate(337 30)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"/><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color:#F99D1B;fill:#F99D1B;animation-delay:1.85s"/></g>
+<g transform="translate(413 20) rotate(-10)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"/><ellipse class="bulb" cx="0" cy="16" rx="7" ry="11" style="color:#FFF7EA;fill:#FFF7EA;animation-delay:2.22s"/></g>
+</pattern>
+</defs>
+<rect width="100%" height="70" fill="url(#ceiling-light-strand)"/>
+</svg>
+<!-- ===== TREE CORNER: the prizes ===== -->
+<div class="tree-corner" style="position: absolute; left: 0; top: 0; width: 1000px; height: 1000px">
+<svg aria-hidden="true" width="130" height="150" viewBox="0 0 140 160" style="position: absolute; left: 760px; top: 220px">
+<path d="M70 0 L70 20" stroke="#1A120A" stroke-width="2"></path>
+<circle cx="70" cy="70" r="48" fill="none" stroke="#163A22" stroke-width="28"></circle>
+<circle cx="70" cy="70" r="48" fill="none" stroke="#24502F" stroke-width="20" stroke-dasharray="4 6"></circle>
+<circle cx="70" cy="70" r="48" fill="none" stroke="#3E8050" stroke-width="8" stroke-dasharray="2 9"></circle>
+<g fill="#C0262D"><circle cx="30" cy="48" r="5"></circle><circle cx="108" cy="52" r="5"></circle><circle cx="70" cy="21" r="5"></circle><circle cx="26" cy="86" r="4.5"></circle><circle cx="114" cy="88" r="4.5"></circle></g>
+<g transform="translate(38 100)"><path d="M32 22 C18 2 2 6 6 20 C9 30 22 28 32 22 Z" fill="#B3262A" stroke="#7A1418" stroke-width="2"></path><path d="M32 22 C46 2 62 6 58 20 C55 30 42 28 32 22 Z" fill="#B3262A" stroke="#7A1418" stroke-width="2"></path><circle cx="32" cy="22" r="6" fill="#C9302F" stroke="#7A1418" stroke-width="2"></circle></g>
+</svg>
+<svg aria-hidden="true" width="120" height="130" viewBox="0 0 120 130" style="position: absolute; left: 684px; top: 716px">
+<path d="M38 90 L82 90 L76 126 L44 126 Z" fill="#8E5A2C" stroke="#5A3418" stroke-width="2"></path><rect x="34" y="86" width="52" height="8" rx="2" fill="#A86E38"></rect>
+<g fill="#2F6B3D"><ellipse cx="30" cy="70" rx="20" ry="8" transform="rotate(-20 30 70)"></ellipse><ellipse cx="90" cy="70" rx="20" ry="8" transform="rotate(20 90 70)"></ellipse></g>
+<g fill="#B3262A" stroke="#7A1418" stroke-width="1.2"><ellipse cx="86" cy="52" rx="18" ry="8" transform="rotate(0 86 52)"></ellipse><ellipse cx="76" cy="68" rx="18" ry="8" transform="rotate(51 76 68)"></ellipse><ellipse cx="54" cy="71" rx="18" ry="8" transform="rotate(103 54 71)"></ellipse><ellipse cx="37" cy="61" rx="18" ry="8" transform="rotate(154 37 61)"></ellipse><ellipse cx="37" cy="43" rx="18" ry="8" transform="rotate(206 37 43)"></ellipse><ellipse cx="54" cy="33" rx="18" ry="8" transform="rotate(257 54 33)"></ellipse><ellipse cx="76" cy="36" rx="18" ry="8" transform="rotate(309 76 36)"></ellipse></g>
+<g fill="#F2C14E"><circle cx="56" cy="50" r="3"></circle><circle cx="64" cy="52" r="3"></circle><circle cx="60" cy="58" r="3"></circle></g>
+</svg>
+<!-- User-supplied Halo 2 poster, cropped and straightened from the reference photo. -->
+<div class="halo-poster" aria-hidden="true" style="position: absolute; left: -20px; top: 205px; width: 230px; box-sizing: border-box; padding: 6px; border: 10px solid #3A281C; background: #D7C7A3; box-shadow: inset 0 0 0 1px #AD9873, 0 0 0 2px #735236, 0 0 0 4px #241A12, 5px 12px 18px rgba(0,0,0,.45); transform: rotate(-1deg); pointer-events: none">
+<img src="images/halo-2-poster.jpg" alt="" width="700" height="1050" decoding="async" style="display: block; width: 100%; height: auto; filter: sepia(.08) brightness(.9)">
+<div style="position: absolute; inset: 6px; background: linear-gradient(120deg, rgba(255,247,220,.12), transparent 38%, rgba(0,0,0,.05)); pointer-events: none"></div>
+</div>
+<svg class="christmas-tree" aria-hidden="true" width="600" height="760" viewBox="0 0 600 760" style="position: absolute; left: 130px; top: 112px; overflow: visible">
+<defs><linearGradient id="treeShade" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#2E6B40"></stop><stop offset="0.55" stop-color="#1F4A2C"></stop><stop offset="1" stop-color="#12301C"></stop></linearGradient>
+<radialGradient id="treePlasmaShell" cx="30%" cy="25%" r="80%"><stop stop-color="#797BC5"/><stop offset=".55" stop-color="#424482"/><stop offset="1" stop-color="#202545"/></radialGradient>
+<radialGradient id="treePlasmaHalo"><stop stop-color="#78EFFF" stop-opacity=".45"/><stop offset="1" stop-color="#41D8FF" stop-opacity="0"/></radialGradient>
+<linearGradient id="treeSwordBlade" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#45BAFA"/><stop offset=".5" stop-color="#E0FDFF"/><stop offset="1" stop-color="#67DCFF"/></linearGradient>
+<filter id="treeEnergyGlow" x="-100%" y="-100%" width="300%" height="300%" color-interpolation-filters="sRGB"><feGaussianBlur stdDeviation="2.5"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<g id="treeFragOrnament">
+<path d="M0 -19 V-13" stroke="#C9A04A" stroke-width="1.5"/>
+<path d="M-5 -10 L-7 -5 Q-13 0 -10 10 Q-8 15 0 15 Q8 15 10 10 Q13 0 7 -5 L5 -10 Z" fill="#687747" stroke="#202C20" stroke-width="1.5"/>
+<path d="M-8 1 H8 M-9 7 H9 M-3 -5 V12 M3 -5 V12" fill="none" stroke="#35482E" stroke-width="1.5"/>
+<path d="M-7 -3 Q-10 5 -6 10" fill="none" stroke="#A5AE75" stroke-width="2" stroke-linecap="round"/>
+<rect x="-5" y="-13" width="10" height="5" rx="1.5" fill="#454C45" stroke="#18251D"/>
+<path d="M-3 -13 H7 L11 2" fill="none" stroke="#C1C7B6" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="-7" cy="-11" r="3.2" fill="none" stroke="#B8BEAA" stroke-width="1.4"/>
+</g>
+<g id="treePlasmaOrnament">
+<circle r="31" fill="url(#treePlasmaHalo)"/>
+<path d="M0 -19 V-12" stroke="#C9A04A" stroke-width="1.5"/>
+<circle r="12" fill="url(#treePlasmaShell)" stroke="#202541" stroke-width="1.5"/>
+<path d="M-10 -5 Q0 -12 10 -5 M-10 5 Q0 12 10 5" fill="none" stroke="#9895C8" stroke-width="1.3"/>
+<path d="M-3 -8 L0 -5 L3 -8 M-3 8 L0 5 L3 8 M-9 -2 L-6 0 L-9 2 M9 -2 L6 0 L9 2" fill="none" stroke="#A6F8FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#treeEnergyGlow)"/>
+<path d="M-2 -2 H2 V2 H-2 Z" fill="#F0A85B" stroke="#FFD19A" stroke-width=".7"/>
+<ellipse cx="-5" cy="-6" rx="2" ry="1.2" fill="#D3DDFF" opacity=".65"/>
+</g>
+</defs>
+<rect x="276" y="620" width="48" height="188" fill="#5A3418"></rect>
+<ellipse class="tree-skirt" cx="300" cy="808" rx="290" ry="42" fill="#8E1F1B" stroke="#E8D9BC" stroke-width="3"></ellipse>
+<path d="M300 330 L80 610 Q300 650 520 610 Z" fill="url(#treeShade)" stroke="#143220" stroke-width="3" stroke-linejoin="round"></path>
+<path d="M125 613 L135 628 L145 613" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M180 619 L190 634 L200 619" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M235 623 L245 638 L255 623" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M290 624 L300 639 L310 624" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M345 623 L355 638 L365 623" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M400 619 L410 634 L420 619" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M455 613 L465 628 L475 613" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M300 220 L125 460 Q300 495 475 460 Z" fill="url(#treeShade)" stroke="#143220" stroke-width="3" stroke-linejoin="round"></path>
+<path d="M159 462 L169 477 L179 462" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M202 467 L212 482 L222 467" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M246 470 L256 485 L266 470" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M290 472 L300 486 L310 472" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M334 470 L344 485 L354 470" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M378 467 L388 482 L398 467" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M421 462 L431 477 L441 462" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M300 120 L170 320 Q300 350 430 320 Z" fill="url(#treeShade)" stroke="#143220" stroke-width="3" stroke-linejoin="round"></path>
+<path d="M192 321 L202 336 L212 321" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M225 325 L235 340 L245 325" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M258 328 L268 343 L278 328" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M290 329 L300 344 L310 329" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M322 328 L332 343 L342 328" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M355 325 L365 340 L375 325" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M388 321 L398 336 L408 321" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M300 40 L215 190 Q300 210 385 190 Z" fill="url(#treeShade)" stroke="#143220" stroke-width="3" stroke-linejoin="round"></path>
+<path d="M226 188 L236 203 L246 188" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M248 192 L258 206 L268 192" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M269 193 L279 208 L289 193" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M290 194 L300 209 L310 194" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M311 193 L321 208 L331 193" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M332 192 L342 206 L352 192" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M354 188 L364 203 L374 188" fill="#1F4A2C" stroke="#143220" stroke-width="2" stroke-linejoin="round"></path>
+<path d="M110 560 Q300 610 495 552" fill="none" stroke="#1B1410" stroke-width="2"></path>
+<ellipse class="bulb" cx="131" cy="570" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 0.37s"></ellipse>
+<ellipse class="bulb" cx="173" cy="579" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 0.74s"></ellipse>
+<ellipse class="bulb" cx="216" cy="584" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 1.11s"></ellipse>
+<ellipse class="bulb" cx="259" cy="588" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 1.48s"></ellipse>
+<ellipse class="bulb" cx="301" cy="588" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 1.85s"></ellipse>
+<ellipse class="bulb" cx="344" cy="586" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 2.22s"></ellipse>
+<ellipse class="bulb" cx="387" cy="581" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 2.59s"></ellipse>
+<ellipse class="bulb" cx="430" cy="573" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 0.36s"></ellipse>
+<ellipse class="bulb" cx="473" cy="563" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 0.73s"></ellipse>
+<path d="M150 418 Q300 462 455 412" fill="none" stroke="#1B1410" stroke-width="2"></path>
+<ellipse class="bulb" cx="171" cy="429" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 1.10s"></ellipse>
+<ellipse class="bulb" cx="215" cy="438" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 1.47s"></ellipse>
+<ellipse class="bulb" cx="258" cy="442" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 1.84s"></ellipse>
+<ellipse class="bulb" cx="301" cy="444" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 2.21s"></ellipse>
+<ellipse class="bulb" cx="345" cy="441" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 2.58s"></ellipse>
+<ellipse class="bulb" cx="389" cy="434" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 0.35s"></ellipse>
+<ellipse class="bulb" cx="433" cy="424" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 0.72s"></ellipse>
+<path d="M190 290 Q300 322 414 284" fill="none" stroke="#1B1410" stroke-width="2"></path>
+<ellipse class="bulb" cx="212" cy="301" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 1.09s"></ellipse>
+<ellipse class="bulb" cx="256" cy="308" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 1.46s"></ellipse>
+<ellipse class="bulb" cx="301" cy="310" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 1.83s"></ellipse>
+<ellipse class="bulb" cx="346" cy="306" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 2.20s"></ellipse>
+<ellipse class="bulb" cx="391" cy="296" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 2.57s"></ellipse>
+<path d="M236 166 Q300 182 366 160" fill="none" stroke="#1B1410" stroke-width="2"></path>
+<ellipse class="bulb" cx="257" cy="175" rx="4.5" ry="6.5" style="color: #F99D1B; fill: #F99D1B; animation-delay: 0.34s"></ellipse>
+<ellipse class="bulb" cx="300" cy="178" rx="4.5" ry="6.5" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 0.71s"></ellipse>
+<ellipse class="bulb" cx="344" cy="171" rx="4.5" ry="6.5" style="color: #F2C14E; fill: #F2C14E; animation-delay: 1.08s"></ellipse>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(262 150) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(338 142) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(228 262) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(330 290) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(392 252) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(278 232) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(196 392) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(286 400) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(372 378) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(440 436) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(240 350) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(148 540) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(240 520) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(350 540) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(452 528) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(300 480) rotate(10)"/>
+<use class="tree-grenade tree-grenade--frag" href="#treeFragOrnament" transform="translate(200 600) rotate(-12)"/>
+<use class="tree-grenade tree-grenade--plasma" href="#treePlasmaOrnament" transform="translate(400 600) rotate(10)"/>
+<g class="tree-sword-topper" transform="translate(300 0)">
+<ellipse cx="0" cy="2" rx="43" ry="65" fill="url(#treePlasmaHalo)"/>
+<g fill="url(#treeSwordBlade)" stroke="#B6F6FF" stroke-width="1.2" stroke-linejoin="round" filter="url(#treeEnergyGlow)">
+<path d="M-4 -64 Q-9 -16 -16 4 Q-21 19 -31 27 L-25 34 Q-13 30 -9 18 L-5 13 Z"/>
+<path d="M4 -64 Q9 -16 16 4 Q21 19 31 27 L25 34 Q13 30 9 18 L5 13 Z"/>
+</g>
+<path d="M-5 -47 Q-8 -12 -12 4 M5 -47 Q8 -12 12 4" fill="none" stroke="#F0FEFF" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M-10 27 Q0 33 10 27 L9 41 L4 47 H-4 L-9 41 Z" fill="#535875" stroke="#24263F" stroke-width="2"/>
+<path d="M0 35 V57" stroke="#25283C" stroke-width="8" stroke-linecap="round"/>
+<path d="M-3 39 H3 M-3 45 H3 M-3 51 H3" stroke="#9CACC1" stroke-width="2"/>
+<path d="M-7 30 L-4 37 M7 30 L4 37" stroke="#A1F6FF" stroke-width="2"/>
+</g>
+</svg>
+<svg class="tree-track" aria-hidden="true" width="800" height="144" viewBox="30 848 800 144" style="position: absolute; left: 30px; top: 848px">
+<ellipse cx="430" cy="920" rx="380" ry="60" fill="none" stroke="#3E2610" stroke-width="16" stroke-dasharray="3 9"></ellipse>
+<ellipse cx="430" cy="920" rx="375" ry="56" fill="none" stroke="#9AA0A8" stroke-width="2"></ellipse>
+<ellipse cx="430" cy="920" rx="385" ry="64" fill="none" stroke="#9AA0A8" stroke-width="2"></ellipse>
+</svg>
+<div aria-hidden="true" class="train train-engine covenant-convoy__wraith" style="position: absolute; left: 0; top: 0; width: 62px; height: 40px; offset-path: path('M 50 920 a 380 60 0 1 0 760 0 a 380 60 0 1 0 -760 0'); offset-distance: 70%; animation-delay: -1.1s"><div class="trainbody" style="position: absolute; inset: 0; animation-delay: -1.1s"><img src="images/props/toy-wraith.svg" alt="" width="62" height="40" style="display: block; width: 100%; height: 100%"></div></div>
+<div aria-hidden="true" class="train covenant-convoy__ghost" style="position: absolute; left: 0; top: 0; width: 48px; height: 30px; offset-path: path('M 50 920 a 380 60 0 1 0 760 0 a 380 60 0 1 0 -760 0'); offset-distance: 65.5%; animation-delay: -0.55s"><div class="trainbody" style="position: absolute; inset: 0; animation-delay: -0.55s"><img src="images/props/toy-ghost.svg" alt="" width="48" height="30" style="display: block; width: 100%; height: 100%"></div></div>
+<div aria-hidden="true" class="train covenant-convoy__ghost" style="position: absolute; left: 0; top: 0; width: 48px; height: 30px; offset-path: path('M 50 920 a 380 60 0 1 0 760 0 a 380 60 0 1 0 -760 0'); offset-distance: 61%; animation-delay: 0s"><div class="trainbody" style="position: absolute; inset: 0; animation-delay: 0s"><img src="images/props/toy-ghost.svg" alt="" width="48" height="30" style="display: block; width: 100%; height: 100%"></div></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 204px; top: 912px; width: 40px; height: 32px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 6px; bottom: 0; background: linear-gradient(90deg, #A8939D, #C9B4BE 45%, #A8939D); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #C9B4BE; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 6px; top: 0; bottom: 0; background: #B3262A"></div><div style="position: absolute; left: 50%; top: -6px; margin-left: -10px; width: 20px; height: 10px; background: radial-gradient(circle at 25% 60%, #B3262A 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #B3262A 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 258px; top: 902px; width: 52px; height: 42px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 8px; bottom: 0; background: linear-gradient(90deg, #C9A04A, #F0CF7A 45%, #C9A04A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 10px; background: #F0CF7A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -4px; width: 8px; top: 0; bottom: 0; background: #2A6B3E"></div><div style="position: absolute; left: 50%; top: -8px; margin-left: -13px; width: 26px; height: 13px; background: radial-gradient(circle at 25% 60%, #2A6B3E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #2A6B3E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 324px; top: 914px; width: 36px; height: 30px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 5px; bottom: 0; background: linear-gradient(90deg, #A2242A, #C4343A 45%, #A2242A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #C4343A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 6px; top: 0; bottom: 0; background: #E2BC5E"></div><div style="position: absolute; left: 50%; top: -6px; margin-left: -9px; width: 18px; height: 9px; background: radial-gradient(circle at 25% 60%, #E2BC5E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #E2BC5E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 374px; top: 906px; width: 48px; height: 38px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 7px; bottom: 0; background: linear-gradient(90deg, #D8CFBA, #F2ECDD 45%, #D8CFBA); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 9px; background: #F2ECDD; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -4px; width: 8px; top: 0; bottom: 0; background: #2A6B3E"></div><div style="position: absolute; left: 50%; top: -8px; margin-left: -12px; width: 24px; height: 12px; background: radial-gradient(circle at 25% 60%, #2A6B3E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #2A6B3E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 436px; top: 910px; width: 40px; height: 34px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 6px; bottom: 0; background: linear-gradient(90deg, #1F5A2E, #2E7444 45%, #1F5A2E); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #2E7444; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 6px; top: 0; bottom: 0; background: #B3262A"></div><div style="position: absolute; left: 50%; top: -6px; margin-left: -10px; width: 20px; height: 10px; background: radial-gradient(circle at 25% 60%, #B3262A 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #B3262A 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 490px; top: 916px; width: 34px; height: 28px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 5px; bottom: 0; background: linear-gradient(90deg, #A2242A, #C4343A 45%, #A2242A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #C4343A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -2px; width: 5px; top: 0; bottom: 0; background: #E2BC5E"></div><div style="position: absolute; left: 50%; top: -5px; margin-left: -8px; width: 17px; height: 8px; background: radial-gradient(circle at 25% 60%, #E2BC5E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #E2BC5E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 538px; top: 906px; width: 46px; height: 38px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 7px; bottom: 0; background: linear-gradient(90deg, #A2242A, #C4343A 45%, #A2242A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 9px; background: #C4343A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 7px; top: 0; bottom: 0; background: #E2BC5E"></div><div style="position: absolute; left: 50%; top: -7px; margin-left: -11px; width: 23px; height: 11px; background: radial-gradient(circle at 25% 60%, #E2BC5E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #E2BC5E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift small-gift--rear" aria-hidden="true" style="position: absolute; left: 598px; top: 898px; width: 58px; height: 46px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 9px; bottom: 0; background: linear-gradient(90deg, #1F5A2E, #2E7444 45%, #1F5A2E); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 11px; background: #2E7444; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -4px; width: 9px; top: 0; bottom: 0; background: #E2BC5E"></div><div style="position: absolute; left: 50%; top: -9px; margin-left: -14px; width: 29px; height: 14px; background: radial-gradient(circle at 25% 60%, #E2BC5E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #E2BC5E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 196px; top: 924px; width: 42px; height: 34px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 6px; bottom: 0; background: linear-gradient(90deg, #D8CFBA, #F2ECDD 45%, #D8CFBA); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #F2ECDD; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 7px; top: 0; bottom: 0; background: #B3262A"></div><div style="position: absolute; left: 50%; top: -7px; margin-left: -10px; width: 21px; height: 10px; background: radial-gradient(circle at 25% 60%, #B3262A 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #B3262A 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 252px; top: 916px; width: 54px; height: 42px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 8px; bottom: 0; background: linear-gradient(90deg, #C9A04A, #F0CF7A 45%, #C9A04A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 10px; background: #F0CF7A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -4px; width: 9px; top: 0; bottom: 0; background: #B3262A"></div><div style="position: absolute; left: 50%; top: -9px; margin-left: -13px; width: 27px; height: 13px; background: radial-gradient(circle at 25% 60%, #B3262A 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #B3262A 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 320px; top: 928px; width: 36px; height: 30px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 5px; bottom: 0; background: linear-gradient(90deg, #C9A04A, #F0CF7A 45%, #C9A04A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #F0CF7A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 6px; top: 0; bottom: 0; background: #B3262A"></div><div style="position: absolute; left: 50%; top: -6px; margin-left: -9px; width: 18px; height: 9px; background: radial-gradient(circle at 25% 60%, #B3262A 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #B3262A 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<!-- Podium awards are boxes; Halo props are separate gifts. -->
+<div class="podium-gift prize-first gift-gold" style="left: 300px; bottom: 80px; width: 240px; height: 240px" role="img" aria-label="1st place, $50, a large wrapped gift box">
+<div class="gift-box-body" aria-hidden="true"></div><div class="gift-box-lid" aria-hidden="true"></div><div class="gift-ribbon-vertical" aria-hidden="true"></div><div class="gift-ribbon-horizontal" aria-hidden="true"></div>
+<svg class="gift-bow" aria-hidden="true" width="130" height="68" viewBox="0 0 130 68"><path d="M65 52C31 6 0 9 10 36C17 54 43 58 65 52Z"/><path d="M65 52C99 6 130 9 120 36C113 54 87 58 65 52Z"/><path d="M60 51L37 67 59 62 66 57 81 66 95 66 71 51Z"/><ellipse cx="65" cy="51" rx="12" ry="10"/></svg>
+<div class="gift-prize-tag"><div>1st place</div><strong>$50</strong></div></div>
+<div class="podium-gift prize-second gift-red" style="left: 95px; bottom: 80px; width: 200px; height: 190px" role="img" aria-label="2nd place, $25, a large wrapped gift box">
+<div class="gift-box-body" aria-hidden="true"></div><div class="gift-box-lid" aria-hidden="true"></div><div class="gift-ribbon-vertical" aria-hidden="true"></div><div class="gift-ribbon-horizontal" aria-hidden="true"></div>
+<svg class="gift-bow" aria-hidden="true" width="130" height="68" viewBox="0 0 130 68"><path d="M65 52C31 6 0 9 10 36C17 54 43 58 65 52Z"/><path d="M65 52C99 6 130 9 120 36C113 54 87 58 65 52Z"/><path d="M60 51L37 67 59 62 66 57 81 66 95 66 71 51Z"/><ellipse cx="65" cy="51" rx="12" ry="10"/></svg>
+<div class="gift-prize-tag"><div>2nd place</div><strong>$25</strong></div></div>
+<div class="podium-gift prize-third gift-green" style="left: 550px; bottom: 80px; width: 165px; height: 155px" role="img" aria-label="3rd place, $10, a large wrapped gift box">
+<div class="gift-box-body" aria-hidden="true"></div><div class="gift-box-lid" aria-hidden="true"></div><div class="gift-ribbon-vertical" aria-hidden="true"></div><div class="gift-ribbon-horizontal" aria-hidden="true"></div>
+<svg class="gift-bow" aria-hidden="true" width="130" height="68" viewBox="0 0 130 68"><path d="M65 52C31 6 0 9 10 36C17 54 43 58 65 52Z"/><path d="M65 52C99 6 130 9 120 36C113 54 87 58 65 52Z"/><path d="M60 51L37 67 59 62 66 57 81 66 95 66 71 51Z"/><ellipse cx="65" cy="51" rx="12" ry="10"/></svg>
+<div class="gift-prize-tag"><div>3rd place</div><strong>$10</strong></div></div>
+<img class="helmet-gift" src="images/props/chief-helmet-gift.svg" alt="An extra gift, Master Chief’s helmet with a gold bow" width="156" height="174" style="position: absolute; left: 774px; top: 700px; width: 156px; height: 174px; z-index: 5; filter: drop-shadow(3px 6px 4px rgba(0,0,0,.35))">
+<!-- An extra floor gift beside the tree, clear of the existing prize tags. -->
+<div class="battle-rifle-gift weapon-gift" aria-hidden="true" style="position: absolute; left: 922px; top: 878px; width: 306px; height: 102px; z-index: 5"><img src="images/props/battle-rifle-gift.svg" alt="A gift-wrapped BR75 battle rifle with a bullpup magazine, carry handle, scope and red bow" width="306" height="102" style="display: block"><svg class="weapon-gift-tag" aria-hidden="true" focusable="false" width="306" height="102" viewBox="0 0 306 102" data-recipient="FourthString"><path class="weapon-tag-cord" d="M164 37 Q199 45 201 82"/><g transform="translate(195 73) rotate(-6)"><path class="weapon-tag-paper" d="M0 8 8 0 H94 Q96 0 96 2 V25 Q96 27 94 27 H8 L0 19Z"/><circle class="weapon-tag-eyelet" cx="6" cy="9" r="2"/><text x="13" y="10" class="weapon-tag-to">To:</text><text x="13" y="22" class="weapon-tag-name" font-size="11">FourthString</text></g></svg></div>
+<div aria-hidden="true" style="position: absolute; left: 786px; top: 968px; width: 108px; height: 12px; border-radius: 50%; background: rgba(0,0,0,0.5); filter: blur(8px)"></div>
+<!-- Wrapped Covenant sidearms hang one above the other below the Halo 2 poster. -->
+<div class="needler-gift weapon-gift" aria-hidden="true" style="position: absolute; left: -45px; top: 545px; width: 180px; height: 115px; z-index: 3; filter: drop-shadow(3px 5px 3px rgba(0,0,0,.4)); width: 180px; height: 115px"><img src="images/props/needler-gift.svg" alt="A purple Needler with exposed pink crystals, a green star-paper cuff and a red gift bow, hanging on wall hooks" width="180" height="115" style="display: block"><svg class="weapon-gift-tag" aria-hidden="true" focusable="false" width="180" height="115" viewBox="0 0 180 115" data-recipient="Chan"><path class="weapon-tag-cord" d="M63 49 Q108 61 130 97"/><g transform="translate(124 88) rotate(7)"><path class="weapon-tag-paper" d="M0 8 8 0 H57 Q59 0 59 2 V25 Q59 27 57 27 H8 L0 19Z"/><circle class="weapon-tag-eyelet" cx="6" cy="9" r="2"/><text x="13" y="10" class="weapon-tag-to">To:</text><text x="13" y="22" class="weapon-tag-name" font-size="12">Chan</text></g></svg></div>
+<div class="plasma-pistol-gift weapon-gift" aria-hidden="true" style="position: absolute; left: 0; top: 683px; width: 90px; height: 74px; z-index: 3; filter: drop-shadow(3px 5px 3px rgba(0,0,0,.4)); width: 90px; height: 74px"><img src="images/props/plasma-pistol-gift.svg" alt="A small purple Covenant plasma pistol with open muzzle jaws, a cyan energy bridge and a gift bow on its rear grip, hanging below the Needler" width="90" height="74" style="display: block"><svg class="weapon-gift-tag" aria-hidden="true" focusable="false" width="90" height="74" viewBox="0 0 90 74" data-recipient="SDot"><path class="weapon-tag-cord" d="M60 40 Q87 81 18 99"/><g transform="translate(12 90) rotate(-5)"><path class="weapon-tag-paper" d="M0 8 8 0 H53 Q55 0 55 2 V25 Q55 27 53 27 H8 L0 19Z"/><circle class="weapon-tag-eyelet" cx="6" cy="9" r="2"/><text x="13" y="10" class="weapon-tag-to">To:</text><text x="13" y="22" class="weapon-tag-name" font-size="12">SDot</text></g></svg></div>
+<!-- Unlabelled toy Warthog and ribboned power weapons beside the tree. -->
+<div class="prize-bonus" style="position: absolute; left: 790px; top: 910px; width: 120px; height: 64px; transform: scale(.85); transform-origin: 50% 100%; z-index: 5"><img src="images/props/warthog-gift.svg" alt="An extra gift, a ribboned toy Warthog" width="140" height="80" style="position: absolute; left: -10px; top: -16px"></div>
+<div class="spnkr-gift weapon-gift" aria-hidden="true" style="position: absolute; left: 650px; top: 535px; z-index: 1; filter: drop-shadow(5px 7px 5px rgba(0,0,0,.4)); width: 210px; height: 385px"><img src="images/props/spnkr-gift.svg" alt="A twin-tube SPNKr rocket launcher leaning against the wall, partly wrapped in green star-patterned paper with a red ribbon and bow" width="210" height="385" style="display: block"><svg class="weapon-gift-tag" aria-hidden="true" focusable="false" width="210" height="385" viewBox="0 0 210 385" data-recipient="scrof"><path class="weapon-tag-cord" d="M137 252 Q103 248 70 277"/><g transform="translate(64 268) rotate(8)"><path class="weapon-tag-paper" d="M0 8 8 0 H57 Q59 0 59 2 V25 Q59 27 57 27 H8 L0 19Z"/><circle class="weapon-tag-eyelet" cx="6" cy="9" r="2"/><text x="13" y="10" class="weapon-tag-to">To:</text><text x="13" y="22" class="weapon-tag-name" font-size="12">scrof</text></g></svg></div>
+<div class="gravity-hammer-gift weapon-gift" aria-hidden="true" style="position: absolute; left: 500px; top: 265px; z-index: 3; filter: drop-shadow(5px 7px 5px rgba(0,0,0,.4)); width: 420px; height: 706px"><img src="images/props/gravity-hammer-gift.svg" alt="A gravity hammer leaning against the wall beside the tree, with candy-cane wrapping on its shaft and a gold ribbon and bow" width="420" height="706" style="display: block"><svg class="weapon-gift-tag" aria-hidden="true" focusable="false" width="420" height="706" viewBox="0 0 420 706" data-recipient="Victory"><path class="weapon-tag-cord" d="M255 99 Q300 103 297 151"/><g transform="translate(291 142) rotate(8)"><path class="weapon-tag-paper" d="M0 8 8 0 H85 Q87 0 87 2 V30 Q87 32 85 32 H8 L0 24Z"/><circle class="weapon-tag-eyelet" cx="6" cy="9" r="2"/><text x="13" y="10" class="weapon-tag-to">To:</text><text x="13" y="27" class="weapon-tag-name" font-size="13">Victory</text></g></svg></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 370px; top: 918px; width: 50px; height: 40px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 8px; bottom: 0; background: linear-gradient(90deg, #A2242A, #C4343A 45%, #A2242A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 10px; background: #C4343A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -4px; width: 8px; top: 0; bottom: 0; background: #E2BC5E"></div><div style="position: absolute; left: 50%; top: -8px; margin-left: -12px; width: 25px; height: 12px; background: radial-gradient(circle at 25% 60%, #E2BC5E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #E2BC5E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 434px; top: 928px; width: 38px; height: 30px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 5px; bottom: 0; background: linear-gradient(90deg, #C9A04A, #F0CF7A 45%, #C9A04A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #F0CF7A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 6px; top: 0; bottom: 0; background: #2A6B3E"></div><div style="position: absolute; left: 50%; top: -6px; margin-left: -9px; width: 19px; height: 9px; background: radial-gradient(circle at 25% 60%, #2A6B3E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #2A6B3E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 486px; top: 926px; width: 40px; height: 32px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 6px; bottom: 0; background: linear-gradient(90deg, #D8CFBA, #F2ECDD 45%, #D8CFBA); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 8px; background: #F2ECDD; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -3px; width: 6px; top: 0; bottom: 0; background: #B3262A"></div><div style="position: absolute; left: 50%; top: -6px; margin-left: -10px; width: 20px; height: 10px; background: radial-gradient(circle at 25% 60%, #B3262A 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #B3262A 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 540px; top: 932px; width: 32px; height: 26px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 5px; bottom: 0; background: linear-gradient(90deg, #A8939D, #C9B4BE 45%, #A8939D); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #C9B4BE; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -2px; width: 5px; top: 0; bottom: 0; background: #B3262A"></div><div style="position: absolute; left: 50%; top: -5px; margin-left: -8px; width: 16px; height: 8px; background: radial-gradient(circle at 25% 60%, #B3262A 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #B3262A 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 586px; top: 934px; width: 30px; height: 24px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 5px; bottom: 0; background: linear-gradient(90deg, #A2242A, #C4343A 45%, #A2242A); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #C4343A; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -2px; width: 5px; top: 0; bottom: 0; background: #E2BC5E"></div><div style="position: absolute; left: 50%; top: -5px; margin-left: -7px; width: 15px; height: 8px; background: radial-gradient(circle at 25% 60%, #E2BC5E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #E2BC5E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+<div class="small-gift" aria-hidden="true" style="position: absolute; left: 630px; top: 930px; width: 34px; height: 28px"><div style="position: absolute; left: -3px; right: -3px; bottom: -4px; height: 8px; border-radius: 50%; background: rgba(0,0,0,0.45); filter: blur(3px)"></div><div style="position: absolute; left: 2px; right: 2px; top: 5px; bottom: 0; background: linear-gradient(90deg, #1F5A2E, #2E7444 45%, #1F5A2E); border-radius: 2px"></div><div style="position: absolute; left: 0; right: 0; top: 0; height: 7px; background: #2E7444; border-radius: 2px; box-shadow: 0 2px 3px rgba(0,0,0,0.3)"></div><div style="position: absolute; left: 50%; margin-left: -2px; width: 5px; top: 0; bottom: 0; background: #E2BC5E"></div><div style="position: absolute; left: 50%; top: -5px; margin-left: -8px; width: 17px; height: 8px; background: radial-gradient(circle at 25% 60%, #E2BC5E 0 34%, transparent 36%), radial-gradient(circle at 75% 60%, #E2BC5E 0 34%, transparent 36%)"></div><span class="bonus-gift-tag">$1</span></div>
+</div><!-- tree corner -->
+<!-- Fixed-size LAN wall decorations above the monitors. -->
+<div class="lan-wall-decor" style="display: none; position: absolute; left: 3430px; top: 112px; width: 205px; padding: 6px; box-sizing: border-box; border: 9px solid #3A281C; background: #C6B48D; box-shadow: inset 0 0 0 1px #AD9873, 0 0 0 2px #735236, 0 0 0 4px #241A12, 5px 12px 18px rgba(0,0,0,.45); transform: rotate(1deg)">
+<img src="images/fuzion-frenzy-cover.png" alt="Framed original Xbox Fuzion Frenzy cover art" width="256" height="353" style="display: block; width: 100%; height: auto; filter: saturate(.85) brightness(.92)">
+<div aria-hidden="true" style="position: absolute; inset: 6px; background: linear-gradient(125deg, rgba(255,244,208,.12), transparent 45%); pointer-events: none"></div>
+</div>
+<img class="lan-wall-decor" src="images/props/lan-trinket-shelf.svg" alt="Wooden shelf with a Halo ringworld snow globe, gold trophy, Master Chief helmet, Halo: Combat Evolved, Halo 2, Fuzion Frenzy and Soulcalibur II game cases, and a trailing plant, from left to right" width="520" height="240" style="display: none; position: absolute; left: 3690px; top: 110px; width: 500px; height: auto; pointer-events: none">
+<!-- The plaque is the only visible winner copy. Keep its accessible equivalent below the room. -->
+<div class="winner-plaque" data-winner-plaque aria-hidden="true">
+<div class="winner-plaque__event">Husky Holiday winners</div>
+<div class="winner-plaque__row" data-winner-year="2025">
+<span class="winner-plaque__year">2025</span>
+<span class="winner-plaque__name">Victory is BACK</span>
+<span class="winner-plaque__score">+17<small>flag diff.</small></span>
+</div>
+<div class="winner-plaque__row winner-plaque__row--open" data-winner-year="2026">
+<span class="winner-plaque__year">2026</span>
+<span class="winner-plaque__name">Your name here</span>
+<span></span>
+</div>
+</div>
+<!-- Four-player holiday LAN setup shares the prize scene's spare right wall. -->
+<img class="holiday-lan" src="images/props/holiday-lan.svg" alt="A festive four-player Halo LAN setup with a long wooden table, four monitors, Xbox consoles, controllers and chairs, cocoa, cookies, garland lights, a Santa hat and a plaid blanket" width="1064" height="700" style="display: none; position: absolute; left: 3345.6px; bottom: 14px; width: 904.4px; height: 595px; pointer-events: none">
+<!-- ===== FIREPLACE ROOM ===== -->
+<div aria-hidden="true" style="position: absolute; left: 896px; top: 132px; width: 40px; height: 450px; background: linear-gradient(90deg, #6A1612, #8E1F1B 40%, #6A1612); border-radius: 0 0 30px 6px; box-shadow: 4px 8px 14px rgba(0,0,0,0.35); z-index: 1"></div>
+<div aria-hidden="true" style="position: absolute; left: 1144px; top: 132px; width: 40px; height: 450px; background: linear-gradient(90deg, #6A1612, #8E1F1B 60%, #6A1612); border-radius: 0 0 6px 30px; box-shadow: -4px 8px 14px rgba(0,0,0,0.35); z-index: 1"></div>
+<div aria-hidden="true" style="position: absolute; left: 890px; top: 124px; width: 300px; height: 14px; background: #2A1C10; border-radius: 7px; z-index: 2"></div>
+<div style="position: absolute; left: 930px; top: 150px; width: 220px; height: 380px; padding: 12px; box-sizing: border-box; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px); border-radius: 4px; box-shadow: inset 0 2px 0 rgba(255,220,170,0.18), 0 12px 24px rgba(0,0,0,0.4)">
+<div style="position: relative; width: 100%; height: 100%; overflow: hidden; background: linear-gradient(180deg, #0B2233, #12354E 60%, #1C4660); box-shadow: inset 0 0 0 3px #2E1A0A">
+<svg aria-hidden="true" width="196" height="120" viewBox="0 0 196 120" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: 0; width: 100%">
+<path d="M0 80 L12 52 L22 72 L34 40 L46 70 L58 48 L70 74 L84 36 L98 70 L110 50 L122 72 L136 42 L150 70 L162 54 L176 74 L188 46 L196 60 L196 120 L0 120 Z" fill="#0A1A26"></path>
+<path d="M0 96 Q60 84 110 92 T196 90 L196 120 L0 120 Z" fill="#DDE7F0"></path>
+</svg>
+<canvas data-js="window-snow" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
+<div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 8px; margin-left: -4px; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px)"></div>
+<div style="position: absolute; left: 0; right: 0; top: 46%; height: 8px; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px)"></div>
+<div style="position: absolute; inset: 0; background: radial-gradient(circle at 0 0, rgba(235,245,255,0.6), transparent 22%), radial-gradient(circle at 100% 0, rgba(235,245,255,0.5), transparent 18%), radial-gradient(circle at 0 100%, rgba(235,245,255,0.55), transparent 20%), radial-gradient(circle at 100% 100%, rgba(235,245,255,0.6), transparent 22%)"></div>
+</div>
+</div>
+<div aria-hidden="true" style="position: absolute; left: 914px; top: 526px; width: 252px; height: 18px; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px); border-radius: 3px; box-shadow: 0 10px 16px rgba(0,0,0,0.4)"></div>
+<div aria-hidden="true" style="position: absolute; left: 2216px; top: 132px; width: 40px; height: 450px; background: linear-gradient(90deg, #6A1612, #8E1F1B 40%, #6A1612); border-radius: 0 0 30px 6px; box-shadow: 4px 8px 14px rgba(0,0,0,0.35); z-index: 1"></div>
+<div aria-hidden="true" style="position: absolute; left: 2464px; top: 132px; width: 40px; height: 450px; background: linear-gradient(90deg, #6A1612, #8E1F1B 60%, #6A1612); border-radius: 0 0 6px 30px; box-shadow: -4px 8px 14px rgba(0,0,0,0.35); z-index: 1"></div>
+<div aria-hidden="true" style="position: absolute; left: 2210px; top: 124px; width: 300px; height: 14px; background: #2A1C10; border-radius: 7px; z-index: 2"></div>
+<div style="position: absolute; left: 2250px; top: 150px; width: 220px; height: 380px; padding: 12px; box-sizing: border-box; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px); border-radius: 4px; box-shadow: inset 0 2px 0 rgba(255,220,170,0.18), 0 12px 24px rgba(0,0,0,0.4)">
+<div style="position: relative; width: 100%; height: 100%; overflow: hidden; background: linear-gradient(180deg, #0B2233, #12354E 60%, #1C4660); box-shadow: inset 0 0 0 3px #2E1A0A">
+<svg aria-hidden="true" width="196" height="120" viewBox="0 0 196 120" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: 0; width: 100%">
+<path d="M0 80 L12 52 L22 72 L34 40 L46 70 L58 48 L70 74 L84 36 L98 70 L110 50 L122 72 L136 42 L150 70 L162 54 L176 74 L188 46 L196 60 L196 120 L0 120 Z" fill="#0A1A26"></path>
+<path d="M0 96 Q60 84 110 92 T196 90 L196 120 L0 120 Z" fill="#DDE7F0"></path>
+</svg>
+<canvas data-js="window-snow" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block"></canvas>
+<div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 8px; margin-left: -4px; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px)"></div>
+<div style="position: absolute; left: 0; right: 0; top: 46%; height: 8px; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px)"></div>
+<div style="position: absolute; inset: 0; background: radial-gradient(circle at 0 0, rgba(235,245,255,0.6), transparent 22%), radial-gradient(circle at 100% 0, rgba(235,245,255,0.5), transparent 18%), radial-gradient(circle at 0 100%, rgba(235,245,255,0.55), transparent 20%), radial-gradient(circle at 100% 100%, rgba(235,245,255,0.6), transparent 22%)"></div>
+</div>
+</div>
+<div aria-hidden="true" style="position: absolute; left: 2234px; top: 526px; width: 252px; height: 18px; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px); border-radius: 3px; box-shadow: 0 10px 16px rgba(0,0,0,0.4)"></div>
+<svg class="ctf-flags" aria-hidden="true" focusable="false" style="position: absolute; left: 1160px; top: 510px; width: 300px; height: 380px; z-index: 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 456">
+<defs>
+  <linearGradient id="ctf-red" x2="1" y2=".3"><stop stop-color="#701D26"/><stop offset=".45" stop-color="#C34448"/><stop offset="1" stop-color="#90252F"/></linearGradient>
+  <linearGradient id="ctf-blue" x2="1" y2=".3"><stop stop-color="#1A435F"/><stop offset=".5" stop-color="#497F9A"/><stop offset="1" stop-color="#23546F"/></linearGradient>
+  <linearGradient id="ctf-pole"><stop stop-color="#343D42"/><stop offset=".45" stop-color="#AEB6B5"/><stop offset=".65" stop-color="#697675"/><stop offset="1" stop-color="#293439"/></linearGradient>
+  <linearGradient id="ctf-base" x2="0" y2="1"><stop stop-color="#6C7774"/><stop offset="1" stop-color="#303C3B"/></linearGradient>
+  <linearGradient id="ctf-crate" x2="1" y2=".2"><stop stop-color="#344539"/><stop offset=".5" stop-color="#596C4F"/><stop offset="1" stop-color="#303F33"/></linearGradient>
+  <!-- Original Husky Holiday favicon, embedded so this SVG stays self-contained. -->
+  <g id="ctf-crest">
+    <image x="-25" y="-25" width="50" height="50" href="data:image/png;base64,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"/>
+  </g>
+  <clipPath id="ctf-mouth"><path d="M175 0H360V340H175Z"/></clipPath>
+  <g id="ctf-captured-flag">
+    <rect x="-3" y="0" width="6" height="230" rx="2" fill="url(#ctf-pole)" stroke="#253034"/>
+    <path d="M0 -12L6 0 0 5 -6 0Z" fill="#B9C2BC" stroke="#3B4748" stroke-width="1.5"/>
+    <g class="captured-cloth" style="transform: translateY(calc((1 - var(--flag-raised, 0)) * 200px))">
+    <path d="M4 12Q31 4 60 18L53 48 58 85Q28 72 4 82Z" fill="url(#ctf-blue)" stroke="#15394E" stroke-width="2"/>
+    <path d="M8 18Q30 11 55 21M8 77Q30 69 54 80" fill="none" stroke="#E4BD82" stroke-width="2"/>
+    <path d="M28 11Q24 44 31 77" fill="none" stroke="#B6D5D8" stroke-width="2" opacity=".2"/>
+    <use href="#ctf-crest" transform="translate(31 46) scale(.65)"/>
+    </g>
+  </g>
+</defs>
+<!-- Tight contact shadows under two solid objects, both resting on the floor. -->
+<ellipse cx="114" cy="448" rx="95" ry="5" fill="#110D0A" opacity=".5"/>
+<ellipse cx="278" cy="448" rx="74" ry="5" fill="#110D0A" opacity=".45"/>
+<!-- Our red CTF flag remains planted in its capture stand. -->
+<rect x="113" y="27" width="10" height="386" rx="3" fill="url(#ctf-pole)" stroke="#253034" stroke-width="2"/>
+<path d="M118 8L127 27 118 36 109 27Z" fill="#C2C6BC" stroke="#3B4748" stroke-width="2"/>
+<path d="M111 49Q58 34 6 59L21 106 9 178Q63 153 111 173Z" fill="url(#ctf-red)" stroke="#601B23" stroke-width="3"/>
+<path d="M103 57Q58 44 14 62M103 164Q60 149 17 171" fill="none" stroke="#E4BD82" stroke-width="3"/>
+<path d="M73 43Q61 104 74 163M37 46Q27 112 39 165" fill="none" stroke="#E9B2A0" stroke-width="3" opacity=".16"/>
+<use href="#ctf-crest" transform="translate(61 105) scale(1.3)"/>
+<path d="M110 53H124M110 110H124M110 169H124" stroke="#D0BC8C" stroke-width="5"/>
+<!-- Broad, low UNSC-style capture pedestal, with a socket holding the pole. -->
+<path d="M41 406H187L204 422H24Z" fill="#727D75" stroke="#293735" stroke-width="2"/>
+<path d="M24 422H204V441L190 446H39L24 441Z" fill="url(#ctf-base)" stroke="#253432" stroke-width="2"/>
+<path d="M41 411H187M34 425H194" stroke="#9CA697" stroke-width="2" opacity=".55"/>
+<path d="M97 405L103 384H134L141 405Z" fill="#4F5C55" stroke="#293735" stroke-width="2"/>
+<ellipse cx="119" cy="385" rx="16" ry="5" fill="#293735" stroke="#849085" stroke-width="2"/>
+<rect x="114" y="374" width="9" height="15" fill="url(#ctf-pole)"/>
+<path d="M39 431H60M169 431H190" stroke="#B4A674" stroke-width="3"/>
+<text x="115" y="438" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="3" fill="#D4D7C2">UNSC</text>
+<path d="M46 418L53 412M177 412L184 418" stroke="#34423E" stroke-width="3"/>
+<!-- Evergreen spirals from the finial to the socket and drapes over the rim. -->
+<g fill="none" stroke-linecap="round">
+  <path d="M119 35Q139 47 113 60T116 86T114 112T116 138T114 164T116 190T114 216T116 242T114 268T116 294T114 320T116 346T114 372L118 382M43 408Q114 432 187 408" stroke="#173E2B" stroke-width="12"/>
+  <path d="M119 35Q139 47 113 60T116 86T114 112T116 138T114 164T116 190T114 216T116 242T114 268T116 294T114 320T116 346T114 372L118 382M43 408Q114 432 187 408" stroke="#356A40" stroke-width="8" stroke-dasharray="2 4"/>
+  <path d="M119 35Q139 47 113 60T116 86T114 112T116 138T114 164T116 190T114 216T116 242T114 268T116 294T114 320T116 346T114 372L118 382M43 408Q114 432 187 408" stroke="#62834B" stroke-width="3" stroke-dasharray="1 7"/>
+  <path d="M47 410Q115 429 183 410" stroke="#D2B36B" stroke-width="1.5"/>
+</g>
+<g fill="#BD3D3D" stroke="#75252A" stroke-width="1"><circle cx="122" cy="48" r="4"/><circle cx="107" cy="99" r="4"/><circle cx="123" cy="151" r="4"/><circle cx="107" cy="203" r="4"/><circle cx="123" cy="255" r="4"/><circle cx="123" cy="305" r="4"/><circle cx="106" cy="332" r="4"/><circle cx="123" cy="355" r="4"/><circle cx="71" cy="418" r="4"/><circle cx="76" cy="422" r="3"/><circle cx="158" cy="418" r="4"/><circle cx="163" cy="421" r="3"/></g>
+<g fill="#F0C770"><circle cx="116" cy="36" r="2.5"/><circle cx="115" cy="87" r="2.5"/><circle cx="116" cy="139" r="2.5"/><circle cx="115" cy="191" r="2.5"/><circle cx="116" cy="243" r="2.5"/><circle cx="113" cy="294" r="2.5"/><circle cx="118" cy="344" r="2.5"/><circle cx="115" cy="376" r="2.5"/><circle cx="48" cy="410" r="2.5"/><circle cx="115" cy="420" r="2.5"/><circle cx="183" cy="410" r="2.5"/></g>
+<!-- Back rim and dark interior sit behind the captured standards. -->
+<path d="M210 338L226 328H335L349 339 337 354H222Z" fill="#6B795B" stroke="#293A2D" stroke-width="2"/>
+<path d="M220 340L230 334H330L339 341 330 349H228Z" fill="#1E2B23"/>
+<!-- Poles cross the opening, then disappear behind the front wall and lip. -->
+<g clip-path="url(#ctf-mouth)">
+<use href="#ctf-captured-flag" transform="translate(227 213) rotate(-9)"/>
+<use href="#ctf-captured-flag" transform="translate(271 181) rotate(3)"/>
+<use href="#ctf-captured-flag" transform="translate(299 241) rotate(8) scale(.88)"/>
+</g>
+<path d="M211 346H348L339 443H220Z" fill="url(#ctf-crate)" stroke="#26392C" stroke-width="3"/>
+<path d="M211 346H348V356H211Z" fill="#788364" stroke="#293A2D" stroke-width="2"/>
+<path d="M226 359L232 434M333 359L327 434M227 434H331" fill="none" stroke="#899270" stroke-width="4" opacity=".65"/>
+<path d="M247 374H311V398H247Z" fill="#273A2D" stroke="#788364" stroke-width="2"/>
+<path d="M265 386H293" stroke="#8C977C" stroke-width="3"/>
+<path d="M245 413H311" stroke="#26392C" stroke-width="3"/>
+<circle cx="231" cy="365" r="3" fill="#BCC0A5"/><circle cx="329" cy="365" r="3" fill="#BCC0A5"/>
+<!-- Three inset holly sprigs on the front face, painted above all crate details. -->
+<g id="container-holly-sprigs">
+<g id="container-holly" transform="translate(235 373) scale(.8) translate(-239 -350)">
+<path d="M229 353L215 343 220 338 217 330 229 333 233 328 239 345M239 350L248 332 253 338 262 336 258 346 262 350 247 355" fill="#2C633D" stroke="#143F29" stroke-width="1.5"/>
+<g fill="#BD3D3D" stroke="#75252A" stroke-width="1"><circle cx="234" cy="350" r="4"/><circle cx="242" cy="349" r="4"/><circle cx="239" cy="357" r="4"/></g>
+</g>
+<use href="#container-holly" transform="translate(88 0)"/>
+<use href="#container-holly" transform="translate(44 52)"/>
+</g>
+</svg>
+<div aria-hidden="true" style="position: absolute; left: 2196px; top: 868px; width: 280px; height: 24px; border-radius: 50%; background: rgba(0,0,0,0.5); filter: blur(10px)"></div>
+<div class="cabin-chair" style="position: absolute; left: 2200px; top: 600px; width: 270px; height: 280px">
+<div aria-hidden="true" style="position: absolute; left: 30px; top: 0; width: 210px; height: 200px; border-radius: 60px 60px 12px 12px; background-color: #8E1F1B; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 6px, transparent 6px 30px), repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0 6px, transparent 6px 30px); box-shadow: inset 0 -10px 20px rgba(0,0,0,0.35)"></div>
+<div aria-hidden="true" style="position: absolute; left: 36px; top: 150px; width: 198px; height: 56px; border-radius: 16px; background-color: #A2242A; background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0 6px, transparent 6px 30px); box-shadow: inset 0 6px 0 rgba(255,255,255,0.08)"></div>
+<div aria-hidden="true" style="position: absolute; left: 0; top: 110px; width: 52px; height: 140px; border-radius: 26px 26px 8px 8px; background-color: #7A1A16; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 6px, transparent 6px 30px)"></div>
+<div aria-hidden="true" style="position: absolute; right: 0; top: 110px; width: 52px; height: 140px; border-radius: 26px 26px 8px 8px; background-color: #7A1A16; background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0.18) 0 6px, transparent 6px 30px)"></div>
+<div aria-hidden="true" style="position: absolute; left: 34px; top: 196px; width: 202px; height: 54px; background: #6A1612; border-radius: 0 0 8px 8px"></div>
+<div aria-hidden="true" style="position: absolute; left: 18px; bottom: 0; width: 14px; height: 32px; background: #3E2410; border-radius: 0 0 4px 4px"></div>
+<div aria-hidden="true" style="position: absolute; right: 18px; bottom: 0; width: 14px; height: 32px; background: #3E2410; border-radius: 0 0 4px 4px"></div>
+<div aria-hidden="true" style="position: absolute; left: 110px; top: 20px; width: 120px; height: 200px; transform: rotate(6deg); background-color: #F4EBDD; background-image: repeating-linear-gradient(0deg, transparent 0 22px, #1F5A2E 22px 28px, transparent 28px 34px, #B3262A 34px 38px, transparent 38px 60px), repeating-linear-gradient(90deg, rgba(0,0,0,0.04) 0 2px, transparent 2px 6px); border-radius: 10px 10px 18px 6px; box-shadow: -4px 8px 12px rgba(0,0,0,0.3)"></div>
+<div aria-hidden="true" style="position: absolute; left: 6px; top: 86px; width: 40px; height: 30px; background: #F4EBDD; border-radius: 3px 3px 10px 10px; box-shadow: inset -6px 0 0 rgba(0,0,0,0.08)">
+<svg class="cocoa-steam" aria-hidden="true" viewBox="0 0 64 90" width="64" height="90" style="position: absolute; left: -12px; bottom: 28px; overflow: visible">
+<g fill="none" stroke="#FFF4E0" stroke-width="3" stroke-linecap="round">
+<path data-steam="0" d="M18 80C4 65 30 59 18 43S22 20 18 8"/>
+<path data-steam="1" d="M32 82C18 66 44 60 32 44S36 22 32 10"/>
+<path data-steam="2" d="M46 80C32 65 58 59 46 43S50 20 46 8"/>
+</g></svg>
+<div style="position: absolute; right: -12px; top: 6px; width: 12px; height: 14px; border: 4px solid #F4EBDD; border-left: none; border-radius: 0 8px 8px 0"></div>
+<div style="position: absolute; left: 6px; top: -6px; width: 10px; height: 10px; background: #FFFFFF; border-radius: 3px"></div><div style="position: absolute; left: 18px; top: -8px; width: 10px; height: 10px; background: #FFFFFF; border-radius: 3px"></div>
+</div>
+</div>
+<!-- A planted home flag and captured enemy flags stand beside the hearth. -->
+<div aria-hidden="true" style="position: absolute; left: 1500px; width: 400px; top: 600px; height: 240px; border-radius: 200px 200px 0 0 / 100px 100px 0 0; background: #120A06; box-shadow: inset 0 0 0 10px #3C1A0E, inset 0 30px 60px rgba(0,0,0,0.9); overflow: hidden">
+<div class="glow" style="position: absolute; left: -20%; right: -20%; bottom: -30px; height: 200px; background: radial-gradient(ellipse 50% 60% at 50% 100%, rgba(255,170,70,0.75), rgba(230,90,40,0.35) 45%, transparent 75%)"></div>
+<div class="fire" style="position: absolute; left: 110px; bottom: 44px; width: 90px; height: 130px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 78%, #FFF4C8 0 18%, #FFC24A 38%, #F2702A 62%, rgba(200,50,20,0) 78%)"></div>
+<div class="fire" style="position: absolute; left: 165px; bottom: 46px; width: 110px; height: 165px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 78%, #FFF7D6 0 20%, #FFC24A 40%, #F2702A 64%, rgba(200,50,20,0) 80%); animation-delay: .35s"></div>
+<div class="fire" style="position: absolute; left: 240px; bottom: 44px; width: 80px; height: 115px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 78%, #FFF4C8 0 18%, #FFC24A 38%, #F2702A 62%, rgba(200,50,20,0) 78%); animation-delay: .7s"></div>
+<div class="fire" style="position: absolute; left: 190px; bottom: 50px; width: 56px; height: 100px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 78%, #FFFFFF 0 20%, #FFD873 45%, rgba(242,112,42,0) 75%); animation-delay: .55s"></div>
+<div style="position: absolute; left: 80px; bottom: 22px; width: 240px; height: 36px; border-radius: 18px; background: linear-gradient(180deg, #6B3F1E, #3E2410); transform: rotate(-6deg); box-shadow: inset 0 -6px 10px rgba(255,120,40,0.35)"></div>
+<div style="position: absolute; left: 90px; bottom: 22px; width: 240px; height: 36px; border-radius: 18px; background: linear-gradient(180deg, #5E361A, #36200E); transform: rotate(7deg); box-shadow: inset 0 -6px 10px rgba(255,120,40,0.35)"></div>
+<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 26px; background: linear-gradient(180deg, #2A140A, #1A0C06)"></div>
+</div>
+<div aria-hidden="true" style="position: absolute; left: 1280px; width: 840px; top: 836px; height: 30px; background: linear-gradient(180deg, #8C857C, #5E5850); border-radius: 3px; box-shadow: inset 0 2px 0 rgba(255,255,255,0.15), 0 10px 18px rgba(0,0,0,0.45)"></div>
+<svg class="drop-wall" aria-hidden="true" focusable="false" style="position: absolute; left: 1476px; top: 674px; width: 448px; height: 180px; pointer-events: none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 180" fill="none">
+  <defs>
+    <linearGradient id="wall-shield" x1="224" y1="0" x2="224" y2="176" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff1b8" stop-opacity=".06"/>
+      <stop offset=".55" stop-color="#f4d984" stop-opacity=".13"/>
+      <stop offset="1" stop-color="#ffe9a6" stop-opacity=".29"/>
+    </linearGradient>
+    <linearGradient id="wall-wing" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff5cd" stop-opacity=".19"/><stop offset=".5" stop-color="#f2d994" stop-opacity=".05"/><stop offset="1" stop-color="#fff5cd" stop-opacity=".19"/></linearGradient>
+    <pattern id="wall-grid" width="11" height="11" patternUnits="userSpaceOnUse"><path d="M11 0H0V11" stroke="#fff3ca" stroke-opacity=".28" stroke-width=".55"/></pattern>
+    <clipPath id="wall-outline"><path d="M10 42 37 18 112 5H336L411 18 438 42V158L336 175H112L10 158Z"/></clipPath>
+  </defs>
+  <g class="drop-wall-field">
+  <!-- A translucent segmented field, not a solid physical fire guard. -->
+  <g clip-path="url(#wall-outline)">
+    <path d="M0 0H448V180H0Z" fill="url(#wall-shield)"/>
+    <path d="M10 42 37 18 112 5V175L10 158ZM336 5 411 18 438 42V158L336 175Z" fill="url(#wall-wing)"/>
+    <path d="M0 0H448V180H0Z" fill="url(#wall-grid)"/>
+    <g stroke="#fff1bc" stroke-opacity=".75" stroke-width="1.25">
+      <path d="M112 5V175M187 5V175M261 5V175M336 5V175"/>
+      <path d="M10 67 112 56H336L438 67M10 112 112 114H336L438 112"/>
+      <path d="M60 11 55 164M388 11 393 164" stroke-opacity=".35" stroke-width=".7"/>
+    </g>
+  </g>
+  <path d="M10 42 37 18 112 5H336L411 18 438 42V158L336 175H112L10 158Z" stroke="#fff0bd" stroke-opacity=".78" stroke-width="1.6" stroke-linejoin="round"/>
+  <!-- Tiny illuminated connections at the panel intersections. -->
+  <g fill="#fff7d7" fill-opacity=".9">
+    <circle cx="112" cy="56" r="1.9"/><circle cx="187" cy="56" r="1.6"/><circle cx="261" cy="56" r="1.6"/><circle cx="336" cy="56" r="1.9"/>
+    <circle cx="112" cy="114" r="1.9"/><circle cx="187" cy="114" r="1.6"/><circle cx="261" cy="114" r="1.6"/><circle cx="336" cy="114" r="1.9"/>
+  </g>
+  </g>
+  <!-- UNSC-style floor projector with a small blue status light. -->
+  <ellipse cx="224" cy="176" rx="28" ry="3" fill="#101b18" fill-opacity=".4"/>
+  <path d="m205 170 12-7h14l12 7-6 7h-26Z" fill="#47554b" stroke="#24352e" stroke-width="1.5"/>
+  <path d="M220 150h8v22h-8Z" fill="#53665c" stroke="#253c32" stroke-width="1.5"/>
+  <path d="M222 152h4v10h-4Z" fill="#a9e8e4"/>
+  <path d="m208 170 10 3h12l10-3" stroke="#879386" stroke-width="1.5"/>
+  <path d="M221 173h6" stroke="#a9e8e4" stroke-width="2" stroke-linecap="round"/>
+</svg>
+<img class="mantel-clock" src="images/props/mantel-clock.svg" alt="" aria-hidden="true" width="128" height="88" style="position: absolute; left: 1194px; top: 384px; width: 128px; height: 88px; z-index: 2; filter: drop-shadow(3px 4px 3px rgba(0,0,0,.4))">
+<svg class="rudolph" aria-hidden="true" width="120" height="130" viewBox="0 0 120 130" style="position: absolute; left: 1970px; top: 708px">
+<ellipse cx="60" cy="126" rx="44" ry="5" fill="rgba(0,0,0,0.45)"></ellipse>
+<path d="M28 18 L22 4 M28 18 L16 12 M28 18 L34 6 M84 18 L90 4 M84 18 L96 12 M84 18 L78 6" stroke="#5A3418" stroke-width="4" stroke-linecap="round"></path>
+<rect x="30" y="62" width="64" height="36" rx="16" fill="#8A5A2C"></rect>
+<rect x="34" y="92" width="8" height="32" rx="3" fill="#6B3F1E"></rect><rect x="48" y="92" width="8" height="32" rx="3" fill="#6B3F1E"></rect>
+<rect x="70" y="92" width="8" height="32" rx="3" fill="#6B3F1E"></rect><rect x="82" y="92" width="8" height="32" rx="3" fill="#6B3F1E"></rect>
+<path d="M90 64 L100 56" stroke="#8A5A2C" stroke-width="6" stroke-linecap="round"></path>
+<rect x="38" y="40" width="20" height="30" rx="8" fill="#8A5A2C"></rect>
+<ellipse cx="56" cy="30" rx="26" ry="20" fill="#9A6A34"></ellipse>
+<ellipse cx="34" cy="20" rx="8" ry="5" fill="#8A5A2C" transform="rotate(-30 34 20)"></ellipse><ellipse cx="78" cy="20" rx="8" ry="5" fill="#8A5A2C" transform="rotate(30 78 20)"></ellipse>
+<circle cx="48" cy="28" r="3" fill="#1A1A1A"></circle><circle cx="66" cy="28" r="3" fill="#1A1A1A"></circle>
+<g class="rudolph-signal" fill="none" stroke="#FF5147" stroke-width="2.2" aria-hidden="true">
+<circle data-nose-ring="0" cx="57" cy="42" r="10" opacity="0"/>
+<circle data-nose-ring="1" cx="57" cy="42" r="22" opacity="0"/>
+<circle data-nose-ring="2" cx="57" cy="42" r="34" opacity="0"/>
+</g>
+<circle class="rudolph-halo" cx="57" cy="42" r="17" fill="#ff493d" opacity="0"></circle>
+<circle class="rudolph-nose" cx="57" cy="42" r="8" fill="#4A3A36" stroke="#2A2220" stroke-width="2"></circle>
+<rect x="40" y="56" width="34" height="8" rx="4" fill="#B3262A"></rect>
+</svg>
+<div aria-hidden="true" style="position: absolute; left: 1190px; width: 1020px; top: 470px; height: 44px; background-color: #5A3418; background-image: repeating-linear-gradient(178deg, rgba(0,0,0,0.14) 0 2px, transparent 2px 9px); border-radius: 4px; box-shadow: inset 0 3px 0 rgba(255,220,170,0.15), 0 16px 24px rgba(0,0,0,0.5)"></div>
+<svg aria-hidden="true" viewBox="0 0 1020 90" style="position: absolute; left: 1190px; top: 490px; width: 1020px; height: 90px; overflow: visible">
+<path d="M0 10 Q127 60 255 16 Q382 60 510 16 Q637 60 765 16 Q892 60 1020 10" fill="none" stroke="#163A22" stroke-width="22" stroke-linecap="round"></path>
+<path d="M0 10 Q127 60 255 16 Q382 60 510 16 Q637 60 765 16 Q892 60 1020 10" fill="none" stroke="#24502F" stroke-width="14" stroke-linecap="round" stroke-dasharray="3 6"></path>
+<path d="M0 10 Q127 60 255 16 Q382 60 510 16 Q637 60 765 16 Q892 60 1020 10" fill="none" stroke="#3E8050" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 9"></path>
+<g transform="translate(32 29)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 0.00s"></ellipse></g>
+<g transform="translate(96 42)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 0.43s"></ellipse></g>
+<g transform="translate(159 44)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 0.86s"></ellipse></g>
+<g transform="translate(223 34)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 1.29s"></ellipse></g>
+<g transform="translate(287 34)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 1.72s"></ellipse></g>
+<g transform="translate(351 45)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 2.15s"></ellipse></g>
+<g transform="translate(414 45)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 0.18s"></ellipse></g>
+<g transform="translate(478 34)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 0.61s"></ellipse></g>
+<g transform="translate(542 34)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 1.04s"></ellipse></g>
+<g transform="translate(606 45)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 1.47s"></ellipse></g>
+<g transform="translate(669 45)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 1.90s"></ellipse></g>
+<g transform="translate(733 34)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 2.33s"></ellipse></g>
+<g transform="translate(797 34)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 0.36s"></ellipse></g>
+<g transform="translate(861 44)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 0.79s"></ellipse></g>
+<g transform="translate(924 42)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #F99D1B; fill: #F99D1B; animation-delay: 1.22s"></ellipse></g>
+<g transform="translate(988 29)"><rect x="-4" y="-2" width="8" height="8" rx="1.5" fill="#2A211B"></rect><ellipse class="bulb" cx="0" cy="14" rx="6" ry="9" style="color: #FFF7EA; fill: #FFF7EA; animation-delay: 1.65s"></ellipse></g>
+</svg>
+<div aria-hidden="true" style="position: absolute; left: 1186px; width: 1028px; top: 464px; height: 12px; background: #F4F7FB; border-radius: 10px 14px 3px 3px / 8px 10px 3px 3px; box-shadow: inset 0 -3px 0 rgba(160,180,210,0.4)"></div>
+<!-- maps cluster: hung row -->
+<div data-map-frame style="position: absolute; left: 1370px; top: 25px; width: 130px; transform: rotate(-1.5deg) scale(1.25); transform-origin: 50% 0">
+<svg aria-hidden="true" viewBox="0 0 100 40" preserveAspectRatio="none" style="position: absolute; left: 0; top: -30px; width: 100%; height: 34px; overflow: visible"><polyline points="20,42 50,2 80,42" fill="none" stroke="#1A120A" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline></svg><div aria-hidden="true" style="position: absolute; top: -33px; left: 50%; margin-left: -4px; width: 8px; height: 8px; border-radius: 50%; background: #6B5A44; box-shadow: 0 2px 3px rgba(0,0,0,0.6)"></div>
+<div style="position: relative; background: #2E1B0E; background-image: repeating-linear-gradient(100deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 6px); padding: 11px; border-radius: 2px; box-shadow: inset 0 0 0 1px #5A3A20, inset 0 0 0 2.5px #1C1008, 0 10px 18px rgba(0,0,0,0.45)"><div style="background: #EFE6D6; padding: 7px 7px 6px"><img class="map-photo" src="images/maps/megapolis.jpg" alt="Megapolis map" width="300" height="400" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: #2C323A"><div style="margin-top: 4px; text-align: center; color: #3A2712; font-family: Fraunces, Georgia, serif; font-style: italic; font-weight: 600; font-size: 12px">Megapolis</div></div></div></div>
+<div data-map-frame style="position: absolute; left: 1600px; top: 30px; width: 200px; transform: rotate(1deg) scale(1.25); transform-origin: 50% 0">
+<svg aria-hidden="true" viewBox="0 0 100 40" preserveAspectRatio="none" style="position: absolute; left: 0; top: -30px; width: 100%; height: 34px; overflow: visible"><polyline points="20,42 50,2 80,42" fill="none" stroke="#1A120A" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline></svg><div aria-hidden="true" style="position: absolute; top: -33px; left: 50%; margin-left: -4px; width: 8px; height: 8px; border-radius: 50%; background: #6B5A44; box-shadow: 0 2px 3px rgba(0,0,0,0.6)"></div>
+<div style="position: relative; background: #C9A374; background-image: repeating-linear-gradient(80deg, rgba(90,55,20,0.10) 0 1px, transparent 1px 5px); padding: 10px; border-radius: 2px; box-shadow: inset 0 0 0 1px #E6C99C, inset 0 0 0 2.5px #A57E4E, 0 10px 18px rgba(0,0,0,0.45)"><div style="background: #F7F0E2; padding: 7px 7px 6px"><img class="map-photo" src="images/maps/scarletts-landing.jpg" alt="Scarlett’s Landing map" width="400" height="300" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: #2C323A"><div style="margin-top: 4px; text-align: center; color: #3A2712; font-family: Fraunces, Georgia, serif; font-style: italic; font-weight: 600; font-size: 12px">Scarlett’s Landing</div></div></div></div>
+<div data-map-frame style="position: absolute; left: 1900px; top: 27px; width: 130px; transform: rotate(2deg) scale(1.25); transform-origin: 50% 0">
+<svg aria-hidden="true" viewBox="0 0 100 40" preserveAspectRatio="none" style="position: absolute; left: 0; top: -30px; width: 100%; height: 34px; overflow: visible"><polyline points="20,42 50,2 80,42" fill="none" stroke="#1A120A" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline></svg><div aria-hidden="true" style="position: absolute; top: -33px; left: 50%; margin-left: -4px; width: 8px; height: 8px; border-radius: 50%; background: #6B5A44; box-shadow: 0 2px 3px rgba(0,0,0,0.6)"></div>
+<div style="position: relative; background: #1F4A2C; padding: 10px; border-radius: 2px; box-shadow: inset 0 0 0 1.5px #3E7A4E, inset 0 0 0 3.5px #143220, inset 0 0 0 5px #C9A04A, 0 10px 18px rgba(0,0,0,0.45)"><div style="background: #F4EBDD; padding: 7px 7px 6px"><img class="map-photo" src="images/maps/yuletide.jpg" alt="Yuletide map" width="300" height="400" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; background: #2C323A"><div style="margin-top: 4px; text-align: center; color: #1F4A2C; font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase">Yuletide</div></div><svg aria-hidden="true" width="46" height="32" viewBox="0 0 64 44" style="position: absolute; left: 42px; top: -16px"><path d="M32 26 C14 0 -2 8 4 24 C8 34 22 32 32 26 Z" fill="#B3262A" stroke="#7A1418" stroke-width="1.5"></path><path d="M32 26 C50 0 66 8 60 24 C56 34 42 32 32 26 Z" fill="#B3262A" stroke="#7A1418" stroke-width="1.5"></path><circle cx="32" cy="26" r="6" fill="#B3262A" stroke="#7A1418" stroke-width="1.5"></circle></svg><div style="position: absolute; top: 24px; right: -18px; transform: rotate(12deg); background: #FFF1D8; color: #8E1F1B; border: 1.5px solid #8E1F1B; border-radius: 4px; padding: 1px 7px; font-size: 9px; font-weight: 800; letter-spacing: 0.14em; box-shadow: 0 3px 6px rgba(0,0,0,0.35)">NEW</div></div></div>
+<!-- maps cluster: standing on the mantel -->
+<div data-map-frame style="position: absolute; left: 1345px; bottom: 528px; width: 190px; transform: rotate(-2deg) scale(1.25); transform-origin: 50% 100%">
+<div aria-hidden="true" style="position: absolute; left: 11px; bottom: -6px; width: 167px; height: 12px; border-radius: 50%; background: rgba(0,0,0,0.55); filter: blur(5px)"></div>
+<div style="position: relative; background: #B8893A; padding: 11px; border-radius: 2px; box-shadow: inset 0 0 0 1.5px #E8C673, inset 0 0 0 4px #8E6424, inset 0 0 0 5.5px #D7AE58, inset 0 0 0 8px #A97C30, 0 10px 18px rgba(0,0,0,0.45)"><div style="background: #F4EBDD; padding: 7px 7px 6px"><img class="map-photo" src="images/maps/corpo.jpg" alt="Corpo map" width="400" height="300" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: #2C323A"><div style="margin: 5px auto 0; width: fit-content; background: #C9A04A; color: #2A1C08; font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; padding: 1px 7px">Corpo</div></div></div></div>
+<div data-map-frame style="position: absolute; left: 1622.5px; bottom: 528px; width: 155px; transform: rotate(1.6deg) scale(1.25); transform-origin: 50% 100%">
+<div aria-hidden="true" style="position: absolute; left: 7px; bottom: -6px; width: 106px; height: 12px; border-radius: 50%; background: rgba(0,0,0,0.55); filter: blur(5px)"></div>
+<div style="position: relative; background: #8E1F1B; padding: 9px; border-radius: 2px; box-shadow: inset 0 0 0 1.5px #C0463A, inset 0 0 0 4px #6A1410, 0 10px 18px rgba(0,0,0,0.45)"><div style="background: #F4EBDD; padding: 7px 7px 6px"><img class="map-photo" src="images/maps/ronin.jpg" alt="Ronin map" width="400" height="400" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; background: #2C323A"><div style="margin-top: 4px; text-align: center; color: #5E1512; font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase">Ronin</div></div></div></div>
+<div data-map-frame style="position: absolute; left: 1865px; bottom: 528px; width: 190px; transform: rotate(-1deg) scale(1.25); transform-origin: 50% 100%">
+<div aria-hidden="true" style="position: absolute; left: 11px; bottom: -6px; width: 167px; height: 12px; border-radius: 50%; background: rgba(0,0,0,0.55); filter: blur(5px)"></div>
+<div style="position: relative; background: #EADCC2; padding: 9px; border-radius: 2px; box-shadow: inset 0 0 0 1.5px #FFF6E6, inset 0 0 0 4px #CDBB98, 0 10px 18px rgba(0,0,0,0.45)"><div style="background: #FBF6EC; padding: 7px 7px 6px"><img class="map-photo" src="images/maps/merchants-square.jpg" alt="Merchant’s Square map" width="400" height="300" decoding="async" style="display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: #2C323A"><div style="margin-top: 5px; text-align: center; color: #4A3418; font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase">Merchant’s Square</div></div></div></div>
+<svg class="sportsmanship-stocking" data-stocking="GoodSport" aria-hidden="true" focusable="false" width="140" height="175" viewBox="0 0 160 200" style="left: 1275px; transform: rotate(-3deg)">
+<g class="stocking-fabric" transform="translate(148 0) scale(-1 1)">
+<circle cx="74" cy="4" r="3" fill="#352313" stroke="#B18B53" stroke-width="1"/>
+<path d="M68 17V7Q74 0 80 7V17" fill="none" stroke="#7A1418" stroke-width="4"/>
+<path class="stocking-leg" d="M45 36H103V134Q103 145 115 150L128 156Q144 164 136 176Q131 184 116 181L60 168Q45 165 45 150Z" fill="#B3262A" stroke="#7A1418" stroke-width="2.5"/>
+<path d="M52 55V145Q51 157 64 160L116 174" fill="none" stroke="#FFF4E0" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 4"/>
+<path d="M119 153Q143 162 135 175Q128 184 115 178L105 174Q119 167 119 153Z" fill="#F4EBDD"/>
+<path d="M53 62H95" stroke="#FFF4E0" stroke-opacity=".14" stroke-width="3"/>
+<rect class="stocking-cuff" x="16" y="14" width="116" height="36" rx="7" fill="#F4EBDD" stroke="#D6C8AF" stroke-width="1.5"/>
+<path d="M23 43H125" stroke="#C3AD8C" stroke-width="1" stroke-dasharray="2 3"/>
+</g>
+<text x="74" y="36" text-anchor="middle" fill="#7A1418">GoodSport</text>
+</svg>
+<svg class="sportsmanship-stocking" data-stocking="TeamPlayer" aria-hidden="true" focusable="false" width="140" height="175" viewBox="0 0 160 200" style="left: 1435px; transform: rotate(-2deg)">
+<g class="stocking-fabric" transform="translate(148 0) scale(-1 1)">
+<circle cx="74" cy="4" r="3" fill="#352313" stroke="#B18B53" stroke-width="1"/>
+<path d="M68 17V7Q74 0 80 7V17" fill="none" stroke="#123B1D" stroke-width="4"/>
+<path class="stocking-leg" d="M45 36H103V134Q103 145 115 150L128 156Q144 164 136 176Q131 184 116 181L60 168Q45 165 45 150Z" fill="#1F5A2E" stroke="#123B1D" stroke-width="2.5"/>
+<path d="M52 55V145Q51 157 64 160L116 174" fill="none" stroke="#FFF4E0" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 4"/>
+<path d="M119 153Q143 162 135 175Q128 184 115 178L105 174Q119 167 119 153Z" fill="#F4EBDD"/>
+<path d="M53 62H95" stroke="#FFF4E0" stroke-opacity=".14" stroke-width="3"/>
+<rect class="stocking-cuff" x="16" y="14" width="116" height="36" rx="7" fill="#F4EBDD" stroke="#D6C8AF" stroke-width="1.5"/>
+<path d="M23 43H125" stroke="#C3AD8C" stroke-width="1" stroke-dasharray="2 3"/>
+</g>
+<text x="74" y="36" text-anchor="middle" fill="#123B1D">TeamPlayer</text>
+</svg>
+<svg class="sportsmanship-stocking" data-stocking="HypeMan" aria-hidden="true" focusable="false" width="140" height="175" viewBox="0 0 160 200" style="left: 1875px; transform: rotate(2deg)">
+<g class="stocking-fabric">
+<circle cx="74" cy="4" r="3" fill="#352313" stroke="#B18B53" stroke-width="1"/>
+<path d="M68 17V7Q74 0 80 7V17" fill="none" stroke="#713021" stroke-width="4"/>
+<path class="stocking-leg" d="M45 36H103V134Q103 145 115 150L128 156Q144 164 136 176Q131 184 116 181L60 168Q45 165 45 150Z" fill="#A84730" stroke="#713021" stroke-width="2.5"/>
+<path d="M52 55V145Q51 157 64 160L116 174" fill="none" stroke="#FFF4E0" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 4"/>
+<path d="M119 153Q143 162 135 175Q128 184 115 178L105 174Q119 167 119 153Z" fill="#F4EBDD"/>
+<path d="M53 62H95" stroke="#FFF4E0" stroke-opacity=".14" stroke-width="3"/>
+<rect class="stocking-cuff" x="16" y="14" width="116" height="36" rx="7" fill="#F4EBDD" stroke="#D6C8AF" stroke-width="1.5"/>
+<path d="M23 43H125" stroke="#C3AD8C" stroke-width="1" stroke-dasharray="2 3"/>
+</g>
+<text x="74" y="36" text-anchor="middle" fill="#713021">HypeMan</text>
+</svg>
+<svg class="sportsmanship-stocking" data-stocking="GraciousRival" aria-hidden="true" focusable="false" width="140" height="175" viewBox="0 0 160 200" style="left: 2035px; transform: rotate(3deg)">
+<g class="stocking-fabric">
+<circle cx="74" cy="4" r="3" fill="#352313" stroke="#B18B53" stroke-width="1"/>
+<path d="M68 17V7Q74 0 80 7V17" fill="none" stroke="#183B4B" stroke-width="4"/>
+<path class="stocking-leg" d="M45 36H103V134Q103 145 115 150L128 156Q144 164 136 176Q131 184 116 181L60 168Q45 165 45 150Z" fill="#285568" stroke="#183B4B" stroke-width="2.5"/>
+<path d="M52 55V145Q51 157 64 160L116 174" fill="none" stroke="#FFF4E0" stroke-opacity=".35" stroke-width="1.5" stroke-dasharray="3 4"/>
+<path d="M119 153Q143 162 135 175Q128 184 115 178L105 174Q119 167 119 153Z" fill="#F4EBDD"/>
+<path d="M53 62H95" stroke="#FFF4E0" stroke-opacity=".14" stroke-width="3"/>
+<rect class="stocking-cuff" x="16" y="14" width="116" height="36" rx="7" fill="#F4EBDD" stroke="#D6C8AF" stroke-width="1.5"/>
+<path d="M23 43H125" stroke="#C3AD8C" stroke-width="1" stroke-dasharray="2 3"/>
+</g>
+<text x="74" y="36" text-anchor="middle" fill="#183B4B">GraciousRival</text>
+</svg>
+<div data-mantel-candle aria-hidden="true" style="position: absolute; left: 2110px; top: 402px; width: 24px; height: 70px; background: linear-gradient(90deg, #E9DCC4, #FFF7EA 40%, #D9C7A6); border-radius: 5px 5px 2px 2px">
+<div style="position: absolute; top: -7px; left: 11px; width: 2px; height: 9px; background: #2A1C10"></div>
+<div style="position: absolute; top: -52px; left: -38px; width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, rgba(253,191,104,0.35), transparent 65%)"></div>
+<div class="flame" style="position: absolute; top: -26px; left: 4px; width: 16px; height: 22px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 70%, #FFF7D6 0 25%, #FDBF68 50%, rgba(246,140,80,0) 75%)"></div>
+</div>
+<div data-mantel-candle aria-hidden="true" style="position: absolute; left: 2150px; top: 422px; width: 24px; height: 50px; background: linear-gradient(90deg, #A3242A, #C9363A 40%, #8A1C21); border-radius: 5px 5px 2px 2px">
+<div style="position: absolute; top: -7px; left: 11px; width: 2px; height: 9px; background: #2A1C10"></div>
+<div style="position: absolute; top: -52px; left: -38px; width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, rgba(253,191,104,0.35), transparent 65%)"></div>
+<div class="flame" style="position: absolute; top: -26px; left: 4px; width: 16px; height: 22px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 70%, #FFF7D6 0 25%, #FDBF68 50%, rgba(246,140,80,0) 75%)"></div>
+</div>
+<div data-mantel-candle aria-hidden="true" style="position: absolute; left: 2190px; top: 410px; width: 24px; height: 62px; background: linear-gradient(90deg, #E9DCC4, #FFF7EA 40%, #D9C7A6); border-radius: 5px 5px 2px 2px">
+<div style="position: absolute; top: -7px; left: 11px; width: 2px; height: 9px; background: #2A1C10"></div>
+<div style="position: absolute; top: -52px; left: -38px; width: 100px; height: 100px; border-radius: 50%; background: radial-gradient(circle, rgba(253,191,104,0.35), transparent 65%)"></div>
+<div class="flame" style="position: absolute; top: -26px; left: 4px; width: 16px; height: 22px; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(ellipse at 50% 70%, #FFF7D6 0 25%, #FDBF68 50%, rgba(246,140,80,0) 75%)"></div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none">
+<svg data-rule-focus aria-hidden="true" focusable="false" style="position: absolute; inset: 0; width: 100%; height: 100%; visibility: hidden"><path class="rule-focus-shadow"/><path class="rule-focus-line"/></svg>
+<div data-rule="friendly-fire" data-at="1780,694" style="position: absolute; left: 0; top: 0; opacity: 0; visibility: hidden; will-change: transform"><div style="position: absolute; left: 0; bottom: 10px; transform: translateX(-50%); white-space: nowrap; background: #FFF4E0; color: #2A1C10; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 14px rgba(0,0,0,0.35)">Friendly fire: off<span class="rule-new">New this year</span></div></div>
+<div data-rule="timer" data-at="1338,412" style="position: absolute; left: 0; top: 0; opacity: 0; visibility: hidden; will-change: transform"><div style="position: absolute; left: 0; bottom: 10px; transform: translateX(-50%); white-space: nowrap; background: #FFF4E0; color: #2A1C10; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 14px rgba(0,0,0,0.35)">8-minute games</div></div>
+<div data-rule="flags" data-at="1360,540" style="position: absolute; left: 0; top: 0; opacity: 0; visibility: hidden; will-change: transform"><div style="position: absolute; left: 0; bottom: 10px; transform: translateX(-50%); white-space: nowrap; background: #FFF4E0; color: #2A1C10; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 14px rgba(0,0,0,0.35)">Unlimited flag captures</div></div>
+<div data-rule="radar" data-at="2107,704" style="position: absolute; left: 0; top: 0; opacity: 0; visibility: hidden; will-change: transform"><div style="position: absolute; left: 0; bottom: 10px; transform: translateX(-50%); white-space: nowrap; background: #FFF4E0; color: #2A1C10; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 14px rgba(0,0,0,0.35)">Radar: off</div></div>
+<div data-rule="chair" data-at="2420,640" style="position: absolute; left: 0; top: 0; opacity: 0; visibility: hidden; will-change: transform"><div style="position: absolute; left: 0; bottom: 10px; transform: translateX(-50%); white-space: nowrap; background: #FFF4E0; color: #2A1C10; font-weight: 800; font-size: 15px; padding: 6px 12px; border-radius: 999px; box-shadow: 0 6px 14px rgba(0,0,0,0.35)">Come and go as you please</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="visually-hidden" aria-labelledby="maps-title">
+<h2 class="section-title" id="maps-title">The maps</h2>
+<ul role="list">
+<li>Corpo</li>
+<li>Megapolis</li>
+<li>Merchant’s Square</li>
+<li>Ronin</li>
+<li>Scarlett’s Landing</li>
+<li>Yuletide (new)</li>
+</ul>
+</section>
+<details class="rule-reference" id="house-rules">
+<summary><h2 class="rule-reference__title">Read all house rules</h2></summary>
+<ol>
+<li id="rule-timer">8-minute games.</li>
+<li id="rule-flags">Unlimited flag captures.<br>No equipment use while carrying the flag.</li>
+<li id="rule-friendly-fire">Friendly fire: off. <strong>New this year.</strong></li>
+<li id="rule-radar">Radar: off.</li>
+<li id="rule-chair">Come and go as you please. Use <code>/set-status idle</code> to sit out.</li>
+</ol>
+</details>
+<section class="visually-hidden" aria-labelledby="prizes-title">
+<h2 class="section-title" id="prizes-title">Prizes</h2>
+<ul role="list">
+<li>1st place: $50</li>
+<li>2nd place: $25</li>
+<li>3rd place: $10</li>
+</ul>
+<p>Plus $1 bonus awards.</p>
+<p>Play 5 or more games to qualify.</p>
+</section>
+<section class="visually-hidden" aria-labelledby="previous-winner-title">
+<h2 id="previous-winner-title">2025 Husky Holiday champion</h2>
+<p>2025: Victory is BACK, +17 flag differential. 2026: Your name here. The next winner has not been crowned.</p>
+</section>
+
+<div class="wrapper flow content-group">
+
+<!-- VOLUNTEER -->
+<section class="panel sidebar volunteer" id="volunteer" aria-labelledby="volunteer-title">
+<svg class="volunteer__tally" aria-hidden="true" width="120" height="110" viewBox="0 0 120 110">
+<defs>
+<mask id="tally-write-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="110">
+<path class="tally__reveal" d="M8 94 Q58 60 110 16" pathLength="1" fill="none" stroke="white" stroke-width="16" stroke-linecap="round"></path>
+</mask>
+</defs>
+<g fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round">
+<path d="M16 14 Q19 52 15 96"></path>
+<path d="M44 10 Q41 50 45 98"></path>
+<path d="M72 14 Q75 56 70 95"></path>
+<path d="M100 9 Q97 48 101 97"></path>
+<path class="tally__diagonal" d="M8 94 Q58 60 110 16" mask="url(#tally-write-mask)"></path>
+</g>
+</svg>
+<div class="flow volunteer__copy">
+<h2 class="section-title section-title--small" id="volunteer-title">Help us keep score</h2>
+<p>Not literally. But we do need three or four people to sign into the Xbox app and authorize the Husky Bot so every match gets counted. You'll need to arrive half an hour early and stay for the whole night.</p>
+<a class="button button--light" href="https://discord.gg/SuCNdEVJbf">Message G on Discord</a>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="panel flow faq" id="faq" aria-labelledby="faq-title">
+<h2 class="section-title" id="faq-title">FAQ</h2>
+<div class="faq__items">
+<details><summary>What's new for v2?</summary><p>We're planning better stat tracking and team shuffling, all-new secret bonus awards, and a pick-the-winner mini-game for spectators. Overall, less waiting, more playing, and more transparency.</p></details>
+<details><summary>Do I need to be good at Halo?</summary><p>No. Teams are balanced every game, so mixed skill levels are welcome. Plus, there are plenty of bonus categories rewarding different playstyles and achievements.</p></details>
+<details><summary>What if we have too many people?</summary><p>This year, we'll be ready for 5-on-5 matches if more than 12 people join. Everyone will play in the majority of games. Each round, the bot will rotate players in and balance teams, taking into account which maps they've played and how recently they've sat out.</p></details>
+<details><summary>How do I get Halo Infinite?</summary><p>It’s free on the Xbox Store, Steam, or the Xbox app on PC. Sign in the day before so updates are done by game time.</p></details>
+<details><summary>Can I join late or leave early?</summary><p>Yes. Come and go whenever you need. Play at least 5 games to be eligible for prizes.</p></details>
+<details><summary>I’m on Xbox. How does Discord voice work?</summary><p>Link Discord through the Xbox app on your phone, then join the Main Lobby from your console.</p></details>
+<details><summary>Will there be a practice session?</summary><p>If there’s interest. Say so in the Discord.</p></details>
+</div>
+</section>
+
+</div>
+</main>
+
+<!-- Main scrolls over this sticky footer without a scripted transform. -->
+<footer class="site-footer" aria-labelledby="footer-title">
+<div class="wrapper flow site-footer__inner">
+<h2 class="site-footer__title" id="footer-title">Husky Holiday 2026<br><span>Good games. Good company.</span></h2>
+<div class="repel site-footer__links">
+<div class="cluster site-footer__actions">
+<a class="button button--accent" href="https://app.rallly.co/poll/H9KAVvkKt5yb">Vote on the date</a>
+<a class="button" href="https://discord.gg/SuCNdEVJbf">Discord</a>
+<a class="button" href="https://twitch.tv/huskyholiday">Twitch</a>
+</div>
+<p class="site-footer__credit">Back for another round · Hosted by G</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

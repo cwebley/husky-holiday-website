@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="120" viewBox="0 0 360 120">
+  <defs>
+    <linearGradient id="receiver" x2="0" y2="1"><stop stop-color="#78867B"/><stop offset=".45" stop-color="#4D6058"/><stop offset="1" stop-color="#2E423C"/></linearGradient>
+    <linearGradient id="paper" x2="0" y2="1"><stop stop-color="#F3E8CC"/><stop offset="1" stop-color="#CDBD96"/></linearGradient>
+    <pattern id="stars" width="20" height="18" patternUnits="userSpaceOnUse"><rect width="20" height="18" fill="url(#paper)"/><path d="M10 4 11 7 14 8 11 9 10 12 9 9 6 8 9 7Z" fill="#A24843" opacity=".7"/></pattern>
+  </defs>
+  <ellipse cx="177" cy="111" rx="163" ry="6" fill="#1E170F" opacity=".25"/>
+  <g stroke="#263A33" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Bullpup magazine behind the pistol grip, not ahead of it. -->
+    <path d="M81 67 108 67 107 101 81 101Z" fill="#45594C"/>
+    <path d="M81 96 108 96 110 102 80 102Z" fill="#22372F"/>
+    <path d="M88 75 87 91M99 75 98 91" stroke="#84917A" stroke-width="1.5"/>
+    <path d="M140 70 158 73 153 102 137 99 134 93Z" fill="#364D43"/>
+    <path d="M143 82 152 84M141 89 150 91" stroke="#748574" stroke-width="1.5"/>
+    <path d="M158 72 184 70 178 89 155 90" fill="none" stroke-width="4"/>
+    <path d="M165 73 165 80 161 82" fill="none" stroke="#A6AC8C" stroke-width="2"/>
+    <!-- Carry handle is open beneath the scope. -->
+    <path d="M111 46 125 26 206 26 225 47 213 49 201 36 133 36 126 48Z" fill="#425A50"/>
+    <path d="M133 29 201 29" fill="none" stroke="#A0A98B" stroke-width="1.5"/>
+    <path d="M146 25 146 20 158 20 158 25M183 25 183 20 193 20 193 25" fill="#263A33"/>
+    <path d="M130 12 142 9 190 9 202 13 202 21 190 24 142 24 130 21Z" fill="#536B60"/>
+    <path d="M128 11 139 11 139 23 128 23Z" fill="#334B42"/>
+    <path d="M193 10 205 10 205 23 193 23Z" fill="#334B42"/>
+    <path d="M199 13 203 13 203 20 199 20Z" fill="#B9C8AA" stroke="none"/>
+    <path d="M147 12 183 12" stroke="#A8B29A" stroke-width="1.5"/>
+    <path d="M167 8 167 4 176 4 176 9" fill="#566C5B" stroke-width="1.5"/>
+    <!-- Short stock, long vented fore-end and exposed muzzle. -->
+    <path d="M19 43 48 41 61 48 120 43 219 43 237 48 275 49 284 58 281 72 232 75 215 82 126 77 65 76 49 86 20 83Z" fill="url(#receiver)"/>
+    <path d="M18 42 24 43 24 84 17 85 14 79 14 48Z" fill="#23382F"/>
+    <path d="M45 46 61 53 116 49 207 49M62 70 122 70 128 74" fill="none" stroke="#A2AA8C" stroke-width="1.5"/>
+    <path d="M120 48 128 58 128 72 213 77 229 69 276 68 279 57" fill="none" stroke="#283E35" stroke-width="2"/>
+    <path d="M282 55 326 55 326 66 281 66Z" fill="#4E6358"/>
+    <path d="M321 52 341 52 344 57 344 67 321 69Z" fill="#2C443B"/>
+    <path d="M327 57 338 57M327 63 338 63" stroke="#95A088" stroke-width="1.5"/>
+    <path d="M271 49 272 41 278 41 280 50" fill="#2E463B"/>
+    <path d="M222 54 229 54 229 61 222 61ZM237 54 244 54 244 61 237 61ZM252 54 259 54 259 61 252 61Z" fill="#20382E" stroke-width="1"/>
+    <path d="M133 53 149 53 149 62 133 62Z" fill="#273F35" stroke-width="1"/>
+    <path d="M137 56 145 56" stroke="#C4D5B8" stroke-width="1.5"/>
+    <circle cx="118" cy="59" r="2.5" fill="#C2C4A4" stroke-width="1"/>
+    <!-- Two fitted paper sleeves keep the rifle's profile readable. -->
+    <path d="M26 43 47 42 61 48 69 48 69 76 49 86 26 84Z" fill="url(#stars)" stroke="#A19069" stroke-width="1.4"/>
+    <path d="M29 48 47 47 60 53 65 52M30 79 47 80 62 73" fill="none" stroke="#B7A57E" stroke-width="1"/>
+    <path d="M178 44 208 44 217 47 217 79 207 82 178 79Z" fill="url(#stars)" stroke="#A19069" stroke-width="1.4"/>
+    <path d="M188 44 197 44 197 81 188 80Z" fill="#A6333D" stroke="#752832" stroke-width="1.2"/>
+    <path d="M39 43 46 43 46 84 39 84Z" fill="#A6333D" stroke="#752832" stroke-width="1.2"/>
+    <path d="M190 47 190 76M41 47 41 79" fill="none" stroke="#D8786E" stroke-width="1"/>
+  </g>
+  <g fill="#B63C47" stroke="#762730" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M191 44C174 22 157 28 164 41 168 49 181 49 191 44ZM194 44C203 19 222 22 220 35 218 46 205 48 194 44Z"/>
+    <path d="M189 45 177 61 176 52 169 54 183 42M196 45 207 59 207 51 216 52 202 42"/>
+    <path d="M187 40Q193 37 199 40L199 47Q194 51 188 47Z" fill="#D26966"/>
+  </g>
+  <path d="M169 34Q176 33 185 41M214 29Q205 29 200 39" fill="none" stroke="#E7A08D" stroke-width="1.3" stroke-linecap="round"/>
+</svg>

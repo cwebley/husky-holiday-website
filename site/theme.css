@@ -1,0 +1,83 @@
+/* Project tokens extend Swatchkit's foundations without editing the vendor.
+   Variable fonts: google/fonts, SIL Open Font License, licenses in fonts/. */
+@font-face {
+  font-family: Fraunces;
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/fraunces-variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: Fraunces;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("fonts/fraunces-italic-variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url("fonts/nunito-variable.ttf") format("truetype");
+}
+@font-face {
+  font-family: Nunito;
+  font-style: italic;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url("fonts/nunito-italic-variable.ttf") format("truetype");
+}
+:root {
+  /* @swatchkit colors "Cabin palette" */
+  --color-ground: #12354e;
+  --color-dark: #111314;
+  --color-dark-glare: #0b1110;
+  --color-light: #fff7ea;
+  --color-mid: rgb(255 247 234 / 74%);
+  --color-primary: #f99d1b;
+  --color-glass: rgb(6 22 34 / 55%);
+  --color-glow: rgb(249 157 27 / 25%);
+  /* @swatchkit end */
+
+  /* @swatchkit fonts "Fonts" */
+  --font-base: Nunito, system-ui, sans-serif;
+  --font-heading: Fraunces, Georgia, serif;
+  --font-mono: ui-monospace, monospace;
+  /* @swatchkit end */
+
+  /* Shared document and artwork aliases. Keep scene colors stable. */
+  --ground: var(--color-ground);
+  --glass: var(--color-glass);
+  --glow: var(--color-glow);
+  --muted: var(--color-mid);
+  --accent: var(--color-primary);
+  --accent-2: var(--color-primary);
+  --on-accent: var(--color-dark);
+  --bulb-1: var(--color-primary);
+  --bulb-2: var(--color-light);
+  --bulb-3: var(--color-primary);
+  --bulb-4: var(--color-light);
+
+  /* Display extension of Swatchkit's fluid type formula. Keep the cabin's
+     expressive wordmark without changing the ordinary heading scale. */
+  --fluid-display-min: 88;
+  --fluid-display-max: 256;
+  /* @swatchkit text-sizes "Display type" */
+  --step-display: clamp(
+    calc(var(--fluid-display-min) / var(--root-base) * 1rem),
+    calc(
+      (var(--fluid-display-min) - var(--vw-min) *
+        (var(--fluid-display-max) - var(--fluid-display-min)) /
+        (var(--vw-max) - var(--vw-min))) / var(--root-base) * 1rem
+      + (var(--fluid-display-max) - var(--fluid-display-min)) /
+        (var(--vw-max) - var(--vw-min)) * 100vw
+    ),
+    calc(var(--fluid-display-max) / var(--root-base) * 1rem)
+  );
+  /* @swatchkit end */
+
+  --gutter: var(--space-s-l);
+  --leading-standard: 1.6;
+  --leading-fine: 1.1;
+}

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="108" height="66" viewBox="0 0 108 66">
+<defs>
+<linearGradient id="shell" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#BA9DC8"/><stop offset=".4" stop-color="#91618E"/><stop offset=".75" stop-color="#69476E"/><stop offset="1" stop-color="#3B304B"/></linearGradient>
+<linearGradient id="wing" x2=".3" y2="1"><stop stop-color="#C598C5"/><stop offset=".5" stop-color="#925E98"/><stop offset="1" stop-color="#49344F"/></linearGradient>
+<linearGradient id="gun" x2="0" y2="1"><stop stop-color="#A0A4AB"/><stop offset=".4" stop-color="#545C65"/><stop offset="1" stop-color="#242D38"/></linearGradient>
+<radialGradient id="hover"><stop stop-color="#9DEFFF" stop-opacity=".6"/><stop offset="1" stop-color="#51CDF5" stop-opacity="0"/></radialGradient>
+</defs>
+<!-- Open rear seat, long central cowling, two separate forward wings and guns. -->
+<ellipse cx="56" cy="61" rx="49" ry="4" fill="#120E1B" opacity=".45"/>
+<ellipse cx="60" cy="56" rx="44" ry="9" fill="url(#hover)"/>
+<!-- Far forward wing. -->
+<path d="M66 25 Q77 14 88 20 Q96 25 102 36 L92 36 L78 32 L66 34 Z" fill="url(#wing)" stroke="#382B43" stroke-width="2"/>
+<path d="M82 20 L85 28 L97 33" fill="none" stroke="#603B62" stroke-width="1.5"/>
+<path d="M94 29 L105 32 L105 37 L94 36 L89 33 Z" fill="url(#gun)" stroke="#30313C" stroke-width="1.5"/>
+<path d="M103 33 L105 34" stroke="#91E4EF" stroke-width="1.5"/>
+<!-- Exposed frame and low saddle at the back. -->
+<path d="M10 31 L30 25 L47 30 L56 43 L38 49 L14 44 Z" fill="#292733" stroke="#1F232D" stroke-width="2"/>
+<path d="M8 33 Q1 24 7 12 Q12 5 22 9 L29 15 L24 32 L18 35 Z" fill="url(#shell)" stroke="#372C42" stroke-width="2"/>
+<path d="M10 16 Q14 10 18 15 L22 28 L16 31 L11 25 Z" fill="#3C3745" stroke="#84778C" stroke-width="1.5"/>
+<path d="M13 17 L18 21 M14 21 L19 25" stroke="#A197A7" stroke-width="1.2"/>
+<path d="M20 32 Q28 28 36 32 L40 37 L27 40 L19 37 Z" fill="#171E25" stroke="#817888" stroke-width="1.5"/>
+<path d="M32 29 L37 21 L43 22 M36 25 L41 27" fill="none" stroke="#92949E" stroke-width="2" stroke-linecap="round"/>
+<!-- Near engine disc under the cowling. -->
+<circle cx="47" cy="43" r="10" fill="url(#gun)" stroke="#252B35" stroke-width="2"/>
+<circle cx="47" cy="43" r="6" fill="#353541" stroke="#7E7D8A" stroke-width="1.5"/>
+<path d="M40 40 L44 40 M47 35 V39 M51 46 L54 49" stroke="#B1A9B8" stroke-width="2"/>
+<!-- Tall single central shell sweeps down to a sharp forward beak. -->
+<path d="M37 24 Q35 11 46 10 Q63 10 76 22 Q89 33 98 45 L87 46 Q72 39 61 35 Q51 32 41 34 Z" fill="url(#shell)" stroke="#382B43" stroke-width="2"/>
+<path d="M43 17 Q52 13 63 20 L77 30" fill="none" stroke="#C9A8CD" stroke-width="2" opacity=".85"/>
+<!-- Recessed silver strip on top of the cowling. -->
+<path d="M46 17 Q55 15 66 23 L74 30 L68 30 L52 23 L45 21 Z" fill="#433349" stroke="#A07BA7" stroke-width="1.2"/>
+<path d="M50 18 L59 21 L68 27" fill="none" stroke="#B6B3BE" stroke-width="3" stroke-linecap="round"/>
+<path d="M58 19 L57 23 M65 23 L63 27" stroke="#665B70" stroke-width="1.3"/>
+<path d="M66 30 L72 31 L76 35 L69 35 Z" fill="#302638" stroke="#B18CBA" stroke-width="1"/>
+<!-- Near forward wing remains distinct from the pointed center body. -->
+<path d="M57 44 Q66 36 75 41 Q87 46 104 55 L99 63 Q82 60 72 53 L58 54 L52 50 Z" fill="url(#wing)" stroke="#382B43" stroke-width="2"/>
+<path d="M67 42 L73 48 L80 50 L88 56" fill="none" stroke="#553352" stroke-width="1.4"/>
+<path d="M60 45 L65 47 L66 51 M78 44 L82 49" fill="none" stroke="#D0A0D1" stroke-width="1.5"/>
+<!-- Twin guns project forward of the armor. -->
+<path d="M77 48 L89 49 L105 54 L104 59 L91 57 L77 53 Z" fill="url(#gun)" stroke="#2C2D37" stroke-width="1.5"/>
+<path d="M84 49 L96 52 M83 53 L96 55" stroke="#B4AFBC" stroke-width="1.2"/>
+<path d="M103 54 L106 55 L105 59 L102 58 Z" fill="#292E39"/>
+<path d="M104 55 L105 56" stroke="#99EBF2" stroke-width="1.5"/>
+<!-- Subtle Covenant-red markings on the wing tips. -->
+<path d="M93 56 Q98 56 99 59 M90 55 L94 59" fill="none" stroke="#D66C8F" stroke-width="1.3"/>
+<path d="M89 25 L93 28" stroke="#D66C8F" stroke-width="1.3"/>
+</svg>

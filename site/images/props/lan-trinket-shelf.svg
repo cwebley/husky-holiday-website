@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="240" viewBox="0 0 520 240">
+<defs>
+  <linearGradient id="oak" x2="0" y2="1"><stop stop-color="#AA7C46"/><stop offset=".3" stop-color="#78532C"/><stop offset="1" stop-color="#49301B"/></linearGradient>
+  <linearGradient id="gold" x2="1" y2="0"><stop stop-color="#946B2F"/><stop offset=".5" stop-color="#F0D588"/><stop offset="1" stop-color="#AE8139"/></linearGradient>
+  <linearGradient id="visor" x2="0" y2="1"><stop stop-color="#FFE093"/><stop offset=".4" stop-color="#CA9B38"/><stop offset="1" stop-color="#80551E"/></linearGradient>
+</defs>
+<!-- Shelf shadow and forged brackets. -->
+<path d="M23 170H500V192H23Z" fill="#150E09" opacity=".35"/>
+<g fill="none" stroke="#211B13" stroke-width="9" stroke-linejoin="round"><path d="M58 172V228L114 172M413 172V228L469 172"/></g>
+<g fill="#826C43"><circle cx="58" cy="190" r="3"/><circle cx="58" cy="221" r="3"/><circle cx="413" cy="190" r="3"/><circle cx="413" cy="221" r="3"/></g>
+<!-- Translucent Xbox cases with molded edges, platform bands and distinct spine art. -->
+<g data-shelf-item="games" transform="translate(333 54)" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle" dominant-baseline="central">
+  <g data-game-case="Halo: Combat Evolved">
+    <rect width="20" height="114" rx="2" fill="#4C8D39" stroke="#193C24" stroke-width="1.5"/>
+    <path d="M2 3V111M18 3V111" stroke="#95BF65" stroke-opacity=".6" stroke-width=".8"/>
+    <rect x="3" y="5" width="14" height="13" rx="1" fill="#193328"/>
+    <text class="game-platform" x="10" y="11.5" font-size="4.1" fill="#B8D585">XBOX</text>
+    <rect x="3" y="21" width="14" height="82" fill="#DCE4CE"/>
+    <path d="M4 23L16 39M4 92L16 102" stroke="#7C9990" stroke-opacity=".45" stroke-width="2"/>
+    <text class="game-title" x="10" y="62" transform="rotate(90 10 62)" font-size="6" fill="#203F38">Halo: Combat Evolved</text>
+    <rect x="7" y="106" width="6" height="5" fill="#EAE6D3"/>
+    <path d="M9 107V110M11 107V110" stroke="#344131" stroke-width=".7"/>
+  </g>
+  <g data-game-case="Halo 2" transform="translate(22 4)">
+    <rect width="20" height="110" rx="2" fill="#579042" stroke="#193C24" stroke-width="1.5"/>
+    <path d="M2 3V107M18 3V107" stroke="#A0C879" stroke-opacity=".55" stroke-width=".8"/>
+    <rect x="3" y="5" width="14" height="13" rx="1" fill="#193328"/>
+    <text class="game-platform" x="10" y="11.5" font-size="4.1" fill="#B8D585">XBOX</text>
+    <rect x="3" y="21" width="14" height="78" fill="#D9C48F"/>
+    <path d="M4 23L16 45M4 77L16 98" stroke="#9A8859" stroke-opacity=".5" stroke-width="3"/>
+    <text class="game-title" x="10" y="60" transform="rotate(90 10 60)" font-family="Georgia,serif" font-size="8" fill="#344434">Halo 2</text>
+    <rect x="7" y="102" width="6" height="5" fill="#EAE6D3"/>
+    <path d="M9 103V106M11 103V106" stroke="#344131" stroke-width=".7"/>
+  </g>
+  <g data-game-case="Fuzion Frenzy" transform="translate(44 0)">
+    <rect width="21" height="114" rx="2" fill="#438234" stroke="#193C24" stroke-width="1.5"/>
+    <path d="M2 3V111M19 3V111" stroke="#9CC775" stroke-opacity=".55" stroke-width=".8"/>
+    <rect x="3" y="5" width="15" height="13" rx="1" fill="#193328"/>
+    <text class="game-platform" x="10.5" y="11.5" font-size="4.1" fill="#B8D585">XBOX</text>
+    <rect x="3" y="21" width="15" height="82" fill="#443B57"/>
+    <path d="M4 23L17 44M4 80L17 102" stroke="#8E565C" stroke-width="2"/>
+    <text class="game-title" x="10.5" y="62" transform="rotate(90 10.5 62)" font-size="6.8" fill="#F5DA79">Fuzion Frenzy</text>
+    <rect x="7.5" y="106" width="6" height="5" fill="#EAE6D3"/>
+    <path d="M9.5 107V110M11.5 107V110" stroke="#344131" stroke-width=".7"/>
+  </g>
+  <g data-game-case="Soulcalibur II" transform="translate(68 6) rotate(-6)">
+    <rect width="19" height="108" rx="2" fill="#63954C" stroke="#193C24" stroke-width="1.5"/>
+    <path d="M2 3V105M17 3V105" stroke="#B1D38B" stroke-opacity=".6" stroke-width=".8"/>
+    <rect x="3" y="5" width="13" height="13" rx="1" fill="#193328"/>
+    <text class="game-platform" x="9.5" y="11.5" font-size="4" fill="#B8D585">XBOX</text>
+    <rect x="3" y="21" width="13" height="76" fill="#304451"/>
+    <path d="M4 22L15 43M4 76L15 96" stroke="#719299" stroke-width="1.5"/>
+    <text class="game-title" x="9.5" y="59" transform="rotate(90 9.5 59)" font-size="6.4" fill="#F0DFC1">Soulcalibur II</text>
+    <rect x="6.5" y="100" width="6" height="5" fill="#EAE6D3"/>
+    <path d="M8.5 101V104M10.5 101V104" stroke="#344131" stroke-width=".7"/>
+  </g>
+</g>
+<!-- Little gold four-player trophy. -->
+<g data-shelf-item="trophy" transform="translate(135 58)">
+  <path d="M9 17H0Q-7 17-4 34Q-1 48 15 47M46 17H56Q64 17 61 34Q58 48 42 47" fill="none" stroke="#B8944E" stroke-width="6"/>
+  <path d="M7 8H49L45 42Q42 58 28 60Q13 58 11 42Z" fill="url(#gold)" stroke="#8A652F" stroke-width="2"/>
+  <path d="M28 59V90M15 90H41" stroke="#C6A052" stroke-width="7"/>
+  <!-- Classic MLG-style tilted controller and looped cable, engraved in pale gold. -->
+  <g data-trophy-emblem="controller" transform="translate(11 17) scale(.19)">
+    <path d="M103 0Q106 0 107 4C120 12 153 51 169 68Q181 87 167 91C155 96 142 78 117 68Q112 65 109 70C104 81 98 78 88 74L74 81Q75 98 64 101Q60 103 55 102Q49 102 50 119L51 141Q54 159 40 160Q30 160 24 146C14 121 8 100 2 78Q-2 66 1 61Q-4 57 6 51L17 42Q21 39 25 43L44 36L56 29L77 15Q78 8 84 6L97 0Z" fill="#FFF0B5" stroke="#A17B36" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M56 29C47 22 35 29 26 24C17 18 37 6 59 0" fill="none" stroke="#FFF0B5" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <rect x="8" y="94" width="40" height="16" rx="2" fill="#38271A"/><rect x="18" y="98" width="20" height="7" rx="1" fill="#BC9C5A"/>
+</g>
+<!-- Collectible Spartan helmet on a display stand. -->
+<g data-shelf-item="chief" transform="translate(223 64)">
+  <ellipse cx="40" cy="100" rx="41" ry="6" fill="#201A12"/>
+  <path d="M33 77H48V97H33Z" fill="#262D27"/><rect x="10" y="96" width="62" height="8" rx="3" fill="#30332A"/>
+  <path d="M9 36L18 12 35 2H51L68 15 76 39 71 66 59 82H25L10 64Z" fill="#52684B" stroke="#23382B" stroke-width="3"/>
+  <path d="M18 17L30 12 36 24H53L58 13 66 22 70 34H14Z" fill="#74805B"/>
+  <path d="M13 36L32 30H56L73 38 68 56 51 63H32L16 55Z" fill="url(#visor)" stroke="#29382C" stroke-width="4"/>
+  <path d="M23 39L38 35H58" fill="none" stroke="#FFEBAB" stroke-width="3"/>
+  <path d="M18 61L30 67V77M65 61L56 67V78M36 69H49V82" fill="none" stroke="#2D4031" stroke-width="5"/>
+  <path d="M6 40V61M77 39V60" stroke="#7E8D63" stroke-width="7"/>
+</g>
+<!-- Snow globe, with a tiny ringworld in the snow. -->
+<g data-shelf-item="snow-globe" transform="translate(30 76)">
+  <circle cx="32" cy="36" r="32" fill="#8ABAC0" fill-opacity=".17" stroke="#93B7AE" stroke-width="2"/>
+  <ellipse cx="32" cy="33" rx="9" ry="23" transform="rotate(25 32 33)" fill="none" stroke="#B5D7CF" stroke-width="3"/>
+  <path d="M6 53Q32 43 59 53L55 59H10Z" fill="#E6DEBE"/>
+  <g fill="#E8E8D4"><circle cx="17" cy="28" r="2"/><circle cx="44" cy="17" r="1.5"/><circle cx="51" cy="39" r="2"/><circle cx="24" cy="46" r="1.5"/></g>
+  <path d="M12 13Q4 21 6 30" fill="none" stroke="#E4EEE1" stroke-opacity=".5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M12 64H53L59 88H6Z" fill="#80352B" stroke="#49251C" stroke-width="2"/>
+  <rect x="16" y="72" width="32" height="9" rx="2" fill="#C4A15B"/>
+</g>
+<!-- Trailing plant in a festive ceramic pot. -->
+<g transform="translate(436 98)">
+  <path d="M6 34H49L43 70H12Z" fill="#B1513D" stroke="#713629" stroke-width="2"/><path d="M8 40H47" stroke="#D9BA81" stroke-width="4"/>
+  <g fill="none" stroke="#315436" stroke-width="4"><path d="M27 35V-8M27 17Q0-3-3 17M28 23Q58 2 61 30Q65 62 63 89Q60 122 79 132"/></g>
+  <g fill="#4C7850" stroke="#264A30" stroke-width="1"><ellipse cx="18" cy="-3" rx="13" ry="6" transform="rotate(28 18 -3)"/><ellipse cx="36" cy="5" rx="13" ry="6" transform="rotate(-30 36 5)"/><ellipse cx="5" cy="14" rx="13" ry="6" transform="rotate(28 5 14)"/><ellipse cx="51" cy="24" rx="13" ry="6" transform="rotate(-25 51 24)"/><ellipse cx="67" cy="52" rx="12" ry="6" transform="rotate(30 67 52)"/><ellipse cx="55" cy="77" rx="12" ry="6" transform="rotate(-28 55 77)"/><ellipse cx="67" cy="103" rx="12" ry="6" transform="rotate(35 67 103)"/><ellipse cx="76" cy="124" rx="12" ry="6" transform="rotate(25 76 124)"/></g>
+</g>
+<path d="M12 168H502L512 175H2Z" fill="#AC804B" stroke="#58391F" stroke-width="2"/>
+<rect x="2" y="175" width="510" height="15" rx="3" fill="url(#oak)" stroke="#4B301B" stroke-width="2"/>
+<path d="M9 179H505" stroke="#CC9F64" stroke-opacity=".4" stroke-width="2"/>
+</svg>

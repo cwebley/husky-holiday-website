@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="140" viewBox="0 0 330 210">
+<defs>
+  <linearGradient id="shell" x2=".3" y2="1"><stop stop-color="#A28EBB"/><stop offset=".4" stop-color="#675480"/><stop offset="1" stop-color="#342D50"/></linearGradient>
+  <linearGradient id="crystal" x2="1" y2=".3"><stop stop-color="#8C306C"/><stop offset=".45" stop-color="#F6A9DC"/><stop offset=".7" stop-color="#D75BAE"/><stop offset="1" stop-color="#893370"/></linearGradient>
+  <pattern id="paper" width="23" height="23" patternUnits="userSpaceOnUse"><rect width="23" height="23" fill="#315D46"/><path d="M11 4L13 9 18 10 14 13 15 18 11 15 7 18 8 13 4 10 9 9Z" fill="#D5B963" opacity=".8"/></pattern>
+</defs>
+<!-- Tiny wall hooks support the wrapped weapon, not a floating gift. -->
+<path d="M78 120V148Q78 156 91 156M260 109V139Q260 149 249 149" fill="none" stroke="#2B2018" stroke-width="8" stroke-linecap="round"/>
+<path d="M78 123V148Q78 152 90 152M260 112V139Q260 145 249 145" fill="none" stroke="#A48251" stroke-width="4" stroke-linecap="round"/>
+<!-- Covenant grip and open trigger guard. -->
+<path d="M122 111L169 121 157 184Q147 199 119 193L105 181Z" fill="#302B42" stroke="#211F32" stroke-width="4"/>
+<path d="M120 139L144 147 134 180 118 177Z" fill="#5D4B6E"/>
+<path d="M165 122Q214 120 221 145Q213 179 160 172L164 158Q195 163 199 145L165 141Z" fill="#514362" stroke="#282438" stroke-width="4"/>
+<path d="M176 127L179 148" stroke="#B19CB7" stroke-width="5" stroke-linecap="round"/>
+<!-- Heavy purple shell with the characteristic pink crystal bank above it. -->
+<path d="M34 108Q42 78 82 69L137 55Q193 50 243 72L288 105 303 129 277 143 235 130 183 140 121 129 83 139 48 132Z" fill="url(#shell)" stroke="#27243C" stroke-width="4"/>
+<path d="M40 108L84 89 137 78Q203 70 246 91L282 112 244 113 211 103 164 111 127 101 77 116Z" fill="#AA91BE" opacity=".65"/>
+<path d="M58 124L91 119 118 126M207 124L243 119 277 133" fill="none" stroke="#C6ACCE" stroke-width="3" opacity=".6"/>
+<path d="M47 114L75 105 82 119 56 129Z" fill="#4D3E65" stroke="#302944" stroke-width="2"/>
+<g fill="url(#crystal)" stroke="#743365" stroke-width="2" stroke-linejoin="round">
+  <path d="M79 82L39 32 54 24 99 75Z"/>
+  <path d="M108 73L81 13 97 8 128 69Z"/>
+  <path d="M141 67L131 5 148 5 160 67Z"/>
+  <path d="M175 67L181 6 198 12 193 72Z"/>
+  <path d="M208 76L231 20 247 29 226 83Z"/>
+  <path d="M239 91L276 45 288 59 254 103Z"/>
+  <path d="M264 111L308 84 314 99 277 123Z"/>
+</g>
+<g fill="none" stroke="#FFE1F5" stroke-width="2" opacity=".8"><path d="M51 33L88 78M94 19L116 68M143 13L151 62M189 17L184 64M238 31L218 76M279 58L248 95M306 95L276 115"/></g>
+<!-- Star-paper cuff and red ribbon leave the crystals and barrel exposed. -->
+<path d="M100 96L132 101 127 137 97 132Z" fill="url(#paper)" stroke="#1E4031" stroke-width="2"/>
+<path d="M111 98L121 100 116 135 106 134Z" fill="#B6383D"/>
+<g class="gift-bow" transform="translate(115 90) scale(3.6) translate(-115 -110)">
+<path d="M115 106Q82 82 87 102Q92 116 115 111Q143 83 141 103Q138 117 115 111Z" fill="#C94847" stroke="#7E252F" stroke-width="2"/>
+<path d="M110 113L97 139 111 135 117 118 124 139 135 142 121 112Z" fill="#B6383D"/>
+<ellipse cx="115" cy="110" rx="6" ry="5" fill="#DA6152" stroke="#7E252F" stroke-width="1.5"/>
+</g>
+</svg>

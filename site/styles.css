@@ -1,0 +1,119 @@
+/* Cabin artwork and decorative animation.
+   Document styles live in page.css; project tokens live in theme.css. */
+
+/* Preserve the illustrated room's original scene-unit geometry. Inline
+   box-sizing on rule bubbles still takes precedence over this reset boundary. */
+#room, #room *, #room *::before, #room *::after { box-sizing: content-box; }
+#room { font-size: 18px; line-height: 1.6; font-size-adjust: none; }
+#room img, #room picture { max-inline-size: none; max-width: none; }
+#room :is(h1, h2, h3, h4) { max-width: none; text-wrap: wrap; }
+
+/* Substantial podium boxes, separate from the loose Halo gifts. */
+.podium-gift { position: absolute; z-index: 5; --paper-light: #EACC7D; --paper-dark: #AE8037; --ribbon: #B63737; --ribbon-edge: #7F242A; filter: drop-shadow(4px 8px 5px rgba(0,0,0,.35)); }
+.gift-red { --paper-light: #B94942; --paper-dark: #7B2629; --ribbon: #EDCB7B; --ribbon-edge: #A77C36; }
+.gift-green { --paper-light: #487C4C; --paper-dark: #234D32; --ribbon: #E8C378; --ribbon-edge: #9C7136; }
+.gift-box-body { position: absolute; inset: 18px 7px 0; border-radius: 3px; background: repeating-linear-gradient(40deg, transparent 0 17px, rgba(255,245,205,.05) 17px 20px), linear-gradient(90deg, var(--paper-dark), var(--paper-light) 35%, var(--paper-light) 65%, var(--paper-dark)); box-shadow: inset 0 -12px 14px rgba(0,0,0,.18), inset -10px 0 0 rgba(0,0,0,.08); }
+.gift-box-lid { position: absolute; inset: 0 0 auto; height: 31px; border-radius: 4px; background: linear-gradient(var(--paper-light), var(--paper-dark)); box-shadow: 0 5px 6px rgba(0,0,0,.3), inset 0 3px 0 rgba(255,245,210,.2); }
+.gift-ribbon-vertical { position: absolute; top: 0; bottom: 0; left: calc(50% - 16px); width: 32px; background: var(--ribbon); box-shadow: inset 4px 0 0 rgba(255,238,195,.13), inset -4px 0 0 rgba(0,0,0,.12); }
+.gift-ribbon-horizontal { position: absolute; top: 52%; left: 7px; right: 7px; height: 25px; background: var(--ribbon); box-shadow: inset 0 -4px 0 rgba(0,0,0,.12); }
+.gift-bow { position: absolute; left: calc(50% - 65px); top: -51px; fill: var(--ribbon); stroke: var(--ribbon-edge); stroke-width: 2; }
+.gift-prize-tag { position: absolute; left: 50%; top: 47%; transform: translate(-50%, -20%) rotate(-3deg); background: #FFF4E0; color: #3A2712; border-radius: 7px; padding: 8px 17px; box-shadow: 0 4px 8px rgba(0,0,0,.3); text-align: center; white-space: nowrap; }
+.gift-prize-tag div { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #8E1F1B; }
+.gift-prize-tag strong { font-family: Fraunces, Georgia, serif; font-size: 38px; line-height: 1.1; font-weight: 900; }
+.prize-first .gift-prize-tag strong { font-size: 48px; }
+
+/* Tags share each weapon's original box and depth. Overflow lets the small
+   pistol's tag hang beside it without resizing or cropping the weapon. */
+.weapon-gift { overflow: visible; }
+.weapon-gift-tag { position: absolute; inset: 0; overflow: visible; pointer-events: none; }
+.weapon-tag-cord { fill: none; stroke: #C5A16B; stroke-width: 1.3; stroke-linecap: round; }
+.weapon-tag-paper { fill: #F6E7C6; stroke: #A58D5D; stroke-width: 1; }
+.weapon-tag-eyelet { fill: #765B37; }
+.weapon-gift-tag text { fill: #513D2B; font-family: Georgia, serif; font-style: italic; }
+.weapon-tag-to { font-size: 8px; }
+.weapon-tag-name { font-weight: 600; }
+
+/* Shared scene coordinates at every viewport size. Only the camera changes. */
+
+  .tree-corner { transform: translateX(var(--tree-shift)); }
+  .holiday-lan, .lan-wall-decor { display: block !important; }
+  .cabin-lights { width: calc(100% + 80px) !important; }
+  .tree-corner .halo-poster { left: 50px !important; }
+  .tree-corner .battle-rifle-gift { left: -250px !important; }
+  [data-scene] > div > .glow { background: radial-gradient(ellipse 550px 400px at 1700px 820px, rgba(246,140,80,.32), transparent 70%), radial-gradient(ellipse 500px 350px at 2930px 550px, rgba(253,191,104,.18), transparent 70%) !important; }
+
+/* --- animation + small helpers (from the design files) --- */
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.4}}
+.bulb{filter:drop-shadow(0 0 5px currentColor) drop-shadow(0 0 14px currentColor);animation:twinkle 2.6s ease-in-out infinite}
+@keyframes flicker{0%,100%{transform:scale(1,1) rotate(-1deg);opacity:1}25%{transform:scale(.94,1.06) rotate(1.5deg);opacity:.92}50%{transform:scale(1.04,.95) rotate(-2deg);opacity:1}75%{transform:scale(.97,1.03) rotate(1deg);opacity:.95}}
+.flame{transform-origin:50% 90%;animation:flicker 1.6s ease-in-out infinite}
+@keyframes fire{0%,100%{transform:scale(1,1) skewX(0deg)}20%{transform:scale(.92,1.1) skewX(3deg)}45%{transform:scale(1.06,.9) skewX(-4deg)}70%{transform:scale(.96,1.06) skewX(2deg)}}
+@keyframes glow{0%,100%{opacity:.85}50%{opacity:1}}
+.fire{transform-origin:50% 100%;animation:fire 1.3s ease-in-out infinite;mix-blend-mode:screen}
+.glow{animation:glow 2.2s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.bulb,.flame,.fire,.glow{animation:none}}
+@keyframes chug{from{offset-distance:0%}to{offset-distance:100%}}
+/* All small gifts sit inside the loop, in front of the podium bases.
+   Far train < podium < small gifts < near train. */
+.small-gift { z-index: 6; }
+.bonus-gift-tag { position: absolute; left: 50%; top: 60%; transform: translate(-50%, -50%) rotate(-5deg); background: #FFF4E0; color: #3A2712; border: 1px solid #C6AE83; border-radius: 2px; padding: 0 3px; font-family: Fraunces, Georgia, serif; font-size: 14px; font-weight: 800; line-height: 16px; white-space: nowrap; box-shadow: 0 2px 3px #0005; }
+.small-gift--rear .bonus-gift-tag { top: -1px; }
+.small-gift:nth-child(even) .bonus-gift-tag { transform: translate(-50%, -50%) rotate(4deg); }
+@keyframes train-depth{0%,49.99%{z-index:7}50%,100%{z-index:2}}
+.train{offset-rotate:0deg;offset-anchor:50% 100%;z-index:7;animation:chug 16s linear infinite,train-depth 16s steps(1,end) infinite}
+@keyframes face{0%,49.9%{transform:scaleX(1)}50%,100%{transform:scaleX(-1)}}
+.trainbody{animation:face 16s linear infinite}
+@media (prefers-reduced-motion: reduce){.flame,.fire,.glow,.bulb,.train,.trainbody{animation:none}}
+
+/* Keep room captions aligned with the text column, without boxing in the scene. */
+[data-band] { width: min(1200px, 100%); box-sizing: border-box; margin-inline: auto; }
+.map-photo { box-shadow: inset 0 0 0 1px rgba(0,0,0,.2); }
+
+/* Phone typography, without rearranging the room artwork. */
+@media (max-width: 699px) {
+  [data-cap] { left: 18px !important; right: 18px !important; bottom: 14px !important; gap: 2px 12px !important; }
+  [data-cap] h2 { font-size: 28px !important; line-height: 1.15 !important; }
+  [data-cap] p { font-size: 14px !important; line-height: 1.45 !important; }
+
+}
+
+/* A brass winner plaque above the LAN monitors, readable without a caption. */
+#room .winner-plaque { box-sizing: border-box; position: absolute; left: 3700px; top: 365px; width: 400px; height: 138px; padding: 10px 16px; border: 6px solid #392B1D; border-radius: 3px; background: linear-gradient(115deg, #AD9567, #D4C39A 42%, #BFA575); color: #302719; box-shadow: 0 0 0 1px #795E3C, inset 0 0 0 1px #927A4D, 3px 5px 7px #0004; text-align: center; }
+.winner-plaque::before, .winner-plaque::after { content: ''; position: absolute; top: 62px; width: 3px; height: 3px; border-radius: 50%; background: #715E3E; box-shadow: inset 1px 1px 1px #3C2A15, 0 1px 0 #E2D3AF; }
+.winner-plaque::before { left: 6px; }
+.winner-plaque::after { right: 6px; }
+.winner-plaque__event { margin-bottom: 6px; font-size: 14px; line-height: 1.3; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.winner-plaque__row { display: grid; grid-template-columns: 48px 1fr 48px; gap: 8px; align-items: center; min-height: 40px; text-align: left; }
+.winner-plaque__year { font-size: 18px; font-weight: 700; }
+.winner-plaque__name { font-family: Fraunces, Georgia, serif; font-size: 26px; line-height: 1.2; font-weight: 700; white-space: nowrap; }
+.winner-plaque__score { font-size: 24px; line-height: 1.1; font-weight: 700; text-align: center; }
+.winner-plaque__score small { display: block; font-size: 10px; line-height: 1.2; font-weight: 700; white-space: nowrap; }
+.winner-plaque__row--open { margin-top: 3px; padding-top: 5px; border-top: 1px solid #8B744C; min-height: 30px; color: #63543B; }
+.winner-plaque__row--open .winner-plaque__name { font-size: 22px; font-style: italic; font-weight: 500; }
+
+/* Loops pin to the wooden mantel. Mirror cuff and fabric together, never names. */
+.sportsmanship-stocking { position: absolute; top: 478px; overflow: visible; transform-origin: 50% 0; }
+.sportsmanship-stocking text { font-family: Nunito, sans-serif; font-size: 13px; font-weight: 800; letter-spacing: .1px; }
+
+/* Fireplace effects are scroll-scrubbed in room(). No timers or CSS loops. */
+.rudolph-nose { fill: color-mix(in srgb, #ff493d calc(var(--nose-light, 1) * 100%), #4A3A36); filter: drop-shadow(0 0 calc(var(--nose-light, 1) * 5px) #ff493d); }
+.rudolph { overflow: visible; }
+.rudolph-signal { filter: drop-shadow(0 0 2px #FF5147); }
+.rudolph-halo { opacity: calc(var(--nose-light, 1) * .28); }
+[data-radar-off="true"] .rudolph-nose { fill: #4A3A36; filter: none; }
+.drop-wall-field { transform-origin: 224px 174px; transform: scale(var(--shield-deployed, 0)); opacity: var(--shield-deployed, 0); }
+.mantel-clock { transform-origin: 50% 100%; transform: scale(calc(1 + var(--clock-pulse, 0) * .055)); }
+.cocoa-steam path { opacity: 0; }
+/* Screen-space brackets keep the same stroke width as the camera zooms. */
+[data-rule-focus] path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.rule-focus-shadow { stroke: #24180F; stroke-width: 8; }
+.rule-focus-line { stroke: #FFF4E0; stroke-width: 3; }
+@media (prefers-reduced-motion: reduce) {
+  .captured-cloth, .drop-wall-field, .mantel-clock { transform: none !important; }
+  .drop-wall-field { opacity: 1; }
+  [data-rule-focus] { display: none; }
+}
+.rule-new { display: block; font-size: 11px; line-height: 1.4; color: #36533B; }
+[data-rule] > div:last-child { max-width: calc(100vw - 48px); box-sizing: border-box; white-space: normal !important; text-align: center; width: max-content; }
+@media (prefers-reduced-motion: reduce) { [data-at] { display: none; } }
+
