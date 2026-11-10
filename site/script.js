@@ -223,10 +223,20 @@
       show(focus, right > x && bottom > y ? opacity : 0);
     }
 
+    // Measure the small viewport, not the toolbar-dependent innerHeight.
+    // Keep camera framing, stage height and scroll distance on the same basis.
+    var viewportMeasure = document.createElement('div');
+    viewportMeasure.dataset.smallViewport = '';
+    viewportMeasure.setAttribute('aria-hidden', 'true');
+    viewportMeasure.style.cssText = 'position:absolute;top:0;left:0;width:0;height:100svh;visibility:hidden;pointer-events:none;overflow:hidden;';
+    section.appendChild(viewportMeasure);
+    var hasSmallViewport = CSS.supports('height', '100svh');
+
     function layout() {
       vw = view.clientWidth || stage.clientWidth;
       var hh = header ? header.offsetHeight : 0;
-      var avail = window.innerHeight - hh;
+      var viewportHeight = hasSmallViewport ? viewportMeasure.getBoundingClientRect().height : window.innerHeight;
+      var avail = viewportHeight - hh;
       if (reduceMotion) {
         band.style.height = 'auto';
         caps.forEach(function (c) { c.style.position = 'static'; c.style.padding = '10px 24px'; show(c, 1); });
@@ -386,7 +396,10 @@
     window.addEventListener('blur', function () { swipe = null; touchPointers.clear(); });
 
     function onScroll() { if (!raf) raf = requestAnimationFrame(update); }
-    new ResizeObserver(layout).observe(stage);
+    var layoutObserver = new ResizeObserver(layout);
+    layoutObserver.observe(stage);
+    // Real small-viewport changes, such as rotation, still need a new layout.
+    layoutObserver.observe(viewportMeasure);
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', layout);
     // Font wrapping can resize the guide without changing the stage dimensions.
