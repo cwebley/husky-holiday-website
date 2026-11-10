@@ -106,8 +106,8 @@
 .cocoa-steam path { opacity: 0; }
 /* Screen-space brackets keep the same stroke width as the camera zooms. */
 [data-rule-focus] path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.rule-focus-shadow { stroke: #24180F; stroke-width: 8; }
-.rule-focus-line { stroke: #FFF4E0; stroke-width: 3; }
+.rule-focus-shadow { stroke: #24180F; stroke-width: 10; }
+.rule-focus-line { stroke: #FFF4E0; stroke-width: 5; }
 @media (prefers-reduced-motion: reduce) {
   .captured-cloth, .drop-wall-field, .mantel-clock { transform: none !important; }
   .drop-wall-field { opacity: 1; }

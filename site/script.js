@@ -111,7 +111,10 @@
     var focusBounds = {
       timer: [1274, 384, 128, 88], flags: [1404, 648, 130, 240],
       'friendly-fire': [1556, 674, 448, 180], radar: [2050, 708, 120, 130],
-      chair: [2280, 600, 270, 280]
+      chair: [2280, 600, 270, 280],
+      // 80px artwork inset + 2500px tree shift + gift positions.
+      // Include the highest bow, not just the rectangular box bodies.
+      gifts: [2675, 629, 620, 291], leaderboard: [3780, 365, 400, 138]
     };
     var focus = section.querySelector('[data-rule-focus]');
     var focusPaths = focus.querySelectorAll('path');
@@ -203,7 +206,7 @@
       var y = Math.max(5, cam.y + bounds[1] * cam.s - pad);
       var right = Math.min(vw - 5, cam.x + (bounds[0] + bounds[2]) * cam.s + pad);
       var bottom = Math.min(vv - 5, cam.y + (bounds[1] + bounds[3]) * cam.s + pad);
-      var leg = Math.min(22, (right - x) / 3, (bottom - y) / 3);
+      var leg = Math.min(28, (right - x) / 3, (bottom - y) / 3);
       var d = 'M' + x + ',' + (y + leg) + 'V' + y + 'H' + (x + leg) +
         'M' + (right - leg) + ',' + y + 'H' + right + 'V' + (y + leg) +
         'M' + right + ',' + (bottom - leg) + 'V' + bottom + 'H' + (right - leg) +
@@ -302,6 +305,13 @@
         show(beat.el, visible);
         if (i === index && t >= 2 && t < 7) drawFocus(bounds, cam, visible);
       });
+      // Keep brackets quiet during the camera moves. One target at a time,
+      // using the same screen-space padding, strokes and corners as the rules.
+      if (!reduceMotion && t >= 7.7 && t < 9.2) {
+        drawFocus(focusBounds.gifts, cam, Math.min(ease((t - 7.7) / .3), ease((9.2 - t) / .3)));
+      } else if (!reduceMotion && t >= 9.8) {
+        drawFocus(focusBounds.leaderboard, cam, ease((t - 9.8) / .2));
+      }
     }
 
     function onScroll() { if (!raf) raf = requestAnimationFrame(update); }
