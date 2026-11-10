@@ -7,7 +7,7 @@ await withChrome(async({page,evaluate,load,errors})=>{
   await page('Page.enable');
   const settle=()=>evaluate('new Promise(r=>setTimeout(()=>requestAnimationFrame(()=>requestAnimationFrame(r)),100))');
   const go=async t=>{
-    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${t}-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(s.style.top)+(r.getBoundingClientRect().height-s.offsetHeight)*p,behavior:'instant'})})()`);await settle();
+    await evaluate(`(()=>{const r=document.querySelector('#cabin'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${t}-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(s.style.top)+(r.getBoundingClientRect().height-s.offsetHeight)*p,behavior:'instant'})})()`);await settle();
   };
   const state=()=>evaluate(`(()=>{const v=document.querySelector('[data-view]'),b=v.getBoundingClientRect();return {y:scrollY,matrix:document.querySelector('[data-scene]').style.transform,band:document.querySelector('[data-band]').offsetHeight,x:b.left+b.width/2,cy:b.top+b.height/2}})()`);
   async function wheel(dx,dy,modifiers=0) {
@@ -48,7 +48,7 @@ await withChrome(async({page,evaluate,load,errors})=>{
     await go(5.5);await evaluate('document.querySelector("[data-skip-room]").focus({preventScroll:true})');
     await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});
     await page('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await settle();
-    assert(await evaluate('document.querySelector("#house-rules").open&&document.activeElement===document.querySelector("#house-rules summary")'));checks++;
+    assert(await evaluate('document.querySelector("#cabin-rules").open&&document.activeElement===document.querySelector("#cabin-rules summary")'));checks++;
   }
   await page('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
   await page('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:2});

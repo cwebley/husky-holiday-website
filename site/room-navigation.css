@@ -44,7 +44,7 @@
 }
 
 /* Scroll-linked cabin progress, hidden for reduced motion. */
-#room .cabin-progress {
+#cabin .cabin-progress {
   position: absolute;
   z-index: 1;
   top: 16px;
@@ -56,9 +56,9 @@
   user-select: none;
   visibility: hidden;
 }
-#room .cabin-progress[data-active="true"] { visibility: visible; }
-#room [data-rule] { z-index: 2; }
-#room .cabin-progress__track {
+#cabin .cabin-progress[data-active="true"] { visibility: visible; }
+#cabin [data-rule] { z-index: 2; }
+#cabin .cabin-progress__track {
   position: absolute;
   top: 14px;
   bottom: 14px;
@@ -68,7 +68,7 @@
   background: #fff4e04d;
   box-shadow: 0 0 0 2px #102737b3;
 }
-#room .cabin-progress__fill {
+#cabin .cabin-progress__fill {
   position: absolute;
   inset: 0;
   border-radius: inherit;
@@ -76,7 +76,7 @@
   transform: scaleY(0);
   transform-origin: top;
 }
-#room .cabin-progress__thumb {
+#cabin .cabin-progress__thumb {
   position: absolute;
   top: 0;
   left: 0;
@@ -88,9 +88,9 @@
   display: grid;
   place-items: center;
 }
-#room .cabin-progress__thumb svg { display: block; overflow: visible; }
-#room .cabin-progress__thumb path { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-#room .cabin-progress__hint {
+#cabin .cabin-progress__thumb svg { display: block; overflow: visible; }
+#cabin .cabin-progress__thumb path { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+#cabin .cabin-progress__hint {
   position: absolute;
   top: 0;
   right: 34px;
@@ -104,7 +104,7 @@
   color: #fff4e0;
   font: 700 13px/1.4 Nunito, sans-serif;
 }
-#room .cabin-progress[data-active="true"]:not([data-used]) .cabin-progress__thumb svg {
+#cabin .cabin-progress[data-active="true"]:not([data-used]) .cabin-progress__thumb svg {
   animation: cabin-scroll-nudge .9s ease-in-out 2;
 }
 @keyframes cabin-scroll-nudge {
@@ -112,6 +112,6 @@
   50% { transform: translateY(2px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  #room .cabin-progress { display: none; }
-  #room .cabin-progress__thumb svg { animation: none !important; }
+  #cabin .cabin-progress { display: none; }
+  #cabin .cabin-progress__thumb svg { animation: none !important; }
 }

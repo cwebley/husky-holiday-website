@@ -24,10 +24,10 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="vendor/swatchkit.css">
 <link rel="stylesheet" href="theme.css">
-<link rel="stylesheet" href="styles.css?v=focus-brackets-1">
+<link rel="stylesheet" href="styles.css?v=cabin-names-1">
 <link rel="stylesheet" href="page.css">
-<link rel="stylesheet" href="room-navigation.css?v=cabin-progress-1">
-<script src="script.js?v=cabin-progress-1" defer></script>
+<link rel="stylesheet" href="room-navigation.css?v=cabin-names-1">
+<script src="script.js?v=cabin-names-1" defer></script>
 </head>
 <body>
 <!-- NAV (frosted, sticky) -->
@@ -36,7 +36,7 @@
 <a class="site-brand" href="#top">Husky Holiday</a>
 <nav class="cluster site-nav" aria-label="Sections">
 <a class="site-nav__section" href="#how">How it works</a>
-<a class="site-nav__section" href="#room">Maps &amp; prizes</a>
+<a class="site-nav__section" href="#cabin">Maps &amp; prizes</a>
 <a class="site-nav__section" href="#faq">FAQ</a>
 <a class="button button--accent button--compact" href="https://discord.gg/SuCNdEVJbf">Join Discord</a>
 </nav>
@@ -122,20 +122,20 @@
 </div>
 
 <!-- Full-bleed experiment: the room is outside the constrained content column. -->
-<!-- THE ROOM: maps → house rules → prizes → previous winner above the LAN table -->
-<section id="room" data-js="story" aria-label="The maps, the house rules, the prizes and last year's winner" style="position: relative; height: 4500px">
+<!-- THE ROOM: maps → cabin rules → prizes → previous winner above the LAN table -->
+<section id="cabin" data-js="story" aria-label="The maps, the cabin rules, the prizes and last year's winner" style="position: relative; height: 4500px">
 <div data-stage="1" style="position: sticky; top: 0; height: 900px; display: flex; flex-direction: column; background: transparent">
 <div data-band="1" style="position: relative; flex: none; height: 132px; width: 100%; max-width: 1240px; margin: 0 auto">
 <div class="room-guide" data-room-guide>
-<a href="#house-rules" data-skip-room>Skip the cabin</a>
+<a href="#cabin-rules" data-skip-room>Skip the cabin</a>
 </div>
 <div data-cap="maps" aria-hidden="true" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px">
 <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">The maps</h2>
 <p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)">Corpo · Megapolis · Merchant’s Square · Ronin · Scarlett’s Landing · <strong style="color: #F99D1B">Yuletide (new)</strong></p>
 </div>
 <div data-cap="rules" aria-hidden="true" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; opacity: 0; visibility: hidden">
-<h2 aria-hidden="true" style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">House rules</h2>
-<p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)"><span data-rule-step>Rule 1 of 5</span> · <a href="#house-rules" tabindex="-1">Read all rules</a></p>
+<h2 aria-hidden="true" style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">Cabin rules</h2>
+<p style="margin: 0; flex: 1 1 360px; font-size: 17px; color: rgba(255,247,234,0.82)"><span data-rule-step>Rule 1 of 5</span> · <a href="#cabin-rules" tabindex="-1">Read all rules</a></p>
 </div>
 <div data-cap="prizes" aria-hidden="true" style="position: absolute; left: 24px; right: 24px; bottom: 18px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 20px; opacity: 0; visibility: hidden">
 <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 48px); line-height: 1.05">Prizes</h2>
@@ -718,8 +718,8 @@
 <li>Yuletide (new)</li>
 </ul>
 </section>
-<details class="rule-reference" id="house-rules">
-<summary><h2 class="rule-reference__title">Read all house rules</h2></summary>
+<details class="rule-reference" id="cabin-rules">
+<summary><h2 class="rule-reference__title">Read all cabin rules</h2></summary>
 <ol>
 <li id="rule-timer">8-minute games.</li>
 <li id="rule-flags">Unlimited flag captures.<br>No equipment use while carrying the flag.</li>

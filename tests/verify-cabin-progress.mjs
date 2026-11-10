@@ -6,8 +6,8 @@ let checks=0;
 await withChrome(async({page,load,evaluate,errors})=>{
  await page('Page.enable');await page('Accessibility.enable');
  const settle=()=>evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>requestAnimationFrame(r))))');
- const snap=()=>evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]'),v=r.querySelector('[data-view]'),c=r.querySelector('[data-scene]'),f=r.querySelector('[data-rule-focus]'),rail=r.querySelector('[data-cabin-progress]');const rect=e=>e.getBoundingClientRect().toJSON();const q=rail&&rail.querySelector('[data-progress-thumb]');return {y:scrollY,span:r.getBoundingClientRect().height-s.offsetHeight,band:r.querySelector('[data-band]').offsetHeight,matrix:c.style.transform,beat:r.dataset.beat,effects:['--flag-raised','--shield-deployed','--clock-pulse','--nose-light'].map(k=>+getComputedStyle(c).getPropertyValue(k)),focus:+f.style.opacity,labels:[...r.querySelectorAll('[data-rule]')].filter(e=>+e.style.opacity>.01).map(e=>[e.dataset.rule,rect(e.lastElementChild)]),view:rect(v),overflow:document.documentElement.scrollWidth>innerWidth,rail:rail&&{rect:rect(rail),thumb:rect(q),fill:getComputedStyle(rail.querySelector('[data-progress-fill]')).transform,used:rail.dataset.used,active:rail.dataset.active,display:getComputedStyle(rail).display,hintOpacity:+rail.querySelector('[data-progress-hint]').style.opacity,nudge:getComputedStyle(q.querySelector('svg')).animationName,animations:rail.getAnimations({subtree:true}).filter(a=>a.playState==='running').length}}})()`);
- async function go(p){await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(s.style.top)+(r.getBoundingClientRect().height-s.offsetHeight)*${p},behavior:'instant'})})()`);await settle();return snap();}
+ const snap=()=>evaluate(`(()=>{const r=document.querySelector('#cabin'),s=r.querySelector('[data-stage]'),v=r.querySelector('[data-view]'),c=r.querySelector('[data-scene]'),f=r.querySelector('[data-rule-focus]'),rail=r.querySelector('[data-cabin-progress]');const rect=e=>e.getBoundingClientRect().toJSON();const q=rail&&rail.querySelector('[data-progress-thumb]');return {y:scrollY,span:r.getBoundingClientRect().height-s.offsetHeight,band:r.querySelector('[data-band]').offsetHeight,matrix:c.style.transform,beat:r.dataset.beat,effects:['--flag-raised','--shield-deployed','--clock-pulse','--nose-light'].map(k=>+getComputedStyle(c).getPropertyValue(k)),focus:+f.style.opacity,labels:[...r.querySelectorAll('[data-rule]')].filter(e=>+e.style.opacity>.01).map(e=>[e.dataset.rule,rect(e.lastElementChild)]),view:rect(v),overflow:document.documentElement.scrollWidth>innerWidth,rail:rail&&{rect:rect(rail),thumb:rect(q),fill:getComputedStyle(rail.querySelector('[data-progress-fill]')).transform,used:rail.dataset.used,active:rail.dataset.active,display:getComputedStyle(rail).display,hintOpacity:+rail.querySelector('[data-progress-hint]').style.opacity,nudge:getComputedStyle(q.querySelector('svg')).animationName,animations:rail.getAnimations({subtree:true}).filter(a=>a.playState==='running').length}}})()`);
+ async function go(p){await evaluate(`(()=>{const r=document.querySelector('#cabin'),s=r.querySelector('[data-stage]');scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(s.style.top)+(r.getBoundingClientRect().height-s.offsetHeight)*${p},behavior:'instant'})})()`);await settle();return snap();}
  const near=(a,b,tol,msg)=>assert(Math.abs(a-b)<=tol,`${msg}: ${a} vs ${b}`);
  const ax=async()=>(await page('Accessibility.getFullAXTree')).nodes.filter(n=>!n.ignored);
  const headings=nodes=>nodes.filter(n=>n.role?.value==='heading').map(n=>n.name?.value).sort();
@@ -42,7 +42,7 @@ await withChrome(async({page,load,evaluate,errors})=>{
   await evaluate('new Promise(r=>setTimeout(r,120))');let after=await snap();assert(after.y>before.y+100&&after.rail.thumb.top>before.rail.thumb.top,'Horizontal gesture advances rail');checks++;
   await evaluate('document.querySelector("[data-skip-room]").focus({preventScroll:true})');
   await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await page('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13});await settle();
-  assert(await evaluate('document.querySelector("#house-rules").open&&document.activeElement===document.querySelector("#house-rules summary")'));checks++;
+  assert(await evaluate('document.querySelector("#cabin-rules").open&&document.activeElement===document.querySelector("#cabin-rules summary")'));checks++;
   console.log(`PASS ${width}x${height}: progress geometry, fixed viewport, fade/nudge, reverse, horizontal input, AX and skip`);
  }
  await page('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
@@ -64,7 +64,7 @@ await withChrome(async({page,load,evaluate,errors})=>{
  for(const width of[320,390,1440]){
   await page('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});await load(candidate);await settle();
   assert.equal((await snap()).rail.display,'none');
-  assert(await evaluate('document.getAnimations().filter(a=>a.playState==="running").length===0&&document.querySelector("#house-rules").open'));
+  assert(await evaluate('document.getAnimations().filter(a=>a.playState==="running").length===0&&document.querySelector("#cabin-rules").open'));
   assert(!(await ax()).some(n=>n.name?.value?.includes('Scroll or swipe to explore')),'Reduced motion has no scroll cue in AX');checks++;
  }
  assert.deepEqual(errors,[]);

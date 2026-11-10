@@ -3,10 +3,10 @@
 
 /* Preserve the illustrated room's original scene-unit geometry. Inline
    box-sizing on rule bubbles still takes precedence over this reset boundary. */
-#room, #room *, #room *::before, #room *::after { box-sizing: content-box; }
-#room { font-size: 18px; line-height: 1.6; font-size-adjust: none; }
-#room img, #room picture { max-inline-size: none; max-width: none; }
-#room :is(h1, h2, h3, h4) { max-width: none; text-wrap: wrap; }
+#cabin, #cabin *, #cabin *::before, #cabin *::after { box-sizing: content-box; }
+#cabin { font-size: 18px; line-height: 1.6; font-size-adjust: none; }
+#cabin img, #cabin picture { max-inline-size: none; max-width: none; }
+#cabin :is(h1, h2, h3, h4) { max-width: none; text-wrap: wrap; }
 
 /* Substantial podium boxes, separate from the loose Halo gifts. */
 .podium-gift { position: absolute; z-index: 5; --paper-light: #EACC7D; --paper-dark: #AE8037; --ribbon: #B63737; --ribbon-edge: #7F242A; filter: drop-shadow(4px 8px 5px rgba(0,0,0,.35)); }
@@ -78,7 +78,7 @@
 }
 
 /* A brass winner plaque above the LAN monitors, readable without a caption. */
-#room .winner-plaque { box-sizing: border-box; position: absolute; left: 3700px; top: 365px; width: 400px; height: 138px; padding: 10px 16px; border: 6px solid #392B1D; border-radius: 3px; background: linear-gradient(115deg, #AD9567, #D4C39A 42%, #BFA575); color: #302719; box-shadow: 0 0 0 1px #795E3C, inset 0 0 0 1px #927A4D, 3px 5px 7px #0004; text-align: center; }
+#cabin .winner-plaque { box-sizing: border-box; position: absolute; left: 3700px; top: 365px; width: 400px; height: 138px; padding: 10px 16px; border: 6px solid #392B1D; border-radius: 3px; background: linear-gradient(115deg, #AD9567, #D4C39A 42%, #BFA575); color: #302719; box-shadow: 0 0 0 1px #795E3C, inset 0 0 0 1px #927A4D, 3px 5px 7px #0004; text-align: center; }
 .winner-plaque::before, .winner-plaque::after { content: ''; position: absolute; top: 62px; width: 3px; height: 3px; border-radius: 50%; background: #715E3E; box-shadow: inset 1px 1px 1px #3C2A15, 0 1px 0 #E2D3AF; }
 .winner-plaque::before { left: 6px; }
 .winner-plaque::after { right: 6px; }

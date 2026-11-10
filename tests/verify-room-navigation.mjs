@@ -48,7 +48,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
   const navigate=async path=>{await load(new URL(path,base).href);await settle();};
   const metrics=async(width,height)=>{await page('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:false});await settle();};
   const snapshot=()=>evaluate(`(() => {
-    const r=document.querySelector('#room'),stage=r.querySelector('[data-stage]'),band=r.querySelector('[data-band]'),view=r.querySelector('[data-view]'),scene=r.querySelector('[data-scene]');
+    const r=document.querySelector('#cabin'),stage=r.querySelector('[data-stage]'),band=r.querySelector('[data-band]'),view=r.querySelector('[data-view]'),scene=r.querySelector('[data-scene]');
     const rect=e=>e?.getBoundingClientRect().toJSON();
     const visible=e=>{const c=getComputedStyle(e);return c.display!=='none'&&c.visibility!=='hidden'&&+c.opacity>.01&&e.getBoundingClientRect().height>0};
     const m=new DOMMatrix(getComputedStyle(scene).transform),top=parseFloat(getComputedStyle(stage).top);
@@ -71,12 +71,12 @@ await withChrome(async ({page,load,evaluate,errors}) => {
       plaque:rect(r.querySelector('[data-winner-plaque]')),overflow:document.documentElement.scrollWidth>innerWidth+1};
   })()`);
   const go=async t=> {
-    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${t}-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(s).top)+(r.getBoundingClientRect().height-s.offsetHeight)*p,behavior:'instant'})})()`);
+    await evaluate(`(()=>{const r=document.querySelector('#cabin'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${t}-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(s).top)+(r.getBoundingClientRect().height-s.offsetHeight)*p,behavior:'instant'})})()`);
     await settle();return snapshot();
   };
   const ax=async()=> (await page('Accessibility.getFullAXTree')).nodes.filter(n=>!n.ignored);
   const headings=nodes=>nodes.filter(n=>n.role?.value==='heading').map(n=>[n.name?.value,n.properties?.find(p=>p.name==='level')?.value.value]).sort();
-  const staticRules=()=>evaluate(`[...document.querySelectorAll('#house-rules li')].map(e=>e.textContent.replace(/\\s+/g,' ').trim())`);
+  const staticRules=()=>evaluate(`[...document.querySelectorAll('#cabin-rules li')].map(e=>e.textContent.replace(/\\s+/g,' ').trim())`);
   const assertAX=async original=> {
     accessibilityChecks++;
     const nodes=await ax();
@@ -97,7 +97,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
       assert(b.left>=-1&&b.right<=s.width+1&&b.top>=s.bandRect.top-1&&b.bottom<=s.bandRect.bottom+1,`${context}: ${name} clipped`);
     }
     for(const cap of s.captions)assert(g.bottom<=cap.rect.top+1,`${context}: guide overlaps ${cap.id} caption`);
-    assert.equal(s.skip.href,'#house-rules');
+    assert.equal(s.skip.href,'#cabin-rules');
     assert(s.labels.length<=1,`${context}: simultaneous rule bubbles`);
     // Production hides bubbles when the actual scene width is >=700 or the
     // viewport is too short. Do not turn that existing behavior into a failure.
@@ -112,14 +112,14 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     geometryChecks++;checks++;
   }
   const skip=async(t,context)=> {
-    await evaluate(`document.querySelector('#house-rules').open=false`);
+    await evaluate(`document.querySelector('#cabin-rules').open=false`);
     await go(t);
     await evaluate(`document.querySelector('[data-skip-room]').focus({preventScroll:true});window.__skipEvent=null;document.querySelector('[data-skip-room]').addEventListener('click',e=>window.__skipEvent={trusted:e.isTrusted,detail:e.detail},{once:true})`);
     assert(await evaluate(`document.activeElement===document.querySelector('[data-skip-room]')`),`${context}: keyboard focus reaches skip`);
     await page('Input.dispatchKeyEvent',{type:'keyDown',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,nativeVirtualKeyCode:13});
     await page('Input.dispatchKeyEvent',{type:'keyUp',key:'Enter',code:'Enter',windowsVirtualKeyCode:13,nativeVirtualKeyCode:13});
     await settle();
-    const result=await evaluate(`(()=>{const d=document.querySelector('#house-rules'),s=d.querySelector('summary'),r=s.getBoundingClientRect(),h=document.querySelector('header').getBoundingClientRect(),room=document.querySelector('#room').getBoundingClientRect();return {open:d.open,focus:document.activeElement===s,summary:r.toJSON(),header:h.toJSON(),room:room.toJSON(),stage:document.querySelector('[data-stage]').getBoundingClientRect().toJSON(),stickyTop:parseFloat(getComputedStyle(document.querySelector('[data-stage]')).top),event:window.__skipEvent,y:scrollY}})()`);
+    const result=await evaluate(`(()=>{const d=document.querySelector('#cabin-rules'),s=d.querySelector('summary'),r=s.getBoundingClientRect(),h=document.querySelector('header').getBoundingClientRect(),room=document.querySelector('#cabin').getBoundingClientRect();return {open:d.open,focus:document.activeElement===s,summary:r.toJSON(),header:h.toJSON(),room:room.toJSON(),stage:document.querySelector('[data-stage]').getBoundingClientRect().toJSON(),stickyTop:parseFloat(getComputedStyle(document.querySelector('[data-stage]')).top),event:window.__skipEvent,y:scrollY}})()`);
     assert.deepEqual(result.event,{trusted:true,detail:0},`${context}: trusted keyboard activation`);
     assert(result.open&&result.focus,`${context}: skip opens details and focuses summary`);
     assert(result.stage.top<result.stickyTop-1&&result.room.bottom<=result.summary.top,`${context}: skip exits pinned scene ${JSON.stringify(result)}`);
@@ -142,7 +142,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
       assert(!/addEventListener\s*\(\s*['"](?:touchstart|touchmove|touchend)['"]/.test(source),'Native touch gestures use passive pointer listeners');
       assert.equal((source.match(/\.preventDefault\s*\(/g)||[]).length,3,'Two reference clicks and horizontal wheel cancel defaults');
       assert.equal((source.match(/addEventListener\s*\(\s*['"]click['"]/g)||[]).length,2,'Exactly two explicit click listeners');
-      for(const selector of ['[data-cap="rules"] a[href="#house-rules"]','[data-skip-room]'])assert(source.includes(`section.querySelector('${selector}').addEventListener('click', function (event) {\n      event.preventDefault();`),'Default cancellation belongs to '+selector);
+      for(const selector of ['[data-cap="rules"] a[href="#cabin-rules"]','[data-skip-room]'])assert(source.includes(`section.querySelector('${selector}').addEventListener('click', function (event) {\n      event.preventDefault();`),'Default cancellation belongs to '+selector);
       assert(/addEventListener\('scroll', onScroll, \{ passive: true \}\)/.test(source),'Scroll listener remains passive');
       console.log('PASS script audit: one horizontal wheel handler, passive touch pointers, unchanged skip clicks; trusted gestures covered by verify-cabin-gestures.mjs');
     }
@@ -191,20 +191,20 @@ await withChrome(async ({page,load,evaluate,errors}) => {
   for(const [width,height]of [[320,568],[390,844],[1440,900],[998,448]]) {
     await metrics(width,height);await navigate('/');const originalHeadings=headings(await ax()),originalRules=await staticRules();
     await navigate(candidatePath);
-    const reduced=await evaluate(`(()=>{const room=document.querySelector('#room'),s=room.querySelector('[data-stage]'),guide=room.querySelector('[data-room-guide]'),r=guide.getBoundingClientRect(),d=document.querySelector('#house-rules');return {section:room.offsetHeight,stage:s.offsetHeight,position:getComputedStyle(s).position,guideHidden:getComputedStyle(guide).display==='none'||getComputedStyle(guide).visibility==='hidden'||r.height===0,open:d.open,running:document.getAnimations().filter(a=>a.playState==='running').length,overflow:document.documentElement.scrollWidth>innerWidth+1}})()`);
+    const reduced=await evaluate(`(()=>{const room=document.querySelector('#cabin'),s=room.querySelector('[data-stage]'),guide=room.querySelector('[data-room-guide]'),r=guide.getBoundingClientRect(),d=document.querySelector('#cabin-rules');return {section:room.offsetHeight,stage:s.offsetHeight,position:getComputedStyle(s).position,guideHidden:getComputedStyle(guide).display==='none'||getComputedStyle(guide).visibility==='hidden'||r.height===0,open:d.open,running:document.getAnimations().filter(a=>a.playState==='running').length,overflow:document.documentElement.scrollWidth>innerWidth+1}})()`);
     assert.equal(reduced.section,reduced.stage,'Reduced motion uses one normal stage');
     assert(reduced.guideHidden&&reduced.open&&!reduced.overflow,'Reduced motion hides guide and opens static rules');
     assert.equal(reduced.running,0,'Reduced motion has no running art animations');
     assert.deepEqual(headings(await ax()),originalHeadings,'Reduced motion static headings unchanged');
     assert(!(await ax()).some(n=>n.role?.value==='link'&&n.name?.value==='Skip the cabin'),'Hidden guide removed from AX tree');
     assert.deepEqual(await staticRules(),originalRules,'Reduced motion retains all five static rules');
-    await evaluate(`(()=>{const r=document.querySelector('#room');scrollTo({top:r.getBoundingClientRect().top+scrollY,behavior:'instant'})})()`);await settle();
+    await evaluate(`(()=>{const r=document.querySelector('#cabin');scrollTo({top:r.getBoundingClientRect().top+scrollY,behavior:'instant'})})()`);await settle();
     const before=await evaluate('scrollY');
     await page('Input.dispatchMouseEvent',{type:'mouseWheel',x:Math.min(width-1,200),y:Math.min(height-1,300),deltaX:0,deltaY:Math.max(height,900)});
     await evaluate('new Promise(r=>setTimeout(r,120))');await settle();
     assert(await evaluate('scrollY')>before+100,'Trusted wheel scroll is not trapped');
-    await evaluate(`document.querySelector('#house-rules summary').scrollIntoView({behavior:'instant',block:'center'})`);await settle();
-    assert(await evaluate(`(()=>{const b=document.querySelector('#house-rules summary').getBoundingClientRect();return b.top<innerHeight&&b.bottom>0})()`),'Static rules reachable through normal scrolling');
+    await evaluate(`document.querySelector('#cabin-rules summary').scrollIntoView({behavior:'instant',block:'center'})`);await settle();
+    assert(await evaluate(`(()=>{const b=document.querySelector('#cabin-rules summary').getBoundingClientRect();return b.top<innerHeight&&b.bottom>0})()`),'Static rules reachable through normal scrolling');
     reducedChecks++;checks++;console.log(`PASS ${width}x${height}: reduced motion, one stage, hidden guide, static rules, no animations or wheel trap`);
   }
   assert.deepEqual(errors,[],'No browser exceptions or failed network requests');

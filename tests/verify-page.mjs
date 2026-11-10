@@ -107,18 +107,18 @@ try {
     assert(await evaluate(`['maps-title', 'prizes-title'].every(id => document.getElementById(id).closest('section').classList.contains('visually-hidden'))`));
     await call('Target.activateTarget', { targetId });
     await page('Emulation.setFocusEmulationEnabled', { enabled: true });
-    const wasOpen = await evaluate(`document.querySelector('#house-rules').open`);
-    await evaluate(`document.querySelector('#house-rules summary').focus()`);
+    const wasOpen = await evaluate(`document.querySelector('#cabin-rules').open`);
+    await evaluate(`document.querySelector('#cabin-rules summary').focus()`);
     await settle();
     await page('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Enter', code: 'Enter', text: '\r', windowsVirtualKeyCode: 13 });
     await page('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Enter', code: 'Enter', windowsVirtualKeyCode: 13 });
     await settle();
-    assert.equal(await evaluate(`document.querySelector('#house-rules').open`), !wasOpen, 'Rules disclosure responds to keyboard');
+    assert.equal(await evaluate(`document.querySelector('#cabin-rules').open`), !wasOpen, 'Rules disclosure responds to keyboard');
     if (!wasOpen) {
       const expanded = await page('Accessibility.getFullAXTree');
       assert(expanded.nodes.some(n => !n.ignored && n.name?.value?.includes('Come and go as you please.')), 'Expanded rules are readable');
     }
-    await evaluate(`document.querySelector('#house-rules').open = ${wasOpen}; document.activeElement.blur(); scrollTo({top:0,behavior:'instant'})`);
+    await evaluate(`document.querySelector('#cabin-rules').open = ${wasOpen}; document.activeElement.blur(); scrollTo({top:0,behavior:'instant'})`);
     await settle();
     for (const name of ['The maps', 'Prizes']) {
       assert.equal(nodes.filter(n => !n.ignored && n.role?.value === 'heading' && n.name?.value === name).length, 1, `Stable cabin heading: ${name}`);
@@ -184,7 +184,7 @@ try {
     const result = await evaluate(`(() => {
       const offenders = [];
       for (const e of document.querySelectorAll('body *')) {
-        if (e.closest('#room') || e instanceof SVGElement || ['SCRIPT','STYLE','LINK','CANVAS'].includes(e.tagName)) continue;
+        if (e.closest('#cabin') || e instanceof SVGElement || ['SCRIPT','STYLE','LINK','CANVAS'].includes(e.tagName)) continue;
         const s = getComputedStyle(e), r = e.getBoundingClientRect();
         if (!r.width || !r.height || s.visibility === 'hidden' || s.display === 'none') continue;
         let left = r.left, right = r.right;
@@ -370,7 +370,7 @@ try {
       await scrollSection('#how');
       await checkOverflow(`${width} how`);
       await screenshot(`${width}-how`);
-      await scrollSection('#house-rules');
+      await scrollSection('#cabin-rules');
       await checkOverflow(`${width} rules disclosure`);
       await screenshot(`${width}-rules-disclosure`);
     }

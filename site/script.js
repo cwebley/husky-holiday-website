@@ -2,7 +2,7 @@
  *
  *  1. Background snow   [data-js="snow"]         falling snow on a fixed layer behind the page
  *  2. Window snow       [data-js="window-snow"]  little snowfall inside each window of the room
- *  3. The room          [data-js="story"]        scroll-driven camera: mantel (maps) → fireplace (house rules) → tree (prizes)
+ *  3. The room          [data-js="story"]        scroll-driven camera: mantel (maps) → fireplace (cabin rules) → tree (prizes)
  *  Footer reveal uses CSS sticky positioning, without a scroll handler.
  *
  * Everything respects prefers-reduced-motion.
@@ -126,9 +126,9 @@
     var steam = section.querySelectorAll('[data-steam]');
     var noseRings = section.querySelectorAll('[data-nose-ring]');
     var stepText = section.querySelector('[data-rule-step]');
-    var reference = document.querySelector('#house-rules');
+    var reference = document.querySelector('#cabin-rules');
     if (reduceMotion) reference.open = true;
-    section.querySelector('[data-cap="rules"] a[href="#house-rules"]').addEventListener('click', function (event) {
+    section.querySelector('[data-cap="rules"] a[href="#cabin-rules"]').addEventListener('click', function (event) {
       event.preventDefault();
       reference.open = true;
       reference.scrollIntoView({ behavior: 'instant', block: 'start' });

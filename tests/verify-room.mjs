@@ -46,14 +46,14 @@ try {
     await evaluate(settle);
   };
   const go = async progress => {
-    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${progress}*11-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY+(r.getBoundingClientRect().height-s.offsetHeight)*p-parseFloat(s.style.top),behavior:'instant'})})()`);
+    await evaluate(`(()=>{const r=document.querySelector('#cabin'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${progress}*11-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY+(r.getBoundingClientRect().height-s.offsetHeight)*p-parseFloat(s.style.top),behavior:'instant'})})()`);
     await evaluate(settle);
     const { nodes } = await page('Accessibility.getFullAXTree');
     for (const name of ['The maps', 'Prizes', '2025 Husky Holiday champion']) {
       assert.equal(nodes.filter(n => !n.ignored && n.role?.value === 'heading' && n.name?.value === name).length, 1, `Stable heading: ${name}`);
     }
     assert(!nodes.some(n => !n.ignored && /^Rule [1-5] of 5$/.test(n.name?.value || '')), 'Animated captions are hidden from screen readers');
-    return evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-scene]'),v=r.querySelector('[data-view]').getBoundingClientRect();return {beat:r.dataset.beat,radar:s.dataset.radarOff,nose:getComputedStyle(r.querySelector('.rudolph-nose')).fill,labels:[...r.querySelectorAll('[data-rule]')].filter(e=>+e.style.opacity>.01).map(e=>({id:e.dataset.rule,rect:e.lastElementChild.getBoundingClientRect().toJSON()})),view:v.toJSON(),overflow:document.documentElement.scrollWidth>innerWidth,transform:s.style.transform}})()`);
+    return evaluate(`(()=>{const r=document.querySelector('#cabin'),s=r.querySelector('[data-scene]'),v=r.querySelector('[data-view]').getBoundingClientRect();return {beat:r.dataset.beat,radar:s.dataset.radarOff,nose:getComputedStyle(r.querySelector('.rudolph-nose')).fill,labels:[...r.querySelectorAll('[data-rule]')].filter(e=>+e.style.opacity>.01).map(e=>({id:e.dataset.rule,rect:e.lastElementChild.getBoundingClientRect().toJSON()})),view:v.toJSON(),overflow:document.documentElement.scrollWidth>innerWidth,transform:s.style.transform}})()`);
   };
   await page('Runtime.enable');
   const ids = ['timer', 'flags', 'friendly-fire', 'radar', 'chair'];
@@ -61,7 +61,7 @@ try {
   for (const [width, height] of [[320,568],[390,844],[430,932],[700,900],[1440,900],[1920,900]]) {
     await page('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     await load();
-    const roomLayout = await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');return {travel:r.offsetHeight-s.offsetHeight,stage:s.offsetHeight,band:r.querySelector('[data-band]').offsetHeight}})()`);
+    const roomLayout = await evaluate(`(()=>{const r=document.querySelector('#cabin'),s=r.querySelector('[data-stage]');return {travel:r.offsetHeight-s.offsetHeight,stage:s.offsetHeight,band:r.querySelector('[data-band]').offsetHeight}})()`);
     const phone = await evaluate("document.querySelector('[data-view]').clientWidth < 700");
     assert(Math.abs(roomLayout.travel-roomLayout.stage*8*(phone?10:9)/11)<1,'Endpoint holds removed without speeding up the middle journey');
     assert.equal(await evaluate("getComputedStyle(document.querySelector('[data-scene]')).willChange"), 'auto', 'Do not restore the scene layer hint: Pixel comparison showed missing cabin elements with it');
@@ -239,7 +239,7 @@ try {
       await evaluate(`new Promise(r=>{if(document.readyState==='complete')r();else addEventListener('load',r,{once:true})})`);
       await evaluate(`document.fonts.ready.then(()=>true)`);
       await evaluate(settle);
-      assert.equal(await evaluate(`document.querySelector('#room').dataset.beat`),'lan','Reload restores the final LAN beat');
+      assert.equal(await evaluate(`document.querySelector('#cabin').dataset.beat`),'lan','Reload restores the final LAN beat');
       assert.equal(await evaluate(`document.querySelector('[data-band]').offsetHeight`),roomLayout.band);
       assert.equal(await evaluate(`document.querySelector('[data-scene]').style.transform`),finale.transform);
     }
@@ -265,9 +265,9 @@ try {
     console.log(`PASS ${width}x${height}: shared geometry, five rules, LAN winner, transitions, reverse, reload, assets`);
   }
   await evaluate(`document.querySelector('[data-cap="rules"] a').click()`);
-  assert(await evaluate(`document.querySelector('#house-rules').open`));
-  assert(await evaluate(`document.activeElement === document.querySelector('#house-rules summary')`));
-  assert(await evaluate(`document.querySelector('#house-rules').textContent.includes('No equipment use while carrying the flag.')`));
+  assert(await evaluate(`document.querySelector('#cabin-rules').open`));
+  assert(await evaluate(`document.activeElement === document.querySelector('#cabin-rules summary')`));
+  assert(await evaluate(`document.querySelector('#cabin-rules').textContent.includes('No equipment use while carrying the flag.')`));
   assert(await evaluate(`document.querySelector('#rule-flags br')?.nextSibling.textContent === 'No equipment use while carrying the flag.'`),'Equipment restriction is on its own line');
   // Live resize restores shared composition, not stale portrait mutations.
   await page('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:false});
@@ -285,9 +285,9 @@ try {
   for (const width of [390,1440]) {
     await page('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:false});
     await load();
-    assert(await evaluate(`document.querySelector('#house-rules').open`));
-    assert.equal(await evaluate(`document.querySelectorAll('#house-rules li').length`),5);
-    assert.equal(await evaluate(`document.querySelector('#room').offsetHeight===document.querySelector('[data-stage]').offsetHeight`),true);
+    assert(await evaluate(`document.querySelector('#cabin-rules').open`));
+    assert.equal(await evaluate(`document.querySelectorAll('#cabin-rules li').length`),5);
+    assert.equal(await evaluate(`document.querySelector('#cabin').offsetHeight===document.querySelector('[data-stage]').offsetHeight`),true);
     assert.equal(await evaluate(`document.getAnimations().filter(a=>a.playState==='running').length`),0);
     assert(await evaluate(`[...document.querySelectorAll('[data-nose-ring]')].every(e=>+getComputedStyle(e).opacity===0)`),'Reduced motion hides nose rings');
     assert.deepEqual(await evaluate(`(()=>{const s=getComputedStyle(document.querySelector('[data-scene]'));return ['--flag-raised','--shield-deployed','--clock-pulse','--nose-light'].map(k=>+s.getPropertyValue(k))})()`),[1,1,0,0]);
