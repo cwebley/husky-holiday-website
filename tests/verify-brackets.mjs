@@ -7,7 +7,7 @@ await withChrome(async ({ page, evaluate, load, errors }) => {
   await page('Page.enable');
   const settle = () => evaluate('new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(()=>requestAnimationFrame(r))))');
   async function go(t) {
-    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(s).top)+(r.offsetHeight-s.offsetHeight)*${t}/11,behavior:'instant'})})()`);
+    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${t}-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(s).top)+(r.getBoundingClientRect().height-s.offsetHeight)*p,behavior:'instant'})})()`);
     await settle();
     return evaluate(`(()=>{
       const f=document.querySelector('[data-rule-focus]'),v=document.querySelector('[data-view]'),s=document.querySelector('[data-scene]');

@@ -7,7 +7,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0 12px;
   font-size: 14px;
   line-height: 1.4;
@@ -41,4 +41,77 @@
 @media (prefers-reduced-motion: reduce) {
   /* No tour needs skipping when the room is a normal-length static overview. */
   .room-guide { display: none; }
+}
+
+/* Scroll-linked cabin progress, hidden for reduced motion. */
+#room .cabin-progress {
+  position: absolute;
+  z-index: 1;
+  top: 16px;
+  bottom: 16px;
+  right: 8px;
+  width: 24px;
+  color: #fff4e0;
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+}
+#room .cabin-progress[data-active="true"] { visibility: visible; }
+#room [data-rule] { z-index: 2; }
+#room .cabin-progress__track {
+  position: absolute;
+  top: 14px;
+  bottom: 14px;
+  left: 10px;
+  width: 4px;
+  border-radius: 4px;
+  background: #fff4e04d;
+  box-shadow: 0 0 0 2px #102737b3;
+}
+#room .cabin-progress__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #fff4e0;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+#room .cabin-progress__thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 28px;
+  border-radius: 12px;
+  background: #0b273bf2;
+  box-shadow: 0 0 0 1px #fff4e080;
+  display: grid;
+  place-items: center;
+}
+#room .cabin-progress__thumb svg { display: block; overflow: visible; }
+#room .cabin-progress__thumb path { fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+#room .cabin-progress__hint {
+  position: absolute;
+  top: 0;
+  right: 34px;
+  margin: 0;
+  padding: 8px 12px;
+  max-width: calc(100vw - 100px);
+  width: max-content;
+  border: 1px solid #fff4e080;
+  border-radius: 18px;
+  background: #0b273bf2;
+  color: #fff4e0;
+  font: 700 13px/1.4 Nunito, sans-serif;
+}
+#room .cabin-progress[data-active="true"]:not([data-used]) .cabin-progress__thumb svg {
+  animation: cabin-scroll-nudge .9s ease-in-out 2;
+}
+@keyframes cabin-scroll-nudge {
+  0%, 100% { transform: translateY(-2px); }
+  50% { transform: translateY(2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #room .cabin-progress { display: none; }
+  #room .cabin-progress__thumb svg { animation: none !important; }
 }

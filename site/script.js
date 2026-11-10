@@ -116,6 +116,11 @@
       // Include the highest bow, not just the rectangular box bodies.
       gifts: [2675, 629, 620, 291], leaderboard: [3780, 365, 400, 138]
     };
+    var progress = section.querySelector('[data-cabin-progress]');
+    var progressThumb = progress.querySelector('[data-progress-thumb]');
+    var progressFill = progress.querySelector('[data-progress-fill]');
+    var progressHint = progress.querySelector('[data-progress-hint]');
+    var progressTravel = 0, progressUsed = false;
     var focus = section.querySelector('[data-rule-focus]');
     var focusPaths = focus.querySelectorAll('path');
     var steam = section.querySelectorAll('[data-steam]');
@@ -134,8 +139,11 @@
     var ceilingLights = scene.querySelector('.cabin-lights');
     var raf = 0, vw = 0, sh = 0, top = 0, vv = 0, captionHeight = 0;
     var travel = 11;
-    // Keep eleven logical beats, but traverse them in eight stage-heights.
+    // Preserve the original middle pace of eight stage-heights per eleven units.
     var scrollLengths = 8;
+    // Desktop begins at the first camera move. Phones retain their original map pan.
+    // Finish when LAN settles at logical t=10, with no final hold to scroll through.
+    var openingTravel = 0, timelineTravel = 9;
     var guide = section.querySelector('[data-room-guide]');
     section.querySelector('[data-skip-room]').addEventListener('click', function (event) {
       event.preventDefault();
@@ -236,9 +244,12 @@
       top = hh;
       stage.style.height = sh + 'px';
       stage.style.top = top + 'px';
+      progressTravel = Math.max(0, progress.clientHeight - progressThumb.offsetHeight);
       geometry();
-      // Preserve every logical stop, with a shorter physical scroll journey.
-      // The unpinned reference follows the stage and is not part of the timeline.
+      openingTravel = vw < 700 ? 1 : 0;
+      timelineTravel = openingTravel + 9;
+      // Keep the middle journey's physical pace exactly as before.
+      scrollLengths = 8 * timelineTravel / travel;
       section.style.height = (reduceMotion ? sh : sh * (scrollLengths + 1)) + 'px';
       update();
     }
@@ -248,7 +259,8 @@
       var phone = vw < 700;
       var r = section.getBoundingClientRect();
       var p = clamp01((top - r.top) / Math.max(1, r.height - sh));
-      var t = p * travel;
+      var distance = p * timelineTravel;
+      var t = openingTravel && distance < openingTravel ? distance / openingTravel : 1 + distance - openingTravel;
       var lanReveal = ease(t - 9);
       // Keep Prizes visible and the scene viewport fixed through the LAN pan.
       if (!reduceMotion) vv = sh - captionHeight;
@@ -287,6 +299,15 @@
       section.dataset.beat = t >= 9 ? 'lan' : t >= 2 && t < 7 ? beats[index].id : t < 2 ? 'maps' : 'prizes';
       effects(t);
       show(focus, 0);
+      // One scroll-linked indicator for vertical and horizontal input alike.
+      var progressActive = !reduceMotion && r.top <= top + 1 && r.bottom >= top + sh - 1;
+      progress.dataset.active = String(progressActive);
+      if (p > .001) progressUsed = true;
+      if (progressUsed) progress.dataset.used = 'true';
+      progressThumb.style.transform = 'translateY(' + (p * progressTravel).toFixed(2) + 'px)';
+      progressFill.style.transform = 'scaleY(' + p.toFixed(5) + ')';
+      var hintOpacity = 1 - ease(p / .04);
+      show(progressHint, hintOpacity);
       scene.style.transform = 'translate(' + cam.x.toFixed(1) + 'px,' + cam.y.toFixed(1) + 'px) scale(' + cam.s.toFixed(4) + ')';
       beats.forEach(function (beat, i) {
         var bounds = focusBounds[beat.id];
@@ -313,6 +334,56 @@
         drawFocus(focusBounds.leaderboard, cam, ease((t - 9.8) / .2));
       }
     }
+
+    // Horizontal input changes the page's existing scroll position.
+    // No second timeline, snapping, animation loop, or vertical-scroll interception.
+    function cabinPinned() {
+      var rect = section.getBoundingClientRect();
+      return !reduceMotion && rect.top <= top + 1 && rect.bottom >= top + sh - 1;
+    }
+    function interactiveTarget(target) {
+      return target.closest('a, button, input, select, textarea, summary, [contenteditable="true"]');
+    }
+    view.addEventListener('wheel', function (event) {
+      if (!cabinPinned() || event.ctrlKey || event.metaKey || interactiveTarget(event.target) ||
+          Math.abs(event.deltaX) <= Math.abs(event.deltaY) * 1.2 || !event.deltaX) return;
+      // Normalize wheel line/page units. Trackpads normally report CSS pixels.
+      var unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? sh : 1;
+      event.preventDefault();
+      window.scrollBy({ top: event.deltaX * unit, behavior: 'instant' });
+    }, { passive: false });
+
+    if (!reduceMotion) view.style.touchAction = 'pan-y pinch-zoom';
+    var swipe = null;
+    var touchPointers = new Set();
+    view.addEventListener('pointerdown', function (event) {
+      if (event.pointerType !== 'touch') return;
+      touchPointers.add(event.pointerId);
+      if (touchPointers.size !== 1) { swipe = null; return; }
+      // Leave screen-edge gestures to the browser and OS. Never capture a pointer.
+      if (!cabinPinned() || interactiveTarget(event.target) || event.clientX < 24 || event.clientX > innerWidth - 24) return;
+      swipe = { id: event.pointerId, x: event.clientX, y: event.clientY, last: event.clientX, axis: null };
+    }, { passive: true });
+    view.addEventListener('pointermove', function (event) {
+      if (!swipe || event.pointerId !== swipe.id || !cabinPinned()) return;
+      var dx = event.clientX - swipe.x, dy = event.clientY - swipe.y;
+      if (!swipe.axis) {
+        if (Math.max(Math.abs(dx), Math.abs(dy)) < 10) return;
+        swipe.axis = Math.abs(dx) > Math.abs(dy) * 1.2 ? 'horizontal' : 'vertical';
+      }
+      if (swipe.axis === 'horizontal') {
+        // Finger left advances, finger right reverses, just like a horizontal scroller.
+        window.scrollBy({ top: swipe.last - event.clientX, behavior: 'instant' });
+      }
+      swipe.last = event.clientX;
+    }, { passive: true });
+    function endSwipe(event) {
+      touchPointers.delete(event.pointerId);
+      if (swipe && swipe.id === event.pointerId) swipe = null;
+    }
+    window.addEventListener('pointerup', endSwipe, { passive: true });
+    window.addEventListener('pointercancel', endSwipe, { passive: true });
+    window.addEventListener('blur', function () { swipe = null; touchPointers.clear(); });
 
     function onScroll() { if (!raf) raf = requestAnimationFrame(update); }
     new ResizeObserver(layout).observe(stage);

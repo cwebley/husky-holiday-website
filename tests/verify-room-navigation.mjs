@@ -53,13 +53,15 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     const visible=e=>{const c=getComputedStyle(e);return c.display!=='none'&&c.visibility!=='hidden'&&+c.opacity>.01&&e.getBoundingClientRect().height>0};
     const m=new DOMMatrix(getComputedStyle(scene).transform),top=parseFloat(getComputedStyle(stage).top);
     const guide=r.querySelector('[data-room-guide]'),skip=r.querySelector('[data-skip-room]');
-    return {t:Math.max(0,Math.min(11,(top-r.getBoundingClientRect().top)/(r.offsetHeight-stage.offsetHeight)*11)),beat:r.dataset.beat,
+    const start=view.clientWidth<700?0:1;
+    const p=Math.max(0,Math.min(1,(top-r.getBoundingClientRect().top)/(r.getBoundingClientRect().height-stage.offsetHeight)));
+    return {t:start+p*(10-start),beat:r.dataset.beat,
       stage:stage.offsetHeight,span:r.offsetHeight-stage.offsetHeight,section:r.offsetHeight,band:band.offsetHeight,bandRect:rect(band),view:rect(view),width:view.clientWidth,
       sceneWidth:parseFloat(scene.style.width),capHeight:Math.max(...[...r.querySelectorAll('[data-cap]')].map(e=>e.offsetHeight)),matrix:[m.a,m.b,m.c,m.d,m.e,m.f],
       anchors:['timer','flags','friendly-fire','radar','chair'].map(id=>r.querySelector('[data-rule="'+id+'"]').dataset.at.split(',').map(Number)),
       captions:[...r.querySelectorAll('[data-cap]')].filter(visible).map(e=>({id:e.dataset.cap,rect:rect(e)})),
       labels:[...r.querySelectorAll('[data-rule]')].filter(visible).map(e=>({id:e.dataset.rule,rect:rect(e.lastElementChild)})),
-      guide:guide&&{visible:visible(guide),height:guide.offsetHeight,rect:rect(guide),cue:rect(guide.querySelector('p'))},
+      guide:guide&&{visible:visible(guide),height:guide.offsetHeight,rect:rect(guide)},
       skip:skip&&{visible:visible(skip),rect:rect(skip),href:skip.getAttribute('href'),hit:(()=>{const b=skip.getBoundingClientRect(),e=document.elementFromPoint(b.x+b.width/2,b.y+b.height/2);return e===skip||skip.contains(e)})()},
       effects:{values:['--flag-raised','--shield-deployed','--clock-pulse','--nose-light'].map(k=>+getComputedStyle(scene).getPropertyValue(k)),
         radar:scene.dataset.radarOff,nose:getComputedStyle(r.querySelector('.rudolph-nose')).fill,
@@ -69,7 +71,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
       plaque:rect(r.querySelector('[data-winner-plaque]')),overflow:document.documentElement.scrollWidth>innerWidth+1};
   })()`);
   const go=async t=> {
-    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(s).top)+(r.offsetHeight-s.offsetHeight)*${t}/11,behavior:'instant'})})()`);
+    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${t}-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY-parseFloat(getComputedStyle(s).top)+(r.getBoundingClientRect().height-s.offsetHeight)*p,behavior:'instant'})})()`);
     await settle();return snapshot();
   };
   const ax=async()=> (await page('Accessibility.getFullAXTree')).nodes.filter(n=>!n.ignored);
@@ -81,7 +83,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     assert.deepEqual(headings(nodes),original,'Static accessible headings unchanged');
     assert(!nodes.some(n=>/^Rule [1-5] of 5$/.test(n.name?.value||'')),'Animated rule count stays hidden');
     assert.equal(nodes.filter(n=>n.role?.value==='link'&&n.name?.value==='Skip the cabin').length,1,'One accessible skip link');
-    assert(nodes.some(n=>n.role?.value==='StaticText'&&n.name?.value?.trim()==='Scroll down to explore'),'Accessible scroll cue without arrow');
+    assert.equal(nodes.filter(n=>n.role?.value==='StaticText'&&n.name?.value==='Scroll or swipe to explore the cabin. Use Skip the cabin to continue without the tour.').length,1,'One accessible static scroll instruction');
     assert(await evaluate(`(()=>{const b=document.querySelector('[data-band]');return !b.closest('[aria-hidden="true"]')&&[...b.querySelectorAll('[data-cap]')].every(e=>e.getAttribute('aria-hidden')==='true')})()`),'Only guide navigation exposed in band');
   };
   function assertGeometry(s,initial,context) {
@@ -89,9 +91,9 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     near(s.band,initial.band,.1,`${context}: fixed band`);
     for(const key of ['x','y','width','height'])near(s.view[key],initial.view[key],1,`${context}: fixed view ${key}`);
     assert(s.guide?.visible&&s.skip?.visible&&s.skip.hit,`${context}: guide and link visible and hit-testable`);
-    const g=s.guide.rect,k=s.skip.rect,c=s.guide.cue;
+    const g=s.guide.rect,k=s.skip.rect;
     assert(k.width>=24&&k.height>=24,`${context}: usable skip target ${JSON.stringify(k)}`);
-    for(const [name,b]of [['guide',g],['skip',k],['cue',c]]) {
+    for(const [name,b]of [['guide',g],['skip',k]]) {
       assert(b.left>=-1&&b.right<=s.width+1&&b.top>=s.bandRect.top-1&&b.bottom<=s.bandRect.bottom+1,`${context}: ${name} clipped`);
     }
     for(const cap of s.captions)assert(g.bottom<=cap.rect.top+1,`${context}: guide overlaps ${cap.id} caption`);
@@ -136,15 +138,17 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     }
     if(width===320) {
       const source=await evaluate(`Promise.all([...document.scripts].filter(s=>s.src&&new URL(s.src).origin===location.origin).map(s=>fetch(s.src).then(r=>{if(!r.ok)throw Error('Script fetch '+r.status);return r.text()}))).then(s=>s.join('\\n'))`);
-      assert(!/addEventListener\s*\(\s*['"](?:wheel|mousewheel|touchstart|touchmove|touchend)['"]|\bon(?:wheel|mousewheel|touchstart|touchmove|touchend)\s*=/.test(source),'No wheel or touch interception handlers');
-      assert.equal((source.match(/\.preventDefault\s*\(/g)||[]).length,2,'Only the two explicit reference-link clicks cancel defaults');
+      assert.equal((source.match(/addEventListener\('wheel'/g)||[]).length,1,'One view-scoped horizontal wheel listener');
+      assert(!/addEventListener\s*\(\s*['"](?:touchstart|touchmove|touchend)['"]/.test(source),'Native touch gestures use passive pointer listeners');
+      assert.equal((source.match(/\.preventDefault\s*\(/g)||[]).length,3,'Two reference clicks and horizontal wheel cancel defaults');
       assert.equal((source.match(/addEventListener\s*\(\s*['"]click['"]/g)||[]).length,2,'Exactly two explicit click listeners');
       for(const selector of ['[data-cap="rules"] a[href="#house-rules"]','[data-skip-room]'])assert(source.includes(`section.querySelector('${selector}').addEventListener('click', function (event) {\n      event.preventDefault();`),'Default cancellation belongs to '+selector);
       assert(/addEventListener\('scroll', onScroll, \{ passive: true \}\)/.test(source),'Scroll listener remains passive');
-      console.log('PASS script audit: no wheel/touch interception; preventDefault only on the written-rules and skip clicks');
+      console.log('PASS script audit: one horizontal wheel handler, passive touch pointers, unchanged skip clicks; trusted gestures covered by verify-cabin-gestures.mjs');
     }
-    near(initial.span,initial.stage*8,1,'Room travel is exactly 8 stages');
-    near(initial.section,initial.stage*9,1,'Room section is exactly 9 stages');
+    const timelineUnits=initial.width<700?10:9;
+    near(initial.span,initial.stage*8*timelineUnits/11,1,'Endpoint holds removed at original middle pace');
+    near(initial.section,initial.stage*(1+8*timelineUnits/11),1,'Section includes shortened journey and one stage');
     near(initial.band,Math.max(initial.width<700?116:132,initial.guide.height+52+initial.capHeight),1,'Band reserves measured guide and maximum caption height');
     assert.deepEqual(await staticRules(),originalRules,'Static rule text unchanged');
     await evaluate(`window.__bandWrites=0;new MutationObserver(ms=>window.__bandWrites+=ms.length).observe(document.querySelector('[data-band]'),{attributes:true,attributeFilter:['style']})`);
@@ -171,7 +175,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     assert.deepEqual(restored.effects,states.get(9.5).effects,'Resize away/back restores effects');
     assertGeometry(restored,initial,`resize ${width}`);
     for(const [name,t]of [['maps',.5],['rules',4.5],['prizes',8.5],['LAN',10.5]])await skip(t,`${width}x${height} ${name}`);
-    console.log(`PASS ${width}x${height}: accessible guide, fixed band, 8-stage travel, 11-unit camera/effects, five rules, plaque, reverse/jump, resize, four trusted keyboard skips`);
+    console.log(`PASS ${width}x${height}: accessible guide, fixed band, trimmed endpoints, original camera/effects, five rules, plaque, reverse/jump, resize, four trusted keyboard skips`);
   }
 
   // Approximate text-only zoom without scaling the layout viewport. Every

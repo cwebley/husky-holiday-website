@@ -46,7 +46,7 @@ try {
     await evaluate(settle);
   };
   const go = async progress => {
-    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');scrollTo({top:r.getBoundingClientRect().top+scrollY+(r.offsetHeight-s.offsetHeight)*${progress}-parseFloat(s.style.top),behavior:'instant'})})()`);
+    await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');const start=r.querySelector('[data-view]').clientWidth<700?0:1;const p=Math.max(0,Math.min(1,(${progress}*11-start)/(10-start)));scrollTo({top:r.getBoundingClientRect().top+scrollY+(r.getBoundingClientRect().height-s.offsetHeight)*p-parseFloat(s.style.top),behavior:'instant'})})()`);
     await evaluate(settle);
     const { nodes } = await page('Accessibility.getFullAXTree');
     for (const name of ['The maps', 'Prizes', '2025 Husky Holiday champion']) {
@@ -62,7 +62,8 @@ try {
     await page('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     await load();
     const roomLayout = await evaluate(`(()=>{const r=document.querySelector('#room'),s=r.querySelector('[data-stage]');return {travel:r.offsetHeight-s.offsetHeight,stage:s.offsetHeight,band:r.querySelector('[data-band]').offsetHeight}})()`);
-    assert.equal(roomLayout.travel,roomLayout.stage*8,'Room takes eight stage-heights to traverse');
+    const phone = await evaluate("document.querySelector('[data-view]').clientWidth < 700");
+    assert(Math.abs(roomLayout.travel-roomLayout.stage*8*(phone?10:9)/11)<1,'Endpoint holds removed without speeding up the middle journey');
     assert.equal(await evaluate("getComputedStyle(document.querySelector('[data-scene]')).willChange"), 'auto', 'Do not restore the scene layer hint: Pixel comparison showed missing cabin elements with it');
     const geometry = await evaluate(`(()=>{const selectors=['.ctf-flags','.mantel-clock','.needler-gift','.plasma-pistol-gift','.rudolph','.cabin-chair','.battle-rifle-gift','.prize-first','.prize-second','.prize-third','.holiday-lan'];return selectors.map(s=>{const e=document.querySelector(s),c=getComputedStyle(e);return [s,parseFloat(c.left),parseFloat(c.top),parseFloat(c.width),parseFloat(c.height),c.translate,c.scale,c.display]})})()`);
     if (sharedGeometry) assert.deepEqual(geometry, sharedGeometry, 'Viewport changed prop coordinates');
