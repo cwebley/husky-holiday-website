@@ -80,7 +80,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     const nodes=await ax();
     assert.deepEqual(headings(nodes),original,'Static accessible headings unchanged');
     assert(!nodes.some(n=>/^Rule [1-5] of 5$/.test(n.name?.value||'')),'Animated rule count stays hidden');
-    assert.equal(nodes.filter(n=>n.role?.value==='link'&&n.name?.value==='Skip the room').length,1,'One accessible skip link');
+    assert.equal(nodes.filter(n=>n.role?.value==='link'&&n.name?.value==='Skip the cabin').length,1,'One accessible skip link');
     assert(nodes.some(n=>n.role?.value==='StaticText'&&n.name?.value?.trim()==='Scroll down to explore'),'Accessible scroll cue without arrow');
     assert(await evaluate(`(()=>{const b=document.querySelector('[data-band]');return !b.closest('[aria-hidden="true"]')&&[...b.querySelectorAll('[data-cap]')].every(e=>e.getAttribute('aria-hidden')==='true')})()`),'Only guide navigation exposed in band');
   };
@@ -192,7 +192,7 @@ await withChrome(async ({page,load,evaluate,errors}) => {
     assert(reduced.guideHidden&&reduced.open&&!reduced.overflow,'Reduced motion hides guide and opens static rules');
     assert.equal(reduced.running,0,'Reduced motion has no running art animations');
     assert.deepEqual(headings(await ax()),originalHeadings,'Reduced motion static headings unchanged');
-    assert(!(await ax()).some(n=>n.role?.value==='link'&&n.name?.value==='Skip the room'),'Hidden guide removed from AX tree');
+    assert(!(await ax()).some(n=>n.role?.value==='link'&&n.name?.value==='Skip the cabin'),'Hidden guide removed from AX tree');
     assert.deepEqual(await staticRules(),originalRules,'Reduced motion retains all five static rules');
     await evaluate(`(()=>{const r=document.querySelector('#room');scrollTo({top:r.getBoundingClientRect().top+scrollY,behavior:'instant'})})()`);await settle();
     const before=await evaluate('scrollY');
